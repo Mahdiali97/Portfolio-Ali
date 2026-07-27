@@ -81,44 +81,48 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+    <section id="hero" class="hero section bazil-hero">
 
-      <!-- Content -->
-      <div class="container hero-content d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
-        <!-- Profile Image -->
-        <div class="profile-image-wrapper">
-          <img src="assets/img/Ali.jpg" alt="Profile Picture" class="img-fluid rounded-circle shadow-lg">
-          <div class="glow-effect"></div>
-        </div>
+      <!-- Text content on the left -->
+      <div class="hero-content" data-aos="fade-right" data-aos-delay="100">
 
-        <!-- Hero Text -->
-        <div class="hero-text ms-4">
-          <h1 class="hero-title">
-            Hi, I'm <span class="text-primary">Ali Hanafiah</span>
-            <br>
-            <span class="typed-text"></span>
-            <span class="cursor" style="display: inline-block;">|</span>
-          </h1>
-          <p class="hero-subtitle">
-            A passionate Software Engineer studying at Sultan Idris Education University. With expertise in Software
-            Requirement Specification (SRS), web development, and UI/UX design, I aim to create innovative solutions
-            that enhance system efficiency and drive impactful results.
-          </p>
+        <!-- Top intro line -->
+        <p class="bazil-top-line">
+          <span class="wave">👋</span>
+          Hi, I'm <strong>Ali Hanafiah</strong> and I am a
+        </p>
 
-          <!-- Call-to-Action Button -->
-          <div class="text-center mt-4">
-            <a href="portfolio.html" class="btn btn-primary btn-lg me-3">
-              <i class="bi bi-eye-fill me-2"></i>View My Work
-            </a>
-            <a href="assets/docs/Resume-Ali.pdf" class="btn btn-outline-light btn-lg" download>
-              <i class="bi bi-download me-2"></i>Download Resume
-            </a>
+        <!-- Giant Typography -->
+        <h1 class="bazil-h1">
+          <span class="bazil-line--solid">Software</span>
+          <span class="bazil-line--outline">&amp; Engineer</span>
+        </h1>
+
+        <!-- Typed Role -->
+        <p class="bazil-tagline">
+          Currently working as: <span class="typed-text-bazil"></span><span class="cursor-bazil">|</span>
+        </p>
+
+        <!-- Location + CTA Buttons -->
+        <div class="bazil-bottom-row">
+          <div class="bazil-location">
+            <i class="bi bi-geo-alt-fill me-1"></i>Software Engineer
+          </div>
+          <div class="bazil-cta-btns">
+            <a href="portfolio.html" class="bazil-btn bazil-btn--solid">View My Work</a>
+            <a href="assets/docs/Resume-Ali.pdf" class="bazil-btn bazil-btn--outline" download>Download Resume</a>
           </div>
         </div>
       </div>
+
+      <!-- Portrait image: proper img element, right side, bottom-aligned -->
+      <img src="assets/img/Ali.JPG" alt="Ali Hanafiah" class="hero-person">
+
     </section><!-- /Hero Section -->
+
     <script>
-      const typedTextElement = document.querySelector('.typed-text');
+      // Typed effect for bazil-style second line
+      const typedTextElement = document.querySelector('.typed-text-bazil');
       const textArray = ['Software Engineer', 'Web Developer', 'UI/UX Designer'];
       let textIndex = 0;
       let charIndex = 0;
