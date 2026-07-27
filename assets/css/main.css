@@ -716,9 +716,22 @@ section,
 }
 
 @keyframes waveHand {
-  0%, 60%, 100% { transform: rotate(0deg); }
-  10%, 30%      { transform: rotate(18deg); }
-  20%, 40%      { transform: rotate(-10deg); }
+
+  0%,
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  10%,
+  30% {
+    transform: rotate(18deg);
+  }
+
+  20%,
+  40% {
+    transform: rotate(-10deg);
+  }
 }
 
 /* 6. Giant h1 — sized to fit within the 50% content area */
@@ -745,6 +758,7 @@ section,
   display: block;
   color: #ffffff;
   -webkit-text-stroke: 4px #111111;
+  text-stroke: 4px #111111;
   paint-order: stroke fill;
 }
 
@@ -771,8 +785,15 @@ section,
 }
 
 @keyframes bazilBlink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 /* 9. Bottom row: location + buttons */
@@ -1896,5 +1917,4 @@ section,
   font-size: 20px;
   margin-right: 8px;
   color: var(--accent-color);
-}
 }
