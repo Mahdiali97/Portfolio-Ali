@@ -745,7 +745,6 @@ section,
   display: block;
   color: #ffffff;
   -webkit-text-stroke: 4px #111111;
-  text-stroke: 4px #111111;
   paint-order: stroke fill;
 }
 
