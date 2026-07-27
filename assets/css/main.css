@@ -692,9 +692,6 @@ section,
   object-position: top center;
   z-index: 1;
   pointer-events: none;
-  /* Fade bottom so feet blend naturally into white */
-  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
 /* 5. Intro top line */
@@ -758,7 +755,6 @@ section,
   display: block;
   color: #ffffff;
   -webkit-text-stroke: 4px #111111;
-  text-stroke: 4px #111111;
   paint-order: stroke fill;
 }
 
@@ -766,7 +762,7 @@ section,
 .bazil-tagline {
   font-size: 1rem;
   color: #444;
-  margin-bottom: 28px;
+  margin-bottom: 48px;
   font-family: var(--default-font);
   font-weight: 500;
   margin-top: 0;
@@ -802,6 +798,7 @@ section,
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
+  margin-top: 24px;
 }
 
 .bazil-location {

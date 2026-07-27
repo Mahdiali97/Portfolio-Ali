@@ -4,336 +4,404 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Portfolio Ali Hanafiah</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>About Me — Ali Hanafiah | Software Engineer</title>
+  <meta name="description"
+    content="About Ali Hanafiah — Software Engineering student at UPSI, passionate about UI/UX design and building meaningful digital products.">
+  <meta name="keywords" content="Ali Hanafiah, About, Software Engineer, UPSI, UI/UX Designer, Portfolio">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
-  <!-- AOS Library -->
+  <!-- AOS -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <script src="assets/vendor/aos/aos.js"></script>
 
-  <!-- Swiper Library -->
-  <link href="assets/vendor/swiper/index.js" rel="stylesheet">
-  <script src="assets/vendor/swiper/index.js"></script>
-  <script src="assets/js/index.js"></script>
-
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-
+  <!-- About Page Styles -->
+  <link href="assets/css/about-page.css?v=1" rel="stylesheet">
 </head>
 
-<body class="index-page">
+<body class="about-page">
 
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="ap-header">
 
-    <div class="profile-img">
-      <img src="assets/img/D20221101859_thumb.jpg" alt="Ali Hanafiah" class="img-fluid">
+    <!-- Left: Brand -->
+    <div class="ap-brand">
+      <div class="ap-wordmark" aria-label="Portfolio">
+        <span class="ap-port">PORT</span><span class="ap-folio">FOLIO</span>
+      </div>
+      <div class="ap-sub">
+        <span class="ap-sub-role">SOFTWARE ENGINEER</span>
+        <span class="ap-sub-year">2026</span>
+      </div>
     </div>
 
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1 class="sitename">Ali Hanafiah</h1>
-    </a>
-    <p class="logo-tagline">Software Engineer</p>
-
-    <div class="social-links text-center">
-      <a href="https://x.com/" class="twitter" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.facebook.com/" class="facebook" target="_blank" rel="noopener"><i
-          class="bi bi-facebook"></i></a>
-      <a href="https://www.instagram.com/" class="instagram" target="_blank" rel="noopener"><i
-          class="bi bi-instagram"></i></a>
-      <a href="https://www.skype.com/en/" class="google-plus" target="_blank" rel="noopener"><i
-          class="bi bi-skype"></i></a>
-      <a href="https://www.linkedin.com/in/ali-hanafiah-778365353" class="linkedin" target="_blank" rel="noopener"><i
-          class="bi bi-linkedin"></i></a>
-      <a href="https://github.com/Mahdiali97" class="github" target="_blank" rel="noopener"><i
-          class="bi bi-github"></i></a>
+    <!-- Right: Identity + Nav -->
+    <div class="ap-header-right">
+      <div class="ap-identity">
+        <span class="ap-identity-dot"></span>
+        ALI HANAFIAH
+      </div>
+      <nav class="ap-nav" aria-label="Main navigation">
+        <a href="index.html" id="nav-home">HOME</a>
+        <span class="ap-nav-sep" aria-hidden="true"></span>
+        <a href="about.html" class="active" id="nav-about">ABOUT</a>
+        <span class="ap-nav-sep" aria-hidden="true"></span>
+        <a href="portfolio.html" id="nav-portfolio">PORTFOLIO</a>
+        <span class="ap-nav-sep" aria-hidden="true"></span>
+        <a href="resume.html" id="nav-resume">RESUME</a>
+      </nav>
     </div>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="index.html"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="about.html" class="active"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="resume.html"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="portfolio.html"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="services.html"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <li><a href="contact.html"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-      </ul>
-    </nav>
 
   </header>
+  <hr class="ap-header-rule" aria-hidden="true">
 
-  <main class="main">
 
-    <!-- Page Title -->
-    <div class="page-title dark-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0"> About Me </h1>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html" class="about-link">Home</a></li>
-            <li class="current">About</li>
-          </ol>
-        </nav>
+  <!-- ============================================================
+       HERO — 3-Column Grid
+       ============================================================ -->
+  <section class="ap-hero" id="hero">
+
+    <!-- Column 1: Giant Typography -->
+    <div class="ap-hero-left" data-aos="fade-right" data-aos-delay="50">
+      <div class="ap-badge">
+        <span class="ap-badge-dot"></span>
+        GET TO KNOW ME
       </div>
-    </div><!-- End Page Title -->
+      <h1 class="ap-big-title">
+        <span class="word-about">ABOUT</span>
+        <span class="word-me">ME</span>
+      </h1>
+      <div class="ap-hero-role">
+        SOFTWARE ENGINEER<br>
+        UI / UX DESIGNER
+      </div>
+      <div class="ap-title-rule"></div>
+    </div>
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-      <!-- Section Title -->
-      <div class="container section-title text-center" data-aos="fade-up">
-        <h2>About</h2>
-        <p class="lead">My name is Muhamad Ali Hanafiah Bin Sabarudin.<br>Student of Sultan Idris Education University.
-          This page shows my introduction and skill level.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-5 align-items-center justify-content-center">
-          <!-- Profile Image -->
-          <div class="col-lg-4 text-center">
-            <div class="profile-image-wrapper">
-              <img src="assets/img/photo_Ali.jpg" class="img-fluid rounded-circle shadow-lg" alt="Profile Picture"
-                style="width: 250px; height: 250px; object-fit: cover;">
-            </div>
-          </div>
-
-          <!-- Content -->
-          <div class="col-lg-8 content">
-            <h2 class="mb-4">UI/UX Designer &amp; Web Developer</h2>
-            <p class="fst-italic py-3">
-              Introduction
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul class="list-unstyled">
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>30 December 2002</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Hobby:</strong> <span>Playing video games</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <a href="tel:+60135081967"
-                      class="text-decoration-none"><span>+60 13508-1967</span></a></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Guar Chempedak, Kedah</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul class="list-unstyled">
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>24</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Undergraduate</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <a
-                      href="mailto:mahdialihanafiah@gmail.com"
-                      class="text-decoration-none"><span>mahdialihanafiah@gmail.com</span></a></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
-              </div>
-            </div>
-
-          </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Coding Skills</h2>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row skills-content skills-animation">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>HTML</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>CSS</span> <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>JavaScript</span> <i class="val">67%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Python</span> <i class="val">65%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Dart</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div><!-- End Skills Item -->
-          </div>
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>PHP</span> <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Microsoft</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Photoshop</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>C++</span> <i class="val">60%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div><!-- End Skills Item -->
-
-
-          </div>
-
+    <!-- Column 2: Profile Photo -->
+    <div class="ap-hero-center" data-aos="fade-up" data-aos-delay="100">
+      <div class="ap-photo-frame">
+        <div class="ap-photo-img-wrap">
+          <img src="assets/img/Ali.jpg" alt="Ali Hanafiah — Software Engineer & UI/UX Designer">
         </div>
-
-      </div>
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Language Skills</h2>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row skills-content skills-animation">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>Bahasa Melayu</span> <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>English</span> <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Japanese </span> <i class="val">40%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div><!-- End Skills Item -->
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-
-
-    </section><!-- /Skills Section -->
-
-  </main>
-
-  <footer id="footer" class="footer position-relative light-background">
-
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>2026</span> <strong class="px-1 sitename"></strong>Created by AliHanafiah </p>
-      </div>
-
-      <div class="social-links text-center">
-        <a href="https://x.com/" class="twitter" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://www.facebook.com/" class="facebook" target="_blank" rel="noopener"><i
-            class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/" class="instagram" target="_blank" rel="noopener"><i
-            class="bi bi-instagram"></i></a>
-        <a href="https://www.skype.com/en/" class="google-plus" target="_blank" rel="noopener"><i
-            class="bi bi-skype"></i></a>
-        <a href="https://www.linkedin.com/in/ali-hanafiah-778365353" class="linkedin" target="_blank" rel="noopener"><i
-            class="bi bi-linkedin"></i></a>
-        <a href="https://github.com/Mahdiali97" class="github" target="_blank" rel="noopener"><i
-            class="bi bi-github"></i></a>
       </div>
     </div>
 
+    <!-- Column 3: Intro Text -->
+    <div class="ap-hero-right" data-aos="fade-left" data-aos-delay="150">
+      <h2 class="ap-hello">HELLO, I'M <span class="rt-red">ALI</span></h2>
+      <p>
+        I am a Software Engineering student at Universiti Pendidikan Sultan Idris (UPSI) with a
+        passion for designing intuitive interfaces and building meaningful digital products.
+      </p>
+      <p>
+        I enjoy turning ideas into real solutions through code and design. Always curious,
+        always learning.
+      </p>
+      <p>
+        My goal is to become a UI/UX Designer who combines creativity, technology and
+        problem solving to create impact.
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       PERSONAL INFORMATION
+       ============================================================ -->
+  <section class="ap-section" id="personal-info" data-aos="fade-up">
+
+    <div class="ap-section-label">
+      <div class="ap-section-title">PERSONAL<br>INFORMATION</div>
+      <div class="ap-section-rule"></div>
+    </div>
+
+    <div class="ap-info-grid">
+
+      <!-- Location -->
+      <div class="ap-info-card">
+        <div class="ap-info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+        <div class="ap-info-label-text">LOCATION</div>
+        <div class="ap-info-value">Kuala Lumpur,<br>Malaysia</div>
+      </div>
+
+      <!-- Education -->
+      <div class="ap-info-card">
+        <div class="ap-info-icon"><i class="bi bi-mortarboard-fill"></i></div>
+        <div class="ap-info-label-text">EDUCATION</div>
+        <div class="ap-info-value">Bachelor of Software Engineering<br>UPSI</div>
+      </div>
+
+      <!-- Birthday -->
+      <div class="ap-info-card">
+        <div class="ap-info-icon"><i class="bi bi-calendar3"></i></div>
+        <div class="ap-info-label-text">BIRTHDAY</div>
+        <div class="ap-info-value">30 December 2002</div>
+        <div class="ap-info-sublabel">AGE</div>
+        <div class="ap-info-value">24</div>
+      </div>
+
+      <!-- Email -->
+      <div class="ap-info-card">
+        <div class="ap-info-icon"><i class="bi bi-envelope-fill"></i></div>
+        <div class="ap-info-label-text">EMAIL</div>
+        <div class="ap-info-value">mahdialihanafiah<br>@gmail.com</div>
+      </div>
+
+      <!-- Phone -->
+      <div class="ap-info-card">
+        <div class="ap-info-icon"><i class="bi bi-telephone-fill"></i></div>
+        <div class="ap-info-label-text">PHONE</div>
+        <div class="ap-info-value">+60 13 508 1967</div>
+      </div>
+
+      <!-- Availability -->
+      <div class="ap-info-card">
+        <div class="ap-info-icon"><i class="bi bi-clock-fill"></i></div>
+        <div class="ap-info-label-text">AVAILABILITY</div>
+        <div class="ap-info-value">Open for<br><strong>Working</strong><br><b>Full time</b>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       MY JOURNEY — Horizontal Timeline
+       ============================================================ -->
+  <section class="ap-section" id="journey" data-aos="fade-up">
+
+    <div class="ap-section-label">
+      <div class="ap-section-title">MY<br>JOURNEY</div>
+      <div class="ap-section-rule"></div>
+    </div>
+
+    <div class="ap-timeline">
+      <div class="ap-timeline-track" aria-hidden="true"></div>
+      <div class="ap-timeline-items">
+
+        <div class="ap-tl-item">
+          <div class="ap-tl-year">2020</div>
+          <div class="ap-tl-icon-wrap"><i class="bi bi-book"></i></div>
+          <div class="ap-tl-name">Kedah Matriculation College</div>
+          <div class="ap-tl-sub">CGPA 3.83</div>
+        </div>
+
+        <div class="ap-tl-item">
+          <div class="ap-tl-year">2022</div>
+          <div class="ap-tl-icon-wrap"><i class="bi bi-mortarboard"></i></div>
+          <div class="ap-tl-name">Universiti Pendidikan Sultan Idris</div>
+          <div class="ap-tl-sub">Bachelor of Software Engineering</div>
+        </div>
+
+        <div class="ap-tl-item">
+          <div class="ap-tl-year">2026</div>
+          <div class="ap-tl-icon-wrap"><i class="bi bi-briefcase"></i></div>
+          <div class="ap-tl-name">UI/UX Designer Internship</div>
+          <div class="ap-tl-sub">SecureLabX Sdn Bhd<br>Feb – Aug 2026</div>
+        </div>
+
+        <div class="ap-tl-item">
+          <div class="ap-tl-year future">FUTURE</div>
+          <div class="ap-tl-icon-wrap"><i class="bi bi-flag"></i></div>
+          <div class="ap-tl-name">UI/UX Designer</div>
+          <div class="ap-tl-sub">Creating digital experiences that make a difference.</div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       TECH STACK
+       ============================================================ -->
+  <section class="ap-section" id="tech-stack" data-aos="fade-up">
+
+    <div class="ap-section-label">
+      <div class="ap-section-title">TECH<br>STACK</div>
+      <div class="ap-section-rule"></div>
+    </div>
+
+    <div class="ap-tech-grid">
+
+      <div class="ap-tech-col">
+        <div class="ap-tech-col-title">FRONTEND</div>
+        <div class="ap-tech-tags">
+          <span class="ap-tag">HTML</span>
+          <span class="ap-tag">CSS</span>
+          <span class="ap-tag">JavaScript</span>
+          <span class="ap-tag">Flutter</span>
+          <span class="ap-tag">Dart</span>
+        </div>
+      </div>
+
+      <div class="ap-tech-col">
+        <div class="ap-tech-col-title">BACKEND</div>
+        <div class="ap-tech-tags">
+          <span class="ap-tag">PHP</span>
+          <span class="ap-tag">Laravel</span>
+          <span class="ap-tag">Firebase</span>
+          <span class="ap-tag">Supabase</span>
+        </div>
+      </div>
+
+      <div class="ap-tech-col">
+        <div class="ap-tech-col-title">DESIGN</div>
+        <div class="ap-tech-tags">
+          <span class="ap-tag">Figma</span>
+          <span class="ap-tag">Photoshop</span>
+          <span class="ap-tag">Illustrator</span>
+          <span class="ap-tag">Canva</span>
+        </div>
+      </div>
+
+      <div class="ap-tech-col">
+        <div class="ap-tech-col-title">TOOLS &amp; OTHERS</div>
+        <div class="ap-tech-tags">
+          <span class="ap-tag">Git</span>
+          <span class="ap-tag">GitLab</span>
+          <span class="ap-tag">MySQL</span>
+          <span class="ap-tag">VS Code</span>
+          <span class="ap-tag">RapidMiner</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       BEYOND WORK
+       ============================================================ -->
+  <section class="ap-section" id="beyond-work" data-aos="fade-up">
+
+    <div class="ap-section-label">
+      <div class="ap-section-title">BEYOND<br>WORK</div>
+      <div class="ap-section-rule"></div>
+    </div>
+
+    <div class="ap-beyond-grid">
+
+      <div class="ap-beyond-card">
+        <span class="ap-beyond-icon"><i class="bi bi-controller"></i></span>
+        <div class="ap-beyond-title">GAMING</div>
+        <div class="ap-beyond-desc">Mobile Legends and other games</div>
+      </div>
+
+      <div class="ap-beyond-card">
+        <span class="ap-beyond-icon"><i class="bi bi-trophy"></i></span>
+        <div class="ap-beyond-title">CHESS</div>
+        <div class="ap-beyond-desc">Aggressive tactical openings and strategic play</div>
+      </div>
+
+      <div class="ap-beyond-card">
+        <span class="ap-beyond-icon"><i class="bi bi-translate"></i></span>
+        <div class="ap-beyond-title">BAHASA MELAYU, ENGLISH, JAPANESE(NLPT3)</div>
+      </div>
+
+      <div class="ap-beyond-card">
+        <span class="ap-beyond-icon"><i class="bi bi-shop"></i></span>
+        <div class="ap-beyond-title">E-COMMERCE DEV</div>
+        <div class="ap-beyond-desc">Building apps like UniPerks and CRM systems</div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       BY THE NUMBERS
+       ============================================================ -->
+  <section class="ap-section" id="numbers" data-aos="fade-up">
+
+    <div class="ap-section-label">
+      <div class="ap-section-title">BY THE<br>NUMBERS</div>
+      <div class="ap-section-rule"></div>
+    </div>
+
+    <div class="ap-numbers-grid">
+
+      <div class="ap-number-block">
+        <div class="ap-number-val">1</div>
+        <div class="ap-number-label">YEARS LEARNING<br>PROGRAMMING</div>
+      </div>
+
+      <div class="ap-number-block">
+        <div class="ap-number-val">4</div>
+        <div class="ap-number-label">UI / UX DESIGN<br>PROJECTS</div>
+      </div>
+
+      <div class="ap-number-block">
+        <div class="ap-number-val">3</div>
+        <div class="ap-number-label">WEB APPLICATION<br>PROJECTS</div>
+      </div>
+
+      <div class="ap-number-block">
+        <div class="ap-number-val">4</div>
+        <div class="ap-number-label">TECHNOLOGIES<br>MASTERED</div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="ap-footer">
+    <div class="ap-footer-copy">© 2026 &nbsp; Created by Ali Hanafiah</div>
+    <div class="ap-footer-links">
+      <a href="https://github.com/Mahdiali97" title="GitHub" target="_blank" rel="noopener">
+        <i class="bi bi-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/ali-hanafiah-778365353" title="LinkedIn" target="_blank" rel="noopener">
+        <i class="bi bi-linkedin"></i>
+      </a>
+      <a href="https://www.behance.net/" title="Behance" target="_blank" rel="noopener">
+        <i class="bi bi-behance"></i>
+      </a>
+      <a href="https://www.instagram.com/" title="Instagram" target="_blank" rel="noopener">
+        <i class="bi bi-instagram"></i>
+      </a>
+      <a href="mailto:mahdialihanafiah@gmail.com" title="Email">
+        <i class="bi bi-envelope"></i>
+      </a>
+    </div>
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS -->
   <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof AOS !== 'undefined') {
+        AOS.init({ once: true, duration: 600, offset: 60 });
+      }
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+      // Remove preloader
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.style.display = 'none';
+      }
+    });
+  </script>
 
 </body>
 

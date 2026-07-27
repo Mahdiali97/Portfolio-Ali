@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>GEP CRM System — Case Study | Ali Hanafiah</title>
+  <meta name="description"
+    content="GEP CRM System case study by Ali Hanafiah — a specialized customer and operations management platform designed for security service providers.">
+  <meta name="keywords" content="GEP CRM, GuardExpert Pro, UI/UX, Case Study, Security Management, Ali Hanafiah">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Bootstrap Icons -->
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Shared retro case-study styles (same as UniPerks) -->
+  <link href="assets/css/uniperks-page.css?v=1" rel="stylesheet">
+
+  <!-- GEP-specific overrides -->
+  <style>
+    /* Hero accent colour: olive-leaning dark green for GEP instead of red hollow */
+    .up-title-line--sub {
+      font-size: clamp(40px, 7vw, 80px);
+      color: transparent;
+      -webkit-text-stroke: 2px #5A7A3A;
+    }
+
+    .up-title-line--crm {
+      font-size: clamp(80px, 14vw, 160px);
+      color: #FDFBF7;
+    }
+
+    /* Dock active dot override for this page */
+    .up-dock-dot { background: #5A7A3A; }
+
+    /* Module card grid */
+    .up-module-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .up-module-card {
+      background: #F3EFE6;
+      border: 1.5px solid rgba(61, 74, 46, 0.18);
+      border-top: 3px solid #3D4A2E;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .up-module-card-icon {
+      font-size: 22px;
+      color: #3D4A2E;
+    }
+
+    .up-module-card-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 17px;
+      letter-spacing: 1.5px;
+      color: #3D4A2E;
+    }
+
+    .up-module-card-text {
+      font-size: 12px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Status badge row */
+    .up-status-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .up-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      border: 1.5px solid currentColor;
+    }
+
+    .up-status-dot-badge {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .up-status-badge--active   { color: #2D6A4F; background: rgba(45, 106, 79, 0.08); }
+    .up-status-badge--expiring { color: #C0392B; background: rgba(192, 57, 43, 0.08); }
+    .up-status-badge--term     { color: #666;    background: rgba(100, 100, 100, 0.08); }
+
+    /* Metrics strip */
+    .up-metrics-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .up-metric-card {
+      background: #1C1E1A;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 20px 16px;
+      text-align: center;
+    }
+
+    .up-metric-number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 36px;
+      color: #5A7A3A;
+      line-height: 1;
+    }
+
+    .up-metric-unit {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 14px;
+      color: rgba(253, 251, 247, 0.4);
+      letter-spacing: 2px;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .up-module-grid { grid-template-columns: 1fr; }
+      .up-metrics-strip { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+
+<body class="uniperks-page">
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="ap-header">
+    <div class="ap-brand">
+      <div class="ap-wordmark" aria-label="Portfolio">
+        <span class="ap-port">PORT</span><span class="ap-folio">FOLIO</span>
+      </div>
+      <div class="ap-sub">
+        <span class="ap-sub-role">SOFTWARE ENGINEER</span>
+        <span class="ap-sub-year">2026</span>
+      </div>
+    </div>
+    <div class="ap-header-right">
+      <div class="ap-identity">
+        <span class="ap-identity-dot"></span>
+        ALI HANAFIAH
+      </div>
+      <nav class="ap-nav" aria-label="Main navigation">
+        <a href="index.html" id="nav-home">HOME</a>
+        <span class="ap-nav-sep" aria-hidden="true"></span>
+        <a href="about.html" id="nav-about">ABOUT</a>
+        <span class="ap-nav-sep" aria-hidden="true"></span>
+        <a href="portfolio.html" class="active" id="nav-portfolio">PORTFOLIO</a>
+        <span class="ap-nav-sep" aria-hidden="true"></span>
+        <a href="resume.html" id="nav-resume">RESUME</a>
+      </nav>
+    </div>
+  </header>
+  <hr class="ap-header-rule" aria-hidden="true">
+
+
+  <!-- ============================================================
+       HERO — dark charcoal
+       ============================================================ -->
+  <section class="up-hero" id="gep-crm-hero" aria-labelledby="hero-title">
+
+    <!-- Back link -->
+    <a href="portfolio.html" class="up-back-link" id="back-to-portfolio">
+      <i class="bi bi-arrow-left"></i> BACK TO PORTFOLIO
+    </a>
+
+    <!-- Floating retro tags -->
+    <div class="up-tag up-tag--filled-olive up-tag-uiux" aria-hidden="true">
+      <i class="bi bi-hash"></i>UI/UX
+    </div>
+    <div class="up-tag up-tag--outline-cream up-tag-mobile" aria-hidden="true">
+      <i class="bi bi-grid-3x3-gap"></i> WEB APP
+    </div>
+    <div class="up-tag up-tag--outline-red up-tag-ecomm" aria-hidden="true">
+      <i class="bi bi-shield-check"></i> SECURITY
+    </div>
+    <div class="up-tag up-tag--outline-cream up-tag-flutter" aria-hidden="true">
+      <i class="bi bi-database"></i> CRM
+    </div>
+
+    <!-- Pixel cursors -->
+    <span class="up-cursor up-cursor-1" aria-hidden="true">➤</span>
+    <span class="up-cursor up-cursor-2" aria-hidden="true">➤</span>
+
+    <!-- Giant title -->
+    <div class="up-hero-title" role="heading" aria-level="1" id="hero-title">
+      <span class="up-title-line up-title-line--crm">
+        <span class="up-letter-olive">G</span><span class="up-letter-cream">E</span><span class="up-letter-red">P</span>
+      </span>
+      <span class="up-title-line up-title-line--sub">
+        CRM SYSTEM
+      </span>
+    </div>
+
+    <!-- Project meta strip -->
+    <div class="up-hero-meta">
+      <div class="up-meta-item">
+        <div class="up-meta-label">Project Type</div>
+        <div class="up-meta-value">Web Application</div>
+      </div>
+      <div class="up-meta-item">
+        <div class="up-meta-label">Full Name</div>
+        <div class="up-meta-value">GuardExpert Pro CRM</div>
+      </div>
+      <div class="up-meta-item">
+        <div class="up-meta-label">Role</div>
+        <div class="up-meta-value">UI/UX Designer &amp; Developer</div>
+      </div>
+      <div class="up-meta-item">
+        <div class="up-meta-label">Stack</div>
+        <div class="up-meta-value">Figma · Web Framework · SQL</div>
+      </div>
+      <div class="up-meta-item">
+        <div class="up-meta-label">Status</div>
+        <div class="up-meta-value">Completed</div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       BREADCRUMB
+       ============================================================ -->
+  <nav class="up-breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="up-breadcrumb-sep" aria-hidden="true">/</span>
+    <a href="portfolio.html">Portfolio</a>
+    <span class="up-breadcrumb-sep" aria-hidden="true">/</span>
+    <span class="up-breadcrumb-current">GEP CRM System</span>
+  </nav>
+
+
+  <!-- ============================================================
+       CASE STUDY BODY
+       ============================================================ -->
+  <div class="up-body">
+
+    <!-- ─────────────────────────────────────────────
+         01 — OVERVIEW
+         ───────────────────────────────────────────── -->
+    <section class="up-section" id="overview">
+      <div class="up-section-heading">
+        <span class="up-section-num">01</span>
+        <h2 class="up-section-title">Overview</h2>
+        <div class="up-section-rule" aria-hidden="true"></div>
+      </div>
+
+      <div class="up-two-col">
+        <div>
+          <p class="up-body-text">
+            <span class="up-hl-olive">GEP CRM System</span> (GuardExpert Pro) is a specialized
+            customer and operations management platform designed for
+            <span class="up-hl-red">security service providers</span>. It centralizes
+            company subscriptions, zone management, premise tracking, and automated
+            invoicing into a single, intuitive dashboard.
+          </p>
+          <p class="up-body-text" style="margin-top:16px;">
+            The goal was to design a clean, responsive web interface that eliminates
+            manual spreadsheet errors and provides real-time visibility into active
+            security contracts, client locations, and monthly billing.
+          </p>
+
+          <ul class="up-list" aria-label="Key deliverables" style="margin-top:20px;">
+            <li>End-to-end UI/UX design in Figma</li>
+            <li>Responsive web framework implementation</li>
+            <li>Secure authentication &amp; role-based access</li>
+            <li>Relational database architecture</li>
+          </ul>
+        </div>
+
+        <!-- Key metrics (dark cards) -->
+        <div>
+          <p class="up-body-text" style="font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#888; margin-bottom:4px;">
+            Key Modules
+          </p>
+          <div class="up-module-grid">
+            <div class="up-module-card">
+              <div class="up-module-card-icon"><i class="bi bi-building"></i></div>
+              <div class="up-module-card-title">Company &amp; Zone Mgmt</div>
+              <p class="up-module-card-text">Register client companies, assign geographical security zones, and manage contract terms.</p>
+            </div>
+            <div class="up-module-card">
+              <div class="up-module-card-icon"><i class="bi bi-geo-alt"></i></div>
+              <div class="up-module-card-title">Premise Tracking</div>
+              <p class="up-module-card-text">Log and monitor individual security premises, assign guards, and track active coverage.</p>
+            </div>
+            <div class="up-module-card">
+              <div class="up-module-card-icon"><i class="bi bi-receipt"></i></div>
+              <div class="up-module-card-title">Subscription &amp; Invoicing</div>
+              <p class="up-module-card-text">Automate monthly billing, track paid vs. pending accounts, and export invoice logs.</p>
+            </div>
+            <div class="up-module-card">
+              <div class="up-module-card-icon"><i class="bi bi-bar-chart-line"></i></div>
+              <div class="up-module-card-title">Operations Reporting</div>
+              <p class="up-module-card-text">Real-time executive dashboard showing revenue metrics, active subscriptions, and zone coverage.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────
+         02 — EXISTING DESIGN & PROBLEM STATEMENT
+         ───────────────────────────────────────────── -->
+    <section class="up-section" id="existing-design">
+      <div class="up-section-heading">
+        <span class="up-section-num">02</span>
+        <h2 class="up-section-title">Existing Design &amp; Problem Statement</h2>
+        <div class="up-section-rule" aria-hidden="true"></div>
+      </div>
+
+      <div class="up-two-col">
+        <div>
+          <p class="up-body-text">
+            Before GEP CRM, security management companies relied heavily on
+            <span class="up-hl-red">disjointed spreadsheets</span> and manual
+            record-keeping to track client premises and generate invoices. A workflow
+            audit revealed four critical failure points:
+          </p>
+          <ul class="up-list" style="margin-top:20px;" aria-label="Pain points">
+            <li>Fragmented client data scattered across multiple legacy files</li>
+            <li>Manual security zone and premise assignment was error-prone and slow</li>
+            <li>Delayed monthly invoicing leading to cash flow friction</li>
+            <li>No centralized executive dashboard to view active subscriptions and revenue metrics at a glance</li>
+          </ul>
+        </div>
+
+        <!-- Before/After placeholder images -->
+        <div>
+          <div class="up-img-block">
+            <div class="up-img-placeholder" style="min-height: 260px;">
+              <i class="bi bi-table" aria-hidden="true"></i>
+              <span>Legacy Spreadsheet Workflow<br>— Drop image here —</span>
+            </div>
+          </div>
+          <p class="up-img-caption">Before — Manual Spreadsheet Chaos</p>
+        </div>
+      </div>
+
+      <!-- Three problem snapshots -->
+      <div class="up-three-col" style="margin-top: 32px;">
+        <div>
+          <div class="up-img-block">
+            <div class="up-img-placeholder">
+              <i class="bi bi-exclamation-triangle" aria-hidden="true"></i>
+              <span>Fragmented<br>Data Files</span>
+            </div>
+          </div>
+          <p class="up-img-caption">Problem 1 — Data Fragmentation</p>
+        </div>
+        <div>
+          <div class="up-img-block">
+            <div class="up-img-placeholder">
+              <i class="bi bi-clock-history" aria-hidden="true"></i>
+              <span>Delayed Invoice<br>Processing</span>
+            </div>
+          </div>
+          <p class="up-img-caption">Problem 2 — Invoice Delays</p>
+        </div>
+        <div>
+          <div class="up-img-block">
+            <div class="up-img-placeholder">
+              <i class="bi bi-eye-slash" aria-hidden="true"></i>
+              <span>Zero Executive<br>Visibility</span>
+            </div>
+          </div>
+          <p class="up-img-caption">Problem 3 — No Dashboard</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────
+         03 — COMPETITIVE ANALYSIS
+         ───────────────────────────────────────────── -->
+    <section class="up-section" id="competitive-analysis">
+      <div class="up-section-heading">
+        <span class="up-section-num">03</span>
+        <h2 class="up-section-title">Competitive Analysis</h2>
+        <div class="up-section-rule" aria-hidden="true"></div>
+      </div>
+
+      <p class="up-body-text">
+        I analyzed existing enterprise CRM solutions and field-service management platforms
+        to identify best practices in <span class="up-hl-olive">data density, table navigation,
+        and status tracking</span>.
+      </p>
+
+      <div class="up-three-col" style="margin-top: 28px;">
+        <div class="up-comp-card">
+          <div class="up-comp-name">Standard Enterprise CRMs</div>
+          <p class="up-comp-text">
+            Great for pipeline management, but lack specialized spatial features like
+            multi-zone security mapping and physical premise tracking. Overly generic
+            for niche security operations.
+          </p>
+        </div>
+        <div class="up-comp-card">
+          <div class="up-comp-name">Field Service Tools</div>
+          <p class="up-comp-text">
+            Excellent tracking mechanics, but cluttered user interfaces that require
+            extensive staff training. Navigation patterns are deeply nested and
+            counter-intuitive for administrative staff.
+          </p>
+        </div>
+        <div class="up-comp-card">
+          <div class="up-comp-name">GEP Approach</div>
+          <p class="up-comp-text">
+            Combined the clean, structured data-tables of modern CRMs with a retro-styled,
+            highly intuitive operator dashboard — purpose-built for security companies.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top: 28px;">
+        <div class="up-img-block">
+          <div class="up-img-placeholder" style="min-height: 180px;">
+            <i class="bi bi-bar-chart-line" aria-hidden="true"></i>
+            <span>Competitive Feature Matrix<br>— Drop image here —</span>
+          </div>
+        </div>
+        <p class="up-img-caption">Competitive Feature Matrix — Enterprise CRM vs. Field Service vs. GEP</p>
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────
+         04 — USER RESEARCH
+         ───────────────────────────────────────────── -->
+    <section class="up-section" id="user-research">
+      <div class="up-section-heading">
+        <span class="up-section-num">04</span>
+        <h2 class="up-section-title">User Research</h2>
+        <div class="up-section-rule" aria-hidden="true"></div>
+      </div>
+
+      <div class="up-two-col">
+        <div>
+          <p class="up-body-text">
+            I conducted interviews and workflow walk-throughs with
+            <span class="up-hl-red">operations managers</span> and administrative staff.
+            Key findings that shaped the entire information architecture:
+          </p>
+          <ul class="up-list" style="margin-top:20px;" aria-label="Research findings">
+            <li>85% of managers preferred tabular data displays with quick-filter options over deep nested menus</li>
+            <li>Real-time tracking of active vs. terminated subscriptions was cited as the highest priority metric</li>
+            <li>Automated invoice calculation saved an estimated 4+ hours of administrative work per week</li>
+          </ul>
+
+          <!-- Status indicator legend -->
+          <p style="font-family:'Bebas Neue',sans-serif; font-size:13px; letter-spacing:2px; color:#888; margin-top:24px; margin-bottom:8px;">
+            STATUS INDICATORS DEFINED FROM RESEARCH
+          </p>
+          <div class="up-status-row">
+            <span class="up-status-badge up-status-badge--active">
+              <span class="up-status-dot-badge" style="background:#2D6A4F;"></span>
+              ACTIVE
+            </span>
+            <span class="up-status-badge up-status-badge--expiring">
+              <span class="up-status-dot-badge" style="background:#C0392B;"></span>
+              EXPIRING SOON
+            </span>
+            <span class="up-status-badge up-status-badge--term">
+              <span class="up-status-dot-badge" style="background:#999;"></span>
+              TERMINATED
+            </span>
+          </div>
+        </div>
+
+        <!-- Quote -->
+        <div>
+          <div class="up-quote" style="margin-bottom:16px;">
+            <p class="up-quote-text">
+              "We used to cross-reference three different files just to verify a client's
+              active security zones. Having everything on one dashboard changes everything."
+            </p>
+            <div class="up-quote-source">— Operations Manager, Security Firm</div>
+          </div>
+
+          <!-- Impact metrics on dark bg -->
+          <div class="up-metrics-strip" style="grid-template-columns: repeat(2,1fr); margin-top:16px;">
+            <div class="up-metric-card">
+              <div class="up-metric-number">85%</div>
+              <div class="up-metric-unit">PREFER TABLES</div>
+            </div>
+            <div class="up-metric-card">
+              <div class="up-metric-number">4h+</div>
+              <div class="up-metric-unit">SAVED / WEEK</div>
+            </div>
+            <div class="up-metric-card">
+              <div class="up-metric-number">3×</div>
+              <div class="up-metric-unit">FEWER FILE REFS</div>
+            </div>
+            <div class="up-metric-card">
+              <div class="up-metric-number">0</div>
+              <div class="up-metric-unit">INVOICE ERRORS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Persona placeholder -->
+      <div style="margin-top:32px;">
+        <div class="up-img-block">
+          <div class="up-img-placeholder" style="min-height:200px;">
+            <i class="bi bi-person-badge" aria-hidden="true"></i>
+            <span>User Persona — Operations Manager<br>— Drop image here —</span>
+          </div>
+        </div>
+        <p class="up-img-caption">Primary Persona — Operations Manager</p>
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────
+         05 — WIREFRAMES & ITERATIONS
+         ───────────────────────────────────────────── -->
+    <section class="up-section" id="wireframes">
+      <div class="up-section-heading">
+        <span class="up-section-num">05</span>
+        <h2 class="up-section-title">Wireframes &amp; Iterations</h2>
+        <div class="up-section-rule" aria-hidden="true"></div>
+      </div>
+
+      <p class="up-body-text">
+        Moving from low-fidelity wireframes in Figma to high-fidelity retro-OS windows,
+        the information architecture was refined across
+        <span class="up-hl-olive">three distinct iterations</span>, each validated with
+        stakeholder review sessions.
+      </p>
+
+      <!-- Three screen areas described -->
+      <div class="up-three-col" style="margin-top:24px;">
+        <div class="up-comp-card">
+          <div class="up-comp-name">Dashboard View</div>
+          <p class="up-comp-text">
+            High-level executive metrics — Active Companies, Total Zones,
+            Monitored Premises, and Monthly Invoices — surfaced at a glance
+            without navigating sub-menus.
+          </p>
+        </div>
+        <div class="up-comp-card">
+          <div class="up-comp-name">Companies &amp; Zones</div>
+          <p class="up-comp-text">
+            Deep-dive directory listing client status, contract terms,
+            and geographical zone allocations in a dense, filterable table view.
+          </p>
+        </div>
+        <div class="up-comp-card">
+          <div class="up-comp-name">Invoices &amp; Reports</div>
+          <p class="up-comp-text">
+            Automated billing states, tracking paid vs. pending accounts,
+            and exportable logs — replacing the entire manual invoice workflow.
+          </p>
+        </div>
+      </div>
+
+      <!-- Wireframe strip -->
+      <div class="up-wireframe-strip" style="margin-top:28px;" role="list" aria-label="Wireframe screens">
+        <div class="up-wf-card" role="listitem">
+          <div class="up-wf-img" aria-label="Dashboard wireframe"><i class="bi bi-speedometer2" aria-hidden="true"></i></div>
+          <p class="up-img-caption">Dashboard</p>
+        </div>
+        <div class="up-wf-card" role="listitem">
+          <div class="up-wf-img" aria-label="Companies listing wireframe"><i class="bi bi-building" aria-hidden="true"></i></div>
+          <p class="up-img-caption">Companies</p>
+        </div>
+        <div class="up-wf-card" role="listitem">
+          <div class="up-wf-img" aria-label="Zone map wireframe"><i class="bi bi-map" aria-hidden="true"></i></div>
+          <p class="up-img-caption">Zones</p>
+        </div>
+        <div class="up-wf-card" role="listitem">
+          <div class="up-wf-img" aria-label="Premises list wireframe"><i class="bi bi-geo-alt" aria-hidden="true"></i></div>
+          <p class="up-img-caption">Premises</p>
+        </div>
+        <div class="up-wf-card" role="listitem">
+          <div class="up-wf-img" aria-label="Invoice list wireframe"><i class="bi bi-receipt" aria-hidden="true"></i></div>
+          <p class="up-img-caption">Invoices</p>
+        </div>
+        <div class="up-wf-card" role="listitem">
+          <div class="up-wf-img" aria-label="Reports screen wireframe"><i class="bi bi-bar-chart" aria-hidden="true"></i></div>
+          <p class="up-img-caption">Reports</p>
+        </div>
+      </div>
+
+      <!-- Hi-fi placeholder -->
+      <div style="margin-top:32px;">
+        <div class="up-img-block">
+          <div class="up-img-placeholder" style="min-height:280px;">
+            <i class="bi bi-display" aria-hidden="true"></i>
+            <span>High-Fidelity Mockups — Dashboard &amp; Table Views<br>— Drop Figma export here —</span>
+          </div>
+        </div>
+        <p class="up-img-caption">Final Hi-Fi Screens — GEP CRM Dashboard</p>
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────
+         06 — DESIGN SYSTEM
+         ───────────────────────────────────────────── -->
+    <section class="up-section" id="design-system">
+      <div class="up-section-heading">
+        <span class="up-section-num">06</span>
+        <h2 class="up-section-title">Design System</h2>
+        <div class="up-section-rule" aria-hidden="true"></div>
+      </div>
+
+      <div class="up-two-col">
+
+        <!-- Colour palette -->
+        <div>
+          <h3 style="font-family:'Bebas Neue',sans-serif; color:#3D4A2E; letter-spacing:2px; font-size:18px; margin-bottom:4px;">
+            Colour Palette
+          </h3>
+          <p class="up-body-text" style="font-size:12px;">
+            Cohesive retro theme — dark olive green, terracotta red, and warm cream backgrounds.
+          </p>
+          <div class="up-ds-row" style="margin-top:16px;">
+            <div class="up-swatch">
+              <div class="up-swatch-circle" style="background:#3D4A2E;"></div>
+              <div class="up-swatch-label">Olive Green</div>
+            </div>
+            <div class="up-swatch">
+              <div class="up-swatch-circle" style="background:#C0392B;"></div>
+              <div class="up-swatch-label">Terracotta</div>
+            </div>
+            <div class="up-swatch">
+              <div class="up-swatch-circle" style="background:#FDFBF7; border:2px solid #3A4032;"></div>
+              <div class="up-swatch-label">Warm Cream</div>
+            </div>
+            <div class="up-swatch">
+              <div class="up-swatch-circle" style="background:#1C1E1A;"></div>
+              <div class="up-swatch-label">Charcoal</div>
+            </div>
+            <div class="up-swatch">
+              <div class="up-swatch-circle" style="background:#2D6A4F;"></div>
+              <div class="up-swatch-label">Active Green</div>
+            </div>
+            <div class="up-swatch">
+              <div class="up-swatch-circle" style="background:#F3EFE6;"></div>
+              <div class="up-swatch-label">Card Bg</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Typography -->
+        <div>
+          <h3 style="font-family:'Bebas Neue',sans-serif; color:#3D4A2E; letter-spacing:2px; font-size:18px; margin-bottom:4px;">
+            Typography
+          </h3>
+          <p class="up-body-text" style="font-size:12px;">
+            Poppins for bold display headers; Inter for clean, legible data table text.
+          </p>
+          <div class="up-type-row">
+            <div class="up-type-item">
+              <span class="up-type-name">Display</span>
+              <span class="up-type-sample" style="font-size:28px;">GEP CRM</span>
+            </div>
+            <div class="up-type-item">
+              <span class="up-type-name">H2</span>
+              <span class="up-type-sample" style="font-size:22px;">Dashboard</span>
+            </div>
+            <div class="up-type-item">
+              <span class="up-type-name">Table</span>
+              <span style="font-size:13px; color:#3A3A3A; font-family:'Inter',sans-serif;">Company Name · Zone · Status</span>
+            </div>
+            <div class="up-type-item">
+              <span class="up-type-name">Badge</span>
+              <span style="font-size:10px; color:#2D6A4F; font-weight:800; letter-spacing:2px; text-transform:uppercase;">● ACTIVE</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Component kit -->
+      <p style="font-family:'Bebas Neue',sans-serif; color:#3D4A2E; letter-spacing:2px; font-size:18px; margin-top:40px; margin-bottom:4px;">
+        Component Library
+      </p>
+      <p class="up-body-text" style="font-size:12px; margin-bottom:20px;">
+        Built with flat, hard-edged card containers, retro OS window control buttons, status indicator dots, and dense tabular data alignment.
+      </p>
+
+      <div class="up-img-block">
+        <div class="up-img-placeholder" style="min-height:200px;">
+          <i class="bi bi-ui-checks-grid" aria-hidden="true"></i>
+          <span>GEP Component Library<br>— Drop Figma component sheet here —</span>
+        </div>
+      </div>
+      <p class="up-img-caption">GEP CRM — Component Library &amp; Design Tokens</p>
+
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────
+         CTA — Prev / Next Project
+         ───────────────────────────────────────────── -->
+    <section class="up-section" style="border-bottom:none; padding-bottom:32px;" id="project-nav">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+        <a href="uniperks.html" id="prev-project-link"
+          style="font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:2px; color:#3D4A2E !important;
+                 text-decoration:none !important; display:flex; align-items:center; gap:8px; transition:color 0.2s;"
+          onmouseover="this.style.color='#C0392B'" onmouseout="this.style.color='#3D4A2E'">
+          <i class="bi bi-arrow-left"></i> UNIPERKS
+        </a>
+        <a href="portfolio.html" id="all-projects-link"
+          style="font-family:'Bebas Neue',sans-serif; font-size:13px; letter-spacing:2px; color:#888 !important;
+                 text-decoration:none !important; transition:color 0.2s;"
+          onmouseover="this.style.color='#C0392B'" onmouseout="this.style.color='#888'">
+          ALL PROJECTS
+        </a>
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:2px; color:rgba(61,74,46,0.25);">
+          MORE COMING SOON ▶
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /up-body -->
+
+
+  <!-- ============================================================
+       FLOATING RETRO DOCK
+       ============================================================ -->
+  <nav class="up-dock" aria-label="Page navigation dock" id="retro-dock">
+
+    <div class="up-dock-item">
+      <a href="index.html" class="up-dock-btn" id="dock-home" aria-label="Home">
+        <i class="bi bi-house-fill"></i>
+      </a>
+      <div class="up-dock-tooltip" aria-hidden="true">HOME</div>
+      <div class="up-dock-dot" aria-hidden="true"></div>
+    </div>
+
+    <div class="up-dock-item">
+      <a href="portfolio.html" class="up-dock-btn" id="dock-portfolio" aria-label="All Projects">
+        <i class="bi bi-grid-3x3-gap-fill"></i>
+      </a>
+      <div class="up-dock-tooltip" aria-hidden="true">PROJECTS</div>
+      <div class="up-dock-dot" aria-hidden="true"></div>
+    </div>
+
+    <div class="up-dock-sep" aria-hidden="true"></div>
+
+    <div class="up-dock-item">
+      <a href="#overview" class="up-dock-btn" id="dock-overview" aria-label="Jump to Overview">
+        <i class="bi bi-info-circle"></i>
+      </a>
+      <div class="up-dock-tooltip" aria-hidden="true">OVERVIEW</div>
+    </div>
+
+    <div class="up-dock-item">
+      <a href="#wireframes" class="up-dock-btn" id="dock-wireframes" aria-label="Jump to Wireframes">
+        <i class="bi bi-display"></i>
+      </a>
+      <div class="up-dock-tooltip" aria-hidden="true">WIREFRAMES</div>
+    </div>
+
+    <div class="up-dock-item">
+      <a href="#design-system" class="up-dock-btn" id="dock-design" aria-label="Jump to Design System">
+        <i class="bi bi-palette2"></i>
+      </a>
+      <div class="up-dock-tooltip" aria-hidden="true">DESIGN SYS</div>
+    </div>
+
+    <div class="up-dock-sep" aria-hidden="true"></div>
+
+    <div class="up-dock-item">
+      <a href="assets/docs/Resume-Ali.pdf" class="up-dock-btn" id="dock-resume" download aria-label="Download Resume">
+        <i class="bi bi-file-earmark-person"></i>
+      </a>
+      <div class="up-dock-tooltip" aria-hidden="true">RESUME</div>
+    </div>
+
+  </nav>
+
+
+  <div id="preloader" style="display:none;"></div>
+
+  <script>
+    /* Smooth scroll for in-page dock links */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

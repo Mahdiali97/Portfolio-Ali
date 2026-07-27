@@ -4,41 +4,43 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Portfolio Ali Hanafiah</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>Portfolio — Ali Hanafiah | Software Engineer</title>
+  <meta name="description"
+    content="Portfolio of Ali Hanafiah, Software Engineer based in 2026. View projects, resume, and contact info.">
+  <meta name="keywords" content="Ali Hanafiah, Software Engineer, Portfolio, Web Developer">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
+  <!-- Google Fonts: Roboto + Poppins (used by rest of site) -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
+  <!-- Vendor CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- AOS Library -->
+  <!-- AOS -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <script src="assets/vendor/aos/aos.js"></script>
 
-  <!-- Swiper Library -->
-  <link href="assets/vendor/swiper/index.js" rel="stylesheet">
-  <script src="assets/vendor/swiper/index.js"></script>
+  <!-- Main site CSS (keeps other pages consistent) -->
+  <link href="assets/css/main.css?v=5" rel="stylesheet">
 
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css?v=2" rel="stylesheet">
-
+  <!-- Retro Hero CSS — index page only -->
+  <link href="assets/css/retro-hero.css?v=1" rel="stylesheet">
 </head>
 
-<body class="index-page">
+<body class="index-page retro-page">
 
+  <!-- =============================================
+       Legacy sidebar — hidden on this page via CSS
+       (.retro-page #header { display: none })
+       Kept in DOM so shared JS/main.js doesn't error.
+       ============================================= -->
   <header id="header" class="header dark-background d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
@@ -71,123 +73,84 @@
         <li><a href="about.html"><i class="bi bi-person navicon"></i> About</a></li>
         <li><a href="resume.html"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
         <li><a href="portfolio.html"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="services.html"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <li><a href="contact.html"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
-
   </header>
+  <!-- /Legacy sidebar -->
 
-  <main class="main">
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section bazil-hero">
+  <!-- =============================================
+       RETRO LAYOUT ROOT
+       ============================================= -->
+  <div class="retro-root">
 
-      <!-- Text content on the left -->
-      <div class="hero-content" data-aos="fade-right" data-aos-delay="100">
+    <!-- TOP HEADER -->
+    <header class="retro-header">
 
-        <!-- Top intro line -->
-        <p class="bazil-top-line">
-          <span class="wave">👋</span>
-          Hi, I'm <strong>Ali Hanafiah</strong> and I am a
-        </p>
-
-        <!-- Giant Typography -->
-        <h1 class="bazil-h1">
-          <span class="bazil-line--solid">Software</span>
-          <span class="bazil-line--outline">&amp; Engineer</span>
-        </h1>
-
-        <!-- Typed Role -->
-        <p class="bazil-tagline">
-          Currently working as: <span class="typed-text-bazil"></span><span class="cursor-bazil">|</span>
-        </p>
-
-        <!-- Location + CTA Buttons -->
-        <div class="bazil-bottom-row">
-          <div class="bazil-location">
-            <i class="bi bi-geo-alt-fill me-1"></i>Software Engineer
-          </div>
-          <div class="bazil-cta-btns">
-            <a href="portfolio.html" class="bazil-btn bazil-btn--solid">View My Work</a>
-            <a href="assets/docs/Resume-Ali.pdf" class="bazil-btn bazil-btn--outline" download>Download Resume</a>
-          </div>
+      <!-- LEFT: Word-mark + subtitle -->
+      <div class="retro-brand" data-aos="fade-down" data-aos-delay="50">
+        <div class="retro-wordmark" aria-label="Portfolio">
+          <span class="retro-port">PORT</span><span class="retro-folio">FOLIO</span>
+        </div>
+        <div class="retro-sub">
+          <span class="retro-sub-role">SOFTWARE ENGINEER</span>
+          <span class="retro-sub-year">2026</span>
         </div>
       </div>
 
-      <!-- Portrait image: proper img element, right side, bottom-aligned -->
-      <img src="assets/img/Ali.jpg" alt="Ali Hanafiah" class="hero-person">
-
-    </section><!-- /Hero Section -->
-
-    <script>
-      // Typed effect for bazil-style second line
-      const typedTextElement = document.querySelector('.typed-text-bazil');
-      const textArray = ['Software Engineer', 'Web Developer', 'UI/UX Designer'];
-      let textIndex = 0;
-      let charIndex = 0;
-
-      function type() {
-        if (charIndex < textArray[textIndex].length) {
-          typedTextElement.textContent += textArray[textIndex].charAt(charIndex);
-          charIndex++;
-          setTimeout(type, 100);
-        } else {
-          setTimeout(erase, 2000);
-        }
-      }
-
-      function erase() {
-        if (charIndex > 0) {
-          typedTextElement.textContent = textArray[textIndex].substring(0, charIndex - 1);
-          charIndex--;
-          setTimeout(erase, 50);
-        } else {
-          textIndex = (textIndex + 1) % textArray.length;
-          setTimeout(type, 1000);
-        }
-      }
-
-      document.addEventListener('DOMContentLoaded', () => {
-        type();
-      });
-    </script>
-
-
-  </main>
-
-  <footer id="footer" class="footer position-relative light-background">
-
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>2026</span> <strong class="px-1 sitename"></strong>Created by AliHanafiah </p>
+      <!-- RIGHT: Name + status dot -->
+      <div class="retro-identity" data-aos="fade-down" data-aos-delay="100">
+        <span class="retro-status-dot" title="Available for work"></span>
+        <span class="retro-name">ALI HANAFIAH</span>
       </div>
 
-      <div class="social-links text-center">
-        <a href="https://x.com/" class="twitter" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://www.facebook.com/" class="facebook" target="_blank" rel="noopener"><i
-            class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/" class="instagram" target="_blank" rel="noopener"><i
-            class="bi bi-instagram"></i></a>
-        <a href="https://www.skype.com/en/" class="google-plus" target="_blank" rel="noopener"><i
-            class="bi bi-skype"></i></a>
-        <a href="https://www.linkedin.com/in/ali-hanafiah-778365353" class="linkedin" target="_blank" rel="noopener"><i
-            class="bi bi-linkedin"></i></a>
-        <a href="https://github.com/Mahdiali97" class="github" target="_blank" rel="noopener"><i
-            class="bi bi-github"></i></a>
-      </div>
-    </div>
+    </header>
 
-  </footer>
+    <!-- Thin horizontal rule -->
+    <hr class="retro-header-rule" aria-hidden="true">
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+
+    <!-- HERO / CENTRE AREA -->
+    <main class="retro-hero-area" id="hero">
+
+      <!-- Typed tagline -->
+      <p class="retro-tagline" aria-live="polite">
+        <span class="typed-text-bazil"></span><span class="cursor-bazil" aria-hidden="true">|</span>
+      </p>
+      <div class="retro-illustration-zone" data-aos="fade-up" data-aos-delay="150">
+
+        <video class="retro-illustration-video" autoplay loop muted playsinline>
+          <source src="assets/img/Running.mp4" type="video/mp4">
+        </video>
+
+      </div><!-- /retro-illustration-zone -->
+
+    </main>
+
+
+    <!-- FIXED BOTTOM NAVIGATION -->
+    <nav class="retro-bottom-nav" id="retro-bottom-nav" aria-label="Main navigation">
+      <a href="index.html" class="retro-nav-link active" id="nav-home">HOME</a>
+      <span class="retro-nav-div" aria-hidden="true"></span>
+      <a href="about.html" class="retro-nav-link" id="nav-about">ABOUT</a>
+      <span class="retro-nav-div" aria-hidden="true"></span>
+      <a href="portfolio.html" class="retro-nav-link" id="nav-portfolio">PORTFOLIO</a>
+      <span class="retro-nav-div" aria-hidden="true"></span>
+      <a href="resume.html" class="retro-nav-link" id="nav-resume">RESUME</a>
+    </nav>
+
+  </div><!-- /retro-root -->
+
+
+  <!-- Scroll Top (kept for consistency) -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
+  <!-- Vendor JS -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -196,8 +159,46 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Main JS File -->
+  <!-- Main JS -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Typed effect -->
+  <script>
+    const typedTextElement = document.querySelector('.typed-text-bazil');
+    const textArray = ['Software Engineer', 'Web Developer', 'UI/UX Designer'];
+    let textIndex = 0;
+    let charIndex = 0;
+
+    function type() {
+      if (charIndex < textArray[textIndex].length) {
+        typedTextElement.textContent += textArray[textIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 100);
+      } else {
+        setTimeout(erase, 2000);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        typedTextElement.textContent = textArray[textIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 50);
+      } else {
+        textIndex = (textIndex + 1) % textArray.length;
+        setTimeout(type, 1000);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Init AOS
+      if (typeof AOS !== 'undefined') {
+        AOS.init({ once: true, duration: 700 });
+      }
+      // Start typing
+      setTimeout(type, 600);
+    });
+  </script>
 
 </body>
 
