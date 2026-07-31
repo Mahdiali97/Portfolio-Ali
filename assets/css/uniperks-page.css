@@ -177,10 +177,10 @@ body.uniperks-page {
 }
 
 /* =====================================================
-   HERO SECTION — dark charcoal background
+   HERO SECTION — UniPerks blue theme
    ===================================================== */
 .up-hero {
-  background: #1C1E1A;
+  background: linear-gradient(135deg, #0A2472 0%, #1565C0 45%, #0D47A1 100%);
   position: relative;
   overflow: hidden;
   padding: 72px 56px 80px;
@@ -190,16 +190,30 @@ body.uniperks-page {
   justify-content: center;
 }
 
-/* Subtle grid texture on dark bg */
+/* Blue-tinted grid texture */
 .up-hero::before {
   content: '';
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 32px 32px;
   pointer-events: none;
+}
+
+/* Radial glow behind the mockup in the centre */
+.up-hero::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+  height: 90%;
+  background: radial-gradient(ellipse at center, rgba(66, 165, 245, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* Back link */
@@ -219,7 +233,7 @@ body.uniperks-page {
 }
 
 .up-back-link:hover {
-  color: #C0392B !important;
+  color: #90CAF9 !important;
 }
 
 /* ── Giant overlapping title ──────────────────────── */
@@ -244,24 +258,24 @@ body.uniperks-page {
 
 .up-title-line--perks {
   font-size: clamp(80px, 14vw, 160px);
-  /* hollow/outlined text */
+  /* hollow/outlined text — UniPerks light blue */
   color: transparent;
-  -webkit-text-stroke: 2px #C0392B;
+  -webkit-text-stroke: 2px #90CAF9;
 }
 
-/* Individual letter colour overrides */
+/* Individual letter colour overrides — UniPerks palette */
 .up-letter-red {
-  color: #C0392B;
+  color: #42A5F5;   /* UniPerks blue highlight */
   -webkit-text-stroke: 0;
 }
 
 .up-letter-olive {
-  color: #5A7A3A;
+  color: #90CAF9;   /* lighter blue accent */
   -webkit-text-stroke: 0;
 }
 
 .up-letter-cream {
-  color: #FDFBF7;
+  color: #FFFFFF;
   -webkit-text-stroke: 0;
 }
 
@@ -282,21 +296,21 @@ body.uniperks-page {
 }
 
 .up-tag--outline-red {
-  color: #C0392B;
-  background: rgba(192, 57, 43, 0.08);
-  border-color: #C0392B;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 .up-tag--outline-cream {
-  color: #FDFBF7;
-  background: rgba(253, 251, 247, 0.07);
-  border-color: rgba(253, 251, 247, 0.5);
+  color: #90CAF9;
+  background: rgba(144, 202, 249, 0.1);
+  border-color: rgba(144, 202, 249, 0.55);
 }
 
 .up-tag--filled-olive {
-  color: #FDFBF7;
-  background: #3D4A2E;
-  border-color: #3D4A2E;
+  color: #FFFFFF;
+  background: #1976D2;
+  border-color: #1976D2;
 }
 
 /* Tag positions */
@@ -329,7 +343,7 @@ body.uniperks-page {
   position: absolute;
   font-size: 20px;
   z-index: 4;
-  color: #FDFBF7;
+  color: #90CAF9;
   line-height: 1;
   animation: cursorBob 2s ease-in-out infinite alternate;
 }
@@ -355,6 +369,29 @@ body.uniperks-page {
   transform: scaleY(-1);
 }
 
+/* ── Hero phone mockup ────────────────────────────── */
+.up-hero-mockup {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+  animation: mockupFloat 4s ease-in-out infinite alternate;
+}
+
+.up-hero-mockup-img {
+  width: clamp(360px, 42vw, 600px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 32px 80px rgba(0, 0, 0, 0.65));
+}
+
+@keyframes mockupFloat {
+  from { transform: translate(-50%, -50%) translateY(0px); }
+  to   { transform: translate(-50%, -50%) translateY(-16px); }
+}
+
 /* ── Hero meta strip ──────────────────────────────── */
 .up-hero-meta {
   position: relative;
@@ -362,7 +399,7 @@ body.uniperks-page {
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
-  border-top: 1px solid rgba(253, 251, 247, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
   padding-top: 24px;
 }
 
@@ -371,13 +408,13 @@ body.uniperks-page {
   font-weight: 800;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: rgba(253, 251, 247, 0.4);
+  color: rgba(255, 255, 255, 0.5);
   margin-bottom: 4px;
 }
 
 .up-meta-value {
   font-size: 13px;
-  color: rgba(253, 251, 247, 0.85);
+  color: rgba(255, 255, 255, 0.92);
   font-weight: 500;
 }
 
@@ -711,6 +748,15 @@ body.uniperks-page {
   justify-content: center;
   color: rgba(61, 74, 46, 0.25);
   font-size: 28px;
+  overflow: hidden;
+}
+
+.up-wf-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
 }
 
 /* =====================================================

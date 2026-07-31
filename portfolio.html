@@ -245,39 +245,55 @@
 
 
   <!-- ============================================================
-       ALI OS — FIXED BOTTOM TASKBAR
+       FLOATING RETRO DOCK  (matches resume page)
        ============================================================ -->
-  <nav class="pf-taskbar" aria-label="ALI OS Taskbar" id="ali-os-taskbar">
+  <nav class="up-dock" aria-label="Page navigation dock" id="retro-dock">
 
-    <!-- Start Button -->
-    <button class="pf-taskbar-start" id="taskbar-start" aria-label="ALI OS Start">
-      <span class="pf-taskbar-start-icon" aria-hidden="true">
-        <i class="bi bi-grid-3x3-gap-fill"></i>
-      </span>
-      ALI OS
-    </button>
-
-    <div class="pf-taskbar-sep" aria-hidden="true"></div>
-
-    <!-- Center App Buttons -->
-    <div class="pf-taskbar-center" role="group" aria-label="Quick launch">
-      <a href="portfolio.html" class="pf-taskbar-btn" id="tb-folder" title="My Projects" aria-label="My Projects">
-        <i class="bi bi-folder2-open"></i>
+    <div class="up-dock-item">
+      <a href="index.html" class="up-dock-btn" id="dock-home" aria-label="Home">
+        <i class="bi bi-house-fill"></i>
       </a>
-      <a href="index.html" class="pf-taskbar-btn" id="tb-globe" title="Home" aria-label="Home">
-        <i class="bi bi-globe2"></i>
-      </a>
-      <a href="about.html" class="pf-taskbar-btn" id="tb-code" title="About" aria-label="About">
-        <i class="bi bi-code-slash"></i>
-      </a>
+      <div class="up-dock-tooltip" aria-hidden="true">HOME</div>
     </div>
 
-    <div class="pf-taskbar-sep" aria-hidden="true"></div>
+    <div class="up-dock-item">
+      <a href="about.html" class="up-dock-btn" id="dock-about" aria-label="About">
+        <i class="bi bi-person-fill"></i>
+      </a>
+      <div class="up-dock-tooltip" aria-hidden="true">ABOUT</div>
+    </div>
 
-    <!-- Right: Volume + Clock -->
-    <div class="pf-taskbar-right" aria-label="System tray">
-      <span class="pf-taskbar-vol" aria-label="Volume"><i class="bi bi-volume-up-fill"></i></span>
-      <div class="pf-taskbar-clock" id="pf-clock" aria-live="polite" aria-label="Current time">10:26 AM</div>
+    <div class="up-dock-item">
+      <a href="portfolio.html" class="up-dock-btn" id="dock-portfolio" aria-label="Portfolio">
+        <i class="bi bi-grid-3x3-gap-fill"></i>
+      </a>
+      <div class="up-dock-tooltip" aria-hidden="true">PROJECTS</div>
+      <div class="up-dock-dot" aria-hidden="true"></div>
+    </div>
+
+    <div class="up-dock-sep" aria-hidden="true"></div>
+
+    <div class="up-dock-item">
+      <a href="resume.html" class="up-dock-btn" id="dock-resume" aria-label="Resume">
+        <i class="bi bi-file-earmark-person"></i>
+      </a>
+      <div class="up-dock-tooltip" aria-hidden="true">RESUME</div>
+    </div>
+
+    <div class="up-dock-sep" aria-hidden="true"></div>
+
+    <div class="up-dock-item">
+      <a href="#project-uniperks" class="up-dock-btn" id="dock-proj1" aria-label="UniPerks project">
+        <i class="bi bi-folder2-open"></i>
+      </a>
+      <div class="up-dock-tooltip" aria-hidden="true">UNIPERKS</div>
+    </div>
+
+    <div class="up-dock-item">
+      <a href="#project-gep-crm" class="up-dock-btn" id="dock-proj2" aria-label="GEP CRM project">
+        <i class="bi bi-briefcase"></i>
+      </a>
+      <div class="up-dock-tooltip" aria-hidden="true">GEP CRM</div>
     </div>
 
   </nav>
@@ -290,25 +306,23 @@
   <script src="assets/vendor/aos/aos.js"></script>
 
   <script>
-    /* ── Live clock ─────────────────────────────────── */
-    function updateClock() {
-      const el = document.getElementById('pf-clock');
-      if (!el) return;
-      const now = new Date();
-      let h = now.getHours();
-      const m = String(now.getMinutes()).padStart(2, '0');
-      const ampm = h >= 12 ? 'PM' : 'AM';
-      h = h % 12 || 12;
-      el.textContent = `${h}:${m} ${ampm}`;
-    }
-    updateClock();
-    setInterval(updateClock, 30000);
-
     /* ── AOS ─────────────────────────────────────────── */
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof AOS !== 'undefined') {
         AOS.init({ once: true, duration: 550, offset: 50 });
       }
+    });
+
+    /* ── Smooth scroll for dock anchor links ─────────── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href').slice(1);
+        const target = document.getElementById(id);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
     });
 
     /* ── Window control button interactions ─────────── */

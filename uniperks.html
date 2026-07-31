@@ -82,6 +82,12 @@
     <span class="up-cursor up-cursor-1" aria-hidden="true">➤</span>
     <span class="up-cursor up-cursor-2" aria-hidden="true">➤</span>
 
+    <!-- Mockup phone -->
+    <div class="up-hero-mockup" aria-hidden="true">
+      <img src="assets/img/portfolio/uniperks-mockup.png" alt="UniPerks app mockup on iPhone" class="up-hero-mockup-img"
+        draggable="false" />
+    </div>
+
     <!-- Giant title -->
     <div class="up-hero-title" role="heading" aria-level="1" id="hero-title">
       <span class="up-title-line up-title-line--uni">
@@ -189,44 +195,37 @@
       </div>
 
       <p class="up-body-text">
-        Before UniPerks, UPSI relied on a static notice-board and physical voucher system.
-        There was <span class="up-hl-red">no digital interface</span> for students to browse
-        or purchase merchandise. Key pain points identified were:
+        Before UniPerks, UPSI relied on a basic catalog website.
+        There was <span class="up-hl-red">integrated checkout system</span> for students to purchase official
+        merchandise.
+        Key pain points identified were:
       </p>
 
       <ul class="up-list" style="margin-top:20px;" aria-label="Pain points">
-        <li>No centralised platform for university merchandise</li>
-        <li>Manual voucher distribution was slow and error-prone</li>
-        <li>Students had no incentive to engage beyond purchasing</li>
-        <li>No inventory visibility for administrators</li>
+        <li>Fragmented user journey caused by external Shopee redirects</li>
+        <li>No centralised native app for purchases and voucher redemption</li>
+        <li>Lack of university control over the third-party shopping experience</li>
+        <li>Inability to integrate student-focused incentives like digital coins</li>
       </ul>
 
       <!-- Before/After placeholder images -->
       <div class="up-three-col" style="margin-top: 32px;">
         <div>
           <div class="up-img-block">
-            <div class="up-img-placeholder">
-              <i class="bi bi-phone" aria-hidden="true"></i>
-              <span>Home Screen<br>Wireframe</span>
-            </div>
+            <img src="assets/img/portfolio/uniperks-before-home.png" alt="UniPerks Home Screen Before" loading="lazy">
           </div>
           <p class="up-img-caption">Home Screen — Before</p>
         </div>
         <div>
           <div class="up-img-block">
-            <div class="up-img-placeholder">
-              <i class="bi bi-grid" aria-hidden="true"></i>
-              <span>Category View<br>Wireframe</span>
-            </div>
+            <img src="assets/img/portfolio/uniperks-before-categories.png" alt="UniPerks Categories Before"
+              loading="lazy">
           </div>
           <p class="up-img-caption">Categories — Before</p>
         </div>
         <div>
           <div class="up-img-block">
-            <div class="up-img-placeholder">
-              <i class="bi bi-cart3" aria-hidden="true"></i>
-              <span>Checkout Flow<br>Wireframe</span>
-            </div>
+            <img src="assets/img/portfolio/uniperks-before-checkout.png" alt="UniPerks Checkout Before" loading="lazy">
           </div>
           <p class="up-img-caption">Checkout — Before</p>
         </div>
@@ -246,30 +245,32 @@
 
       <p class="up-body-text">
         I studied existing university merchandise and loyalty-app platforms to understand
-        <span class="up-hl-olive">design patterns and user flows</span> that work at scale.
+        <span class="up-hl-red">design patterns and user flows</span> that work at scale.
         The analysis focused on navigation clarity, onboarding, and reward mechanics.
       </p>
 
       <div class="up-three-col" style="margin-top: 28px;">
         <div class="up-comp-card">
-          <div class="up-comp-name">Shopee Campus</div>
+          <div class="up-comp-name">UTM ALUMNI STORE</div>
           <p class="up-comp-text">
-            Strong category filtering and flash-sale mechanics. Weak loyalty programme
-            integration — coins feel disconnected from the main shopping flow.
+            A static shopping interface focused strictly on a product catalog.
+            It entirely lacks a login mechanism or engagement layer,
+            requiring users to deal directly with sellers for delivery.
           </p>
         </div>
         <div class="up-comp-card">
-          <div class="up-comp-name">Lazada</div>
+          <div class="up-comp-name">IIUM E-SHOP</div>
           <p class="up-comp-text">
-            Excellent product discovery and voucher system. Checkout is overcrowded with
-            cross-sells that distract from primary user goals.
+            A basic, product-based interface that offers both delivery and campus pick-up options.
+            The layout is functional but lacks any gamification or academic integration.
           </p>
         </div>
         <div class="up-comp-card">
-          <div class="up-comp-name">Grab Rewards</div>
+          <div class="up-comp-name">UTP MERCHANDISE</div>
           <p class="up-comp-text">
-            Best-in-class gamification loop — points, streaks, and tiers. The pattern was
-            adapted for UniPerks' quiz-to-coin reward system.
+            A standard e-commerce platform that provides items via delivery only.
+            It is purely transactional, offering no educational elements, learning features, or reward-based
+            interactions.
           </p>
         </div>
       </div>
@@ -277,10 +278,8 @@
       <!-- Analysis diagram placeholder -->
       <div style="margin-top: 28px;">
         <div class="up-img-block">
-          <div class="up-img-placeholder" style="min-height: 180px;">
-            <i class="bi bi-bar-chart-line" aria-hidden="true"></i>
-            <span>Competitive Feature Matrix<br>— Drop image here —</span>
-          </div>
+          <img src="assets/img/portfolio/uniperks-competitive-matrix.png" alt="UniPerks Competitive Feature Matrix"
+            loading="lazy">
         </div>
         <p class="up-img-caption">Competitive Feature Matrix</p>
       </div>
@@ -344,10 +343,7 @@
       <!-- User persona placeholder -->
       <div style="margin-top: 32px;">
         <div class="up-img-block">
-          <div class="up-img-placeholder" style="min-height: 200px;">
-            <i class="bi bi-person-badge" aria-hidden="true"></i>
-            <span>User Persona Card<br>— Drop image here —</span>
-          </div>
+          <img src="assets/img/portfolio/uniperks-persona.png" alt="UniPerks Primary User Persona" loading="lazy">
         </div>
         <p class="up-img-caption">Primary User Persona</p>
       </div>
@@ -373,31 +369,33 @@
       <!-- Scrollable wireframe strip -->
       <div class="up-wireframe-strip" role="list" aria-label="Wireframe screens">
         <div class="up-wf-card" role="listitem">
-          <div class="up-wf-img" aria-label="Home screen wireframe"><i class="bi bi-house" aria-hidden="true"></i></div>
+          <div class="up-wf-img" aria-label="Home screen wireframe"><img src="assets/img/portfolio/uniperks-wf-home.png"
+              alt="Home wireframe" loading="lazy"></div>
           <p class="up-img-caption">Home</p>
         </div>
         <div class="up-wf-card" role="listitem">
-          <div class="up-wf-img" aria-label="Quiz screen wireframe"><i class="bi bi-patch-question"
-              aria-hidden="true"></i></div>
+          <div class="up-wf-img" aria-label="Quiz screen wireframe"><img src="assets/img/portfolio/uniperks-wf-quiz.png"
+              alt="Quiz wireframe" loading="lazy"></div>
           <p class="up-img-caption">Quiz</p>
         </div>
         <div class="up-wf-card" role="listitem">
-          <div class="up-wf-img" aria-label="Shop screen wireframe"><i class="bi bi-shop" aria-hidden="true"></i></div>
+          <div class="up-wf-img" aria-label="Shop screen wireframe"><img src="assets/img/portfolio/uniperks-wf-shop.png"
+              alt="Shop wireframe" loading="lazy"></div>
           <p class="up-img-caption">Shop</p>
         </div>
         <div class="up-wf-card" role="listitem">
-          <div class="up-wf-img" aria-label="Product detail wireframe"><i class="bi bi-bag" aria-hidden="true"></i>
-          </div>
+          <div class="up-wf-img" aria-label="Product detail wireframe"><img
+              src="assets/img/portfolio/uniperks-wf-product.png" alt="Product wireframe" loading="lazy"></div>
           <p class="up-img-caption">Product</p>
         </div>
         <div class="up-wf-card" role="listitem">
-          <div class="up-wf-img" aria-label="Checkout wireframe"><i class="bi bi-credit-card" aria-hidden="true"></i>
-          </div>
+          <div class="up-wf-img" aria-label="Checkout wireframe"><img
+              src="assets/img/portfolio/uniperks-wf-checkout.png" alt="Checkout wireframe" loading="lazy"></div>
           <p class="up-img-caption">Checkout</p>
         </div>
         <div class="up-wf-card" role="listitem">
-          <div class="up-wf-img" aria-label="Wallet screen wireframe"><i class="bi bi-wallet2" aria-hidden="true"></i>
-          </div>
+          <div class="up-wf-img" aria-label="Wallet screen wireframe"><img
+              src="assets/img/portfolio/uniperks-wf-wallet.png" alt="Wallet wireframe" loading="lazy"></div>
           <p class="up-img-caption">Wallet</p>
         </div>
       </div>
@@ -405,10 +403,7 @@
       <!-- Hi-fi mockup placeholder -->
       <div style="margin-top: 32px;">
         <div class="up-img-block">
-          <div class="up-img-placeholder" style="min-height: 260px;">
-            <i class="bi bi-phone" aria-hidden="true"></i>
-            <span>High-Fidelity Mockups<br>— Drop Figma export here —</span>
-          </div>
+          <img src="assets/img/portfolio/uniperks-hifi-screens.png" alt="UniPerks High-Fidelity Screens" loading="lazy">
         </div>
         <p class="up-img-caption">Final Hi-Fi Screens — Figma Export</p>
       </div>
@@ -496,10 +491,7 @@
       <!-- Component kit placeholder -->
       <div style="margin-top: 32px;">
         <div class="up-img-block">
-          <div class="up-img-placeholder" style="min-height: 200px;">
-            <i class="bi bi-ui-checks-grid" aria-hidden="true"></i>
-            <span>Component Library<br>— Drop Figma component sheet here —</span>
-          </div>
+          <img src="assets/img/portfolio/uniperks-components.png" alt="UniPerks Component Library" loading="lazy">
         </div>
         <p class="up-img-caption">UniPerks — Component Library</p>
       </div>
