@@ -16,6 +16,9 @@
   <!-- Bootstrap Icons -->
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
+  <!-- AOS -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
   <!-- Shared retro styles -->
   <link href="assets/css/uniperks-page.css?v=1" rel="stylesheet">
 
@@ -503,7 +506,7 @@
   <div class="rv-body" role="main">
 
     <!-- ── Name hero strip ─────────────────────────────────── -->
-    <div class="rv-hero-strip">
+    <div class="rv-hero-strip" data-aos="fade-up" data-aos-delay="50">
       <div class="rv-hero-title" aria-label="Ali Hanafiah">
         <span class="rv-hero-line1">ALI</span>
         <span class="rv-hero-line2">HANAFIAH</span>
@@ -527,7 +530,7 @@
 
 
     <!-- ── LEFT COLUMN ─────────────────────────────────────── -->
-    <div class="rv-left">
+    <div class="rv-left" data-aos="fade-right" data-aos-delay="150">
 
       <!-- EDUCATION -->
       <section aria-labelledby="edu-heading">
@@ -560,9 +563,6 @@
         </div>
 
         <div class="rv-entry" style="border-left-color:#C0392B;">
-          <div class="rv-entry-badge">
-            <div class="rv-entry-badge-dot"></div> CURRENT
-          </div>
           <div class="rv-entry-date">Feb 2026 – Aug 2026</div>
           <div class="rv-entry-title" style="color:#3D4A2E;">SecureLabX Sdn Bhd.</div>
           <div class="rv-entry-sub" style="font-weight:600; color:#C0392B;">Software Designer Internship</div>
@@ -631,7 +631,7 @@
 
 
     <!-- ── RIGHT COLUMN ───────────────────────────────────── -->
-    <div class="rv-right">
+    <div class="rv-right" data-aos="fade-left" data-aos-delay="200">
 
       <!-- SKILLS -->
       <section aria-labelledby="skills-heading">
@@ -807,7 +807,15 @@
 
   <div id="preloader" style="display:none;"></div>
 
+  <!-- AOS -->
+  <script src="assets/vendor/aos/aos.js"></script>
   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof AOS !== 'undefined') {
+        AOS.init({ once: true, duration: 600, offset: 60 });
+      }
+    });
+
     /* Smooth scroll for in-page dock anchor links */
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
