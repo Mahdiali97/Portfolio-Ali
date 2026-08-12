@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>GEP CRM System — Case Study | Ali Hanafiah</title>
+  <title>HR Payroll System — Case Study | Ali Hanafiah</title>
   <meta name="description"
-    content="GEP CRM System case study by Ali Hanafiah — a specialized customer and operations management platform designed for security service providers.">
-  <meta name="keywords" content="GEP CRM, GuardExpert Pro, UI/UX, Case Study, Security Management, Ali Hanafiah">
+    content="HR Payroll System case study by Ali Hanafiah — a comprehensive HR and payroll management platform that automates salary processing, leave tracking, and payslip generation.">
+  <meta name="keywords" content="HR Payroll System, Human Resources, UI/UX, Case Study, Payroll, Ali Hanafiah">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -19,23 +19,97 @@
   <!-- Shared retro case-study styles (same as UniPerks) -->
   <link href="assets/css/uniperks-page.css?v=1" rel="stylesheet">
 
-  <!-- GEP-specific overrides -->
+  <!-- HR Payroll–specific overrides -->
   <style>
-    /* Hero accent colour: olive-leaning dark green for GEP instead of red hollow */
-    .up-title-line--sub {
-      font-size: clamp(40px, 7vw, 80px);
-      color: transparent;
-      -webkit-text-stroke: 2px rgb(144, 202, 249);
+    /* ── Palette: Mountain Palette ─────────────────────────────────
+       #014385  — deep forest shadow (base)
+       #0066cb  — dark matcha
+       #0066cb  — rich matcha green
+       #1C1E1A  — mid matcha (accent / dock)
+       #9ec8d8  — soft matcha sage (strokes / outlines)
+       #F3EFE6  — pale matcha mist (hover / tags)
+       #FDFBF7  — warm parchment cream (title text)
+    ──────────────────────────────────────────────────────────── */
+
+    /* Hero background — deep matcha gradient */
+    #hr-payroll-hero.up-hero {
+      background: linear-gradient(135deg, #014385 0%, #0066cb 55%, #012f5e 100%);
     }
 
-    .up-title-line--crm {
+    /* Subtle matcha-tinted grid texture */
+    #hr-payroll-hero.up-hero::before {
+      background-image:
+        linear-gradient(rgba(143, 168, 130, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(143, 168, 130, 0.05) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    /* Soft matcha radial glow */
+    #hr-payroll-hero.up-hero::after {
+      background: radial-gradient(ellipse at center, rgba(90, 122, 82, 0.22) 0%, transparent 70%);
+    }
+
+    /* Back link hover */
+    #hr-payroll-hero .up-back-link:hover {
+      color: #F3EFE6 !important;
+    }
+
+    /* ── Floating tags — matcha palette ── */
+    /* Filled tag (UI/UX): rich matcha fill */
+    #hr-payroll-hero .up-tag--filled-olive {
+      color: #FDFBF7;
+      background: #0066cb;
+      border-color: #0066cb;
+    }
+
+    /* Outline-cream tag (WEB APP, PAYROLL): sage outline */
+    #hr-payroll-hero .up-tag--outline-cream {
+      color: #9ec8d8;
+      background: rgba(143, 168, 130, 0.10);
+      border-color: rgba(143, 168, 130, 0.50);
+    }
+
+    /* Outline-red tag (HR): pale matcha mist outline */
+    #hr-payroll-hero .up-tag--outline-red {
+      color: #F3EFE6;
+      background: rgba(184, 204, 170, 0.10);
+      border-color: rgba(184, 204, 170, 0.45);
+    }
+
+    /* Pixel cursors */
+    #hr-payroll-hero .up-cursor {
+      color: #9ec8d8;
+    }
+
+    /* Giant title — warm parchment */
+    .up-title-line--hr {
       font-size: clamp(80px, 14vw, 160px);
       color: #FDFBF7;
     }
 
-    /* Dock active dot override for this page */
+    /* Subtitle "PAYROLL SYSTEM" — soft sage matcha outline */
+    .up-title-line--sub {
+      font-size: clamp(28px, 5vw, 60px);
+      color: transparent;
+      -webkit-text-stroke: 2px #9ec8d8;
+    }
+
+    /* Letter accent colours */
+    .up-letter-olive {
+      color: #9ec8d8;
+    }
+
+    .up-letter-cream {
+      color: #FDFBF7;
+    }
+
+    .up-letter-red {
+      color: #F3EFE6;
+    }
+
+    /* Dock active dot */
     .up-dock-dot {
-      background: #0055aa;
+      background: #1C1E1A;
     }
 
     /* Module card grid */
@@ -48,8 +122,8 @@
 
     .up-module-card {
       background: #F3EFE6;
-      border: 1.5px solid rgba(61, 74, 46, 0.18);
-      border-top: 3px solid #014385;
+      border: 1.5px solid rgba(23, 50, 11, 0.18);
+      border-top: 3px solid #0066cb;
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -58,61 +132,20 @@
 
     .up-module-card-icon {
       font-size: 22px;
-      color: #014385;
+      color: #0066cb;
     }
 
     .up-module-card-title {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 17px;
       letter-spacing: 1.5px;
-      color: #014385;
+      color: #0066cb;
     }
 
     .up-module-card-text {
       font-size: 12px;
       color: #555;
       line-height: 1.6;
-    }
-
-    /* Status badge row */
-    .up-status-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .up-status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 6px 14px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 13px;
-      letter-spacing: 1.5px;
-      border: 1.5px solid currentColor;
-    }
-
-    .up-status-dot-badge {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .up-status-badge--active {
-      color: #014385;
-      background: rgba(45, 106, 79, 0.08);
-    }
-
-    .up-status-badge--expiring {
-      color: #0066cb;
-      background: rgba(192, 57, 43, 0.08);
-    }
-
-    .up-status-badge--term {
-      color: #666;
-      background: rgba(100, 100, 100, 0.08);
     }
 
     /* Metrics strip */
@@ -133,7 +166,7 @@
     .up-metric-number {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 36px;
-      color: #0055aa;
+      color: #9ec8d8;
       line-height: 1;
     }
 
@@ -194,7 +227,7 @@
   <!-- ============================================================
        HERO — dark charcoal
        ============================================================ -->
-  <section class="up-hero" id="gep-crm-hero" aria-labelledby="hero-title">
+  <section class="up-hero" id="hr-payroll-hero" aria-labelledby="hero-title">
 
     <!-- Back link -->
     <a href="portfolio.html" class="up-back-link" id="back-to-portfolio">
@@ -209,29 +242,29 @@
       <i class="bi bi-grid-3x3-gap"></i> WEB APP
     </div>
     <div class="up-tag up-tag--outline-red up-tag-ecomm" aria-hidden="true">
-      <i class="bi bi-shield-check"></i> SECURITY
+      <i class="bi bi-people-fill"></i> HR
     </div>
     <div class="up-tag up-tag--outline-cream up-tag-flutter" aria-hidden="true">
-      <i class="bi bi-database"></i> CRM
+      <i class="bi bi-cash-stack"></i> PAYROLL
     </div>
 
     <!-- Pixel cursors -->
     <span class="up-cursor up-cursor-1" aria-hidden="true">➤</span>
     <span class="up-cursor up-cursor-2" aria-hidden="true">➤</span>
 
-    <!-- Floating CRM mockup — centred in hero -->
+    <!-- Floating HR Payroll mockup — centred in hero -->
     <div class="up-hero-mockup" aria-hidden="true">
-      <img src="assets/img/portfolio/crm-float.png" alt="GEP CRM app mockup" class="up-hero-mockup-img"
+      <img src="assets/img/portfolio/hr-float.png" alt="HR Payroll System mockup" class="up-hero-mockup-img"
         draggable="false" />
     </div>
 
     <!-- Giant title -->
     <div class="up-hero-title" role="heading" aria-level="1" id="hero-title">
-      <span class="up-title-line up-title-line--crm">
-        <span class="up-letter-olive">G</span><span class="up-letter-cream">E</span><span class="up-letter-red">P</span>
+      <span class="up-title-line up-title-line--hr">
+        <span class="up-letter-olive">H</span><span class="up-letter-cream">R</span>
       </span>
       <span class="up-title-line up-title-line--sub">
-        CRM SYSTEM
+        PAYROLL SYSTEM
       </span>
     </div>
 
@@ -243,15 +276,15 @@
       </div>
       <div class="up-meta-item">
         <div class="up-meta-label">Full Name</div>
-        <div class="up-meta-value">GuardExpert Pro CRM</div>
+        <div class="up-meta-value">HR Payroll System</div>
       </div>
       <div class="up-meta-item">
         <div class="up-meta-label">Role</div>
-        <div class="up-meta-value">UI/UX Designer &amp; Developer</div>
+        <div class="up-meta-value">UI/UX Designer</div>
       </div>
       <div class="up-meta-item">
         <div class="up-meta-label">Stack</div>
-        <div class="up-meta-value">Figma · Web Framework · SQL</div>
+        <div class="up-meta-value">Figma · Canva</div>
       </div>
       <div class="up-meta-item">
         <div class="up-meta-label">Status</div>
@@ -262,49 +295,43 @@
   </section>
 
 
-
   <div style="display:flex; flex-direction:column; gap:0; width:100%;">
     <figure style="margin:0; padding:0; width:100%;">
-      <img src="assets/img/portfolio/CRM1.png" alt="GEP CRM System — Screen 1" id="crm-screenshot-1"
+      <img src="assets/img/portfolio/HR1.png" alt="HR Payroll System — Screen 1" id="hr-screenshot-1"
         style="display:block; width:100%; height:auto;">
     </figure>
     <figure style="margin:0; padding:0; width:100%;">
-      <img src="assets/img/portfolio/CRM2.png" alt="GEP CRM System — Screen 2" id="crm-screenshot-2"
+      <img src="assets/img/portfolio/HR2.png" alt="HR Payroll System — Screen 2" id="hr-screenshot-2"
         style="display:block; width:100%; height:auto;">
     </figure>
     <figure style="margin:0; padding:0; width:100%;">
-      <img src="assets/img/portfolio/CRM3.png" alt="GEP CRM System — Screen 3" id="crm-screenshot-3"
+      <img src="assets/img/portfolio/HR3.png" alt="HR Payroll System — Screen 3" id="hr-screenshot-3"
         style="display:block; width:100%; height:auto;">
     </figure>
     <figure style="margin:0; padding:0; width:100%;">
-      <img src="assets/img/portfolio/CRM4.png" alt="GEP CRM System — Screen 4" id="crm-screenshot-4"
-        style="display:block; width:100%; height:auto;">
-    </figure>
-    <figure style="margin:0; padding:0; width:100%;">
-      <img src="assets/img/portfolio/CRM5.png" alt="GEP CRM System — Screen 5" id="crm-screenshot-5"
+      <img src="assets/img/portfolio/HR4.png" alt="HR Payroll System — Screen 4" id="hr-screenshot-4"
         style="display:block; width:100%; height:auto;">
     </figure>
   </div>
-  </section>
 
 
   <!-- ─────────────────────────────────────────────
-         CTA — Prev / Next Project
-         ───────────────────────────────────────────── -->
+       CTA — Prev / Next Project
+       ───────────────────────────────────────────── -->
   <section class="up-section" style="border-bottom:none; padding-bottom: 32px;" id="project-nav">
     <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
-      <a href="portfolio.html" id="all-projects-link" style="font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:2px; color:#014385 !important;
+      <a href="gep-crm.html" id="all-projects-link" style="font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:2px; color:#014385 !important;
                  text-decoration:none !important; display:flex; align-items:center; gap:8px; transition:color 0.2s;"
         onmouseover="this.style.color='#0066cb'" onmouseout="this.style.color='#014385'">
-        <i class="bi bi-arrow-left"></i> ALL PROJECTS
+        <i class="bi bi-arrow-left"></i> CRM SYSTEM
       </a>
       <div style="font-family:'Bebas Neue',sans-serif; font-size:13px; letter-spacing:2px; color:#888;">
         NEXT PROJECT ▶
       </div>
-      <a href="hr-payroll.html" id="next-project-link" style="font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:2px; color:#014385 !important;
+      <a href="uniperks.html" id="next-project-link" style="font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:2px; color:#014385 !important;
                  text-decoration:none !important; display:flex; align-items:center; gap:8px; transition:color 0.2s;"
         onmouseover="this.style.color='#0066cb'" onmouseout="this.style.color='#014385'">
-        HR PAYROLL SYSTEM <i class="bi bi-arrow-right"></i>
+        UniPerks <i class="bi bi-arrow-right"></i>
       </a>
     </div>
   </section>
@@ -345,19 +372,19 @@
 
     <!-- Project switcher -->
     <div class="up-dock-item">
-      <a href="gep-crm.html" class="up-dock-btn" id="dock-proj-crm" aria-label="GEP CRM Project"
-        style="background:#1976D2; color:#fff; border:1.5px solid #90CAF9;">
+      <a href="gep-crm.html" class="up-dock-btn" id="dock-proj-crm" aria-label="GEP CRM Project">
         <i class="bi bi-shield-check"></i>
       </a>
       <div class="up-dock-tooltip" aria-hidden="true">GEP CRM</div>
-      <div class="up-dock-dot" aria-hidden="true"></div>
     </div>
 
     <div class="up-dock-item">
-      <a href="hr-payroll.html" class="up-dock-btn" id="dock-proj-hr" aria-label="HR Payroll Project">
+      <a href="hr-payroll.html" class="up-dock-btn" id="dock-proj-hr" aria-label="HR Payroll Project"
+        style="background:#0066cb; color:#FDFBF7; border:1.5px solid #9ec8d8;">
         <i class="bi bi-cash-stack"></i>
       </a>
       <div class="up-dock-tooltip" aria-hidden="true">HR PAYROLL</div>
+      <div class="up-dock-dot" aria-hidden="true"></div>
     </div>
 
     <div class="up-dock-item">

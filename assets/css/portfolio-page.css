@@ -16,7 +16,7 @@
 
 body.portfolio-page {
   background: #FDFBF7;
-  color: #1A1A1A;
+  color: #014385;
   font-family: 'Inter', 'Roboto', sans-serif;
   font-size: 14px;
   line-height: 1.65;
@@ -26,11 +26,11 @@ body.portfolio-page {
 
 /* ── Colour helpers ────────────────────────────────── */
 .rt-green {
-  color: #3D4A2E !important;
+  color: #014385 !important;
 }
 
 .rt-red {
-  color: #C0392B !important;
+  color: #0066cb !important;
 }
 
 /* =====================================================
@@ -55,11 +55,11 @@ body.portfolio-page {
 }
 
 .ap-port {
-  color: #3D4A2E;
+  color: #014385;
 }
 
 .ap-folio {
-  color: #C0392B;
+  color: #0066cb;
 }
 
 .ap-sub {
@@ -73,14 +73,14 @@ body.portfolio-page {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 12px;
   letter-spacing: 4px;
-  color: #3D4A2E;
+  color: #014385;
 }
 
 .ap-sub-year {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 12px;
   letter-spacing: 4px;
-  color: #C0392B;
+  color: #0066cb;
 }
 
 .ap-header-right {
@@ -98,14 +98,14 @@ body.portfolio-page {
   font-weight: 600;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: #1A1A1A;
+  color: #014385;
 }
 
 .ap-identity-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #C0392B;
+  background: #0066cb;
   flex-shrink: 0;
   animation: apPulse 2s ease-out infinite;
 }
@@ -134,18 +134,18 @@ body.portfolio-page {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 15px;
   letter-spacing: 2.5px;
-  color: #3D4A2E !important;
+  color: #014385 !important;
   text-decoration: none !important;
   padding: 2px 18px;
   transition: color 0.2s;
 }
 
 .ap-nav a:hover {
-  color: #C0392B !important;
+  color: #0066cb !important;
 }
 
 .ap-nav a.active {
-  color: #C0392B !important;
+  color: #0066cb !important;
 }
 
 .ap-nav a.active::after {
@@ -154,7 +154,7 @@ body.portfolio-page {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #C0392B;
+  background: #0066cb;
   margin: 2px auto 0;
 }
 
@@ -219,7 +219,7 @@ body.portfolio-page {
 .pf-title-heading {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(32px, 5vw, 54px);
-  color: #3D4A2E;
+  color: #014385;
   letter-spacing: 2px;
   line-height: 1;
   margin-bottom: 8px;
@@ -230,7 +230,7 @@ body.portfolio-page {
 
 .pf-sparkle {
   font-size: 20px;
-  color: #C0392B;
+  color: #0066cb;
   animation: sparkleRotate 3s ease-in-out infinite;
 }
 
@@ -306,11 +306,15 @@ body.portfolio-page {
 }
 
 .pf-titlebar--olive {
-  background: #3D4A2E;
+  background: #014385;
 }
 
 .pf-titlebar--red {
-  background: #C0392B;
+  background: #0066cb;
+}
+
+.pf-titlebar--blue {
+  background: #1D4ED8;
 }
 
 .pf-titlebar-text {
@@ -385,7 +389,7 @@ body.portfolio-page {
 .pf-project-name {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(28px, 3vw, 38px);
-  color: #3D4A2E;
+  color: #014385;
   letter-spacing: 1.5px;
   line-height: 1;
 }
@@ -393,7 +397,7 @@ body.portfolio-page {
 .pf-project-subtitle {
   font-size: 13px;
   font-weight: 700;
-  color: #C0392B;
+  color: #0066cb;
   letter-spacing: 0.5px;
   margin-top: -4px;
 }
@@ -428,7 +432,7 @@ body.portfolio-page {
 
 .pf-checklist li::before {
   content: '✓';
-  color: #3D4A2E;
+  color: #014385;
   font-weight: 800;
   font-size: 13px;
   flex-shrink: 0;
@@ -449,7 +453,7 @@ body.portfolio-page {
   font-size: 14px;
   letter-spacing: 1.5px;
   padding: 8px 20px;
-  border: 2px solid #3D4A2E;
+  border: 2px solid #014385;
   cursor: pointer;
   text-decoration: none !important;
   transition: background 0.18s, color 0.18s;
@@ -457,23 +461,23 @@ body.portfolio-page {
 }
 
 .pf-btn--filled {
-  background: #3D4A2E;
+  background: #014385;
   color: #FDFBF7 !important;
 }
 
 .pf-btn--filled:hover {
-  background: #C0392B;
-  border-color: #C0392B;
+  background: #0066cb;
+  border-color: #0066cb;
   color: #FDFBF7 !important;
 }
 
 .pf-btn--outline {
   background: transparent;
-  color: #3D4A2E !important;
+  color: #014385 !important;
 }
 
 .pf-btn--outline:hover {
-  background: #3D4A2E;
+  background: #014385;
   color: #FDFBF7 !important;
 }
 
@@ -583,7 +587,7 @@ body.portfolio-page {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #3D4A2E;
+  background: #014385;
   color: #FDFBF7;
   border: 2px solid #5A6A3E;
   box-shadow:
@@ -600,7 +604,7 @@ body.portfolio-page {
 }
 
 .pf-taskbar-start:hover {
-  background: #C0392B;
+  background: #0066cb;
   border-color: #d04020;
 }
 
@@ -647,7 +651,7 @@ body.portfolio-page {
 
 .pf-taskbar-btn:hover {
   background: #FDFBF7;
-  color: #3D4A2E !important;
+  color: #014385 !important;
 }
 
 .pf-taskbar-btn:active {
@@ -678,7 +682,7 @@ body.portfolio-page {
 .pf-taskbar-clock {
   font-family: 'VT323', 'Courier New', monospace;
   font-size: 15px;
-  color: #1A1A1A;
+  color: #014385;
   letter-spacing: 1px;
   min-width: 56px;
   text-align: right;
@@ -801,7 +805,7 @@ body.portfolio-page {
 .up-dock-btn:hover {
   transform: translateY(-10px) scale(1.18);
   background: #FDFBF7;
-  color: #3D4A2E !important;
+  color: #014385 !important;
   z-index: 1;
 }
 
@@ -814,7 +818,7 @@ body.portfolio-page {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #C0392B;
+  background: #0066cb;
   margin-top: 3px;
 }
 

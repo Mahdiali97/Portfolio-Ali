@@ -9,11 +9,11 @@
 /* ── Design Tokens ───────────────────────────────────────── */
 :root {
   --rt-bg: #FDFBF7;
-  --rt-olive: #3D4A2E;
-  --rt-red: #C0392B;
-  --rt-dark: #1A1A1A;
-  --rt-gray: #4A4A4A;
-  --rt-border: #3D4A2E;
+  --rt-olive: #014385;
+  --rt-red: #0066cb;
+  --rt-dark: #014385;
+  --rt-gray: #0066cb;
+  --rt-border: #014385;
   --rt-cream: #FDFBF7;
   --rt-pale: #F3EFE6;
   --rt-display: 'Bebas Neue', 'Impact', sans-serif;

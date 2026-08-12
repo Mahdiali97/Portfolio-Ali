@@ -8,14 +8,14 @@
   --background-color: #ffffff;
   --default-color: #272829;
   --heading-color: #050d18;
-  --accent-color: #5c8585;
+  --accent-color: #0055aa;
   --surface-color: #ffffff;
   --contrast-color: #ffffff;
-  --blue-color: #149ddd;
+  --blue-color: #0066cb;
 }
 
 :root {
-  --nav-color: #5c8585;
+  --nav-color: #0055aa;
   --nav-hover-color: #ffffff;
   --nav-mobile-background-color: #040b14;
 }
@@ -27,7 +27,7 @@
 }
 
 .dark-background {
-  --background-color: #54a2a2;
+  --background-color: #014385;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --surface-color: #151f2b;
@@ -71,7 +71,7 @@ h6 {
 
 .header {
   color: var(--default-color);
-  background: linear-gradient(180deg, #2d6b6b 0%, #3d8080 40%, #4a9494 100%);
+  background: linear-gradient(180deg, #012f5e 0%, #014385 40%, #0066cb 100%);
   position: fixed;
   top: 0;
   left: 0;
@@ -769,13 +769,13 @@ section,
 }
 
 .typed-text-bazil {
-  color: #54a2a2;
+  color: #014385;
   font-weight: 700;
 }
 
 /* 8. Blinking cursor */
 .cursor-bazil {
-  color: #54a2a2;
+  color: #014385;
   font-weight: 700;
   animation: bazilBlink 1s step-start infinite;
 }

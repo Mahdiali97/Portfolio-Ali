@@ -9,9 +9,9 @@
 /* ---------- Design Tokens --------------------- */
 :root {
   --retro-bg: #FDFBF7;
-  --retro-olive: #3D4A2E;
-  --retro-red: #C0392B;
-  --retro-dark: #1A1A1A;
+  --retro-olive: #014385;
+  --retro-red: #0066cb;
+  --retro-dark: #014385;
   --retro-cream: #FDFBF7;
   --retro-border: rgba(192, 57, 43, 0.25);
   --retro-display: 'Bebas Neue', 'Impact', sans-serif;
