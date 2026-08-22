@@ -380,9 +380,15 @@ body.portfolio-page {
 
 /* Folder icon */
 .pf-folder-icon {
-  font-size: 38px;
   line-height: 1;
   margin-bottom: 2px;
+}
+
+.pf-folder-cat {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  display: block;
 }
 
 /* Project title & subtitle */
