@@ -56,10 +56,25 @@
         <span class="ap-nav-sep" aria-hidden="true"></span>
         <a href="portfolio.html" id="nav-portfolio">PORTFOLIO</a>
       </nav>
+      <!-- Mobile hamburger -->
+      <button class="ap-hamburger" id="ap-hamburger" aria-label="Open navigation" aria-expanded="false">
+        <span class="ap-hamburger-bar"></span>
+        <span class="ap-hamburger-bar"></span>
+        <span class="ap-hamburger-bar"></span>
+      </button>
     </div>
 
   </header>
   <hr class="ap-header-rule" aria-hidden="true">
+
+  <!-- Mobile Nav Overlay -->
+  <nav class="ap-mobile-nav" id="ap-mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+    <button class="ap-mobile-nav-close" id="ap-mobile-nav-close" aria-label="Close navigation">&times;</button>
+    <a href="index.html">HOME</a>
+    <a href="about.html" class="active">ABOUT</a>
+    <a href="resume.html">RESUME</a>
+    <a href="portfolio.html">PORTFOLIO</a>
+  </nav>
 
 
   <!-- ============================================================
@@ -470,6 +485,32 @@
       if (preloader) {
         preloader.style.display = 'none';
       }
+
+      /* ── Mobile Nav Toggle ───────────────────────── */
+      const hamburger = document.getElementById('ap-hamburger');
+      const mobileNav = document.getElementById('ap-mobile-nav');
+      const closeBtn  = document.getElementById('ap-mobile-nav-close');
+
+      function openNav() {
+        hamburger.classList.add('is-open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        mobileNav.classList.add('is-open');
+        mobileNav.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeNav() {
+        hamburger.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileNav.classList.remove('is-open');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', openNav);
+      closeBtn.addEventListener('click', closeNav);
+      mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
     });
   </script>
 
