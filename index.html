@@ -181,7 +181,7 @@
       {
         type: 'img',
         src: 'assets/img/Album/FCDO.jpg',
-        caption: 'Certificate of completion — DevOps programme'
+        caption: 'Foundation Certificate of DevOps'
       },
       {
         type: 'img',
@@ -275,10 +275,10 @@
     function render() {
       const cards = deck.querySelectorAll('.j-card');
       const total = PHOTOS.length;
-      
+
       cards.forEach((card, i) => {
         let offset = i - current;
-        
+
         // Ensure infinite loop logic
         if (offset > total / 2) offset -= total;
         if (offset < -total / 2) offset += total;
@@ -286,9 +286,9 @@
         const abs = Math.abs(offset);
         const visible = abs <= VISIBLE;
         const isActive = offset === 0;
-        
+
         let tx = 0, tz = 0, ry = 0, scale = 1, op = 1, zi = 0;
-        
+
         // Simulating an open book page flip
         if (offset < 0) {
           // Pages on the left (flipped over)
@@ -310,27 +310,27 @@
           // The active page
           tx = 0;
           tz = 60;
-          ry = 0; 
+          ry = 0;
           scale = 1.05;
           op = 1;
           zi = 20;
         }
-        
+
         card.style.transformOrigin = 'center center';
-        
+
         card.style.cssText += `
           transform: translateX(${tx}px) translateZ(${tz}px) rotateY(${ry}deg) scale(${scale});
           opacity: ${op};
           z-index: ${zi};
           pointer-events: ${visible ? 'auto' : 'none'};
         `;
-        
+
         card.classList.toggle('j-card--active', isActive);
 
         /* Play video only when active */
         if (card._vid) {
-          if (isActive) card._vid.play().catch(() => {});
-          else          { card._vid.pause(); card._vid.currentTime = 0; }
+          if (isActive) card._vid.play().catch(() => { });
+          else { card._vid.pause(); card._vid.currentTime = 0; }
         }
       });
     }
