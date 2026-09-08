@@ -485,17 +485,27 @@
       position: absolute;
     }
 
-    .ap-hamburger-bar:nth-child(1) { transform: translateY(-7px); }
-    .ap-hamburger-bar:nth-child(2) { transform: translateY(0); }
-    .ap-hamburger-bar:nth-child(3) { transform: translateY(7px); }
+    .ap-hamburger-bar:nth-child(1) {
+      transform: translateY(-7px);
+    }
+
+    .ap-hamburger-bar:nth-child(2) {
+      transform: translateY(0);
+    }
+
+    .ap-hamburger-bar:nth-child(3) {
+      transform: translateY(7px);
+    }
 
     .ap-hamburger.is-open .ap-hamburger-bar:nth-child(1) {
       transform: translateY(0) rotate(45deg);
     }
+
     .ap-hamburger.is-open .ap-hamburger-bar:nth-child(2) {
       opacity: 0;
       transform: scaleX(0);
     }
+
     .ap-hamburger.is-open .ap-hamburger-bar:nth-child(3) {
       transform: translateY(0) rotate(-45deg);
     }
@@ -504,7 +514,10 @@
     .ap-mobile-nav {
       display: none;
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background: rgba(253, 251, 247, 0.97);
       backdrop-filter: blur(12px);
       z-index: 1000;
@@ -533,13 +546,20 @@
       position: relative;
     }
 
-    .ap-mobile-nav a:hover { color: #0066cb !important; transform: translateX(6px); }
-    .ap-mobile-nav a.active { color: #0066cb !important; }
+    .ap-mobile-nav a:hover {
+      color: #0066cb !important;
+      transform: translateX(6px);
+    }
+
+    .ap-mobile-nav a.active {
+      color: #0066cb !important;
+    }
 
     .ap-mobile-nav a.active::after {
       content: '';
       display: block;
-      width: 6px; height: 6px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: #0066cb;
       margin: 4px auto 0;
@@ -547,7 +567,8 @@
 
     .ap-mobile-nav-close {
       position: absolute;
-      top: 24px; right: 24px;
+      top: 24px;
+      right: 24px;
       font-size: 28px;
       color: #014385;
       background: none;
@@ -570,7 +591,6 @@
         display: flex;
       }
     }
-
   </style>
 </head>
 
@@ -670,7 +690,7 @@
           <div class="rv-entry-date">Sep 2022 – Aug 2026</div>
           <div class="rv-entry-title">Bachelor of Software Engineering (Honours)</div>
           <div class="rv-entry-sub">Universiti Pendidikan Sultan Idris</div>
-          <div class="rv-entry-note">Dean's List (Semester 1-7)<br>Current CGPA: 3.83</div>
+          <div class="rv-entry-note">Dean's List (Semester 1-8)<br>Current CGPA: 3.85</div>
         </div>
 
         <div class="rv-entry">
@@ -974,7 +994,7 @@
       /* ── Mobile Nav Toggle ───────────────────────── */
       const hamburger = document.getElementById('ap-hamburger');
       const mobileNav = document.getElementById('ap-mobile-nav');
-      const closeBtn  = document.getElementById('ap-mobile-nav-close');
+      const closeBtn = document.getElementById('ap-mobile-nav-close');
 
       function openNav() {
         hamburger.classList.add('is-open');
