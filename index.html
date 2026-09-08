@@ -113,12 +113,6 @@
     <!-- JOURNAL HERO -->
     <main class="journal-stage" id="hero" aria-label="Photo journal">
 
-      <!-- Journal title -->
-      <div class="journal-title-block">
-        <span class="journal-label">Journal</span>
-        <span class="journal-pages" id="journal-pages"></span>
-      </div>
-
       <!-- 3D card deck -->
       <div class="journal-scene" id="journal-scene" aria-live="polite">
         <div class="journal-deck" id="journal-deck">
@@ -225,7 +219,6 @@
     let autoTimer = null;
 
     const deck = document.getElementById('journal-deck');
-    const pagesEl = document.getElementById('journal-pages');
 
     /* ── Build cards ───────────────────────────────────────────────── */
     function buildCards() {
@@ -275,7 +268,6 @@
         });
         deck.appendChild(card);
       });
-      pagesEl.textContent = `— ${PHOTOS.length} Pages`;
       render();
     }
 

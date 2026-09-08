@@ -434,10 +434,11 @@ body.retro-page {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: #0d1b2e;
+  background: #ffffff;
   overflow: hidden;
   position: relative;
-  padding-bottom: 72px; /* clear fixed bottom-nav */
+  padding-bottom: 72px;
+  /* clear fixed bottom-nav */
   user-select: none;
 }
 
@@ -455,7 +456,7 @@ body.retro-page {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.12);
   border: none;
   color: #fff;
   font-size: 16px;
@@ -466,7 +467,10 @@ body.retro-page {
   transition: background 0.2s;
   backdrop-filter: blur(6px);
 }
-.journal-back-btn:hover { background: rgba(255,255,255,0.22); }
+
+.journal-back-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
 
 .journal-title-block {
   display: flex;
@@ -474,6 +478,7 @@ body.retro-page {
   align-items: center;
   gap: 2px;
 }
+
 .journal-label {
   font-family: 'Inter', sans-serif;
   font-size: 17px;
@@ -481,11 +486,12 @@ body.retro-page {
   color: #fff;
   letter-spacing: 0.3px;
 }
+
 .journal-pages {
   font-family: 'Inter', sans-serif;
   font-size: 11px;
   font-weight: 500;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255, 255, 255, 0.45);
   letter-spacing: 0.5px;
 }
 
@@ -493,13 +499,14 @@ body.retro-page {
   display: flex;
   gap: 8px;
 }
+
 .journal-icon-btn {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   border: none;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
   display: flex;
   align-items: center;
@@ -507,7 +514,10 @@ body.retro-page {
   cursor: pointer;
   transition: background 0.2s;
 }
-.journal-icon-btn:hover { background: rgba(255,255,255,0.2); }
+
+.journal-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
 
 /* ── 3D scene container ──────────────────────────── */
 .journal-scene {
@@ -516,7 +526,6 @@ body.retro-page {
   align-items: center;
   justify-content: center;
   perspective: 1200px;
-  overflow: hidden;
   position: relative;
 }
 
@@ -535,18 +544,18 @@ body.retro-page {
   overflow: hidden;
   background: #1a2d45;
   box-shadow:
-    0 8px 32px rgba(0,0,0,0.55),
-    0 2px 8px rgba(0,0,0,0.3);
+    0 12px 30px rgba(0, 0, 0, 0.12),
+    0 4px 10px rgba(0, 0, 0, 0.08);
   transition:
-    transform  1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    opacity    1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: pointer;
 }
 
 .j-card--active {
   box-shadow:
-    0 16px 56px rgba(0,0,0,0.65),
-    0 4px 16px rgba(0,0,0,0.4);
+    0 24px 60px rgba(0, 0, 0, 0.18),
+    0 8px 24px rgba(0, 0, 0, 0.12);
   cursor: default;
 }
 
@@ -566,8 +575,8 @@ body.retro-page {
   left: 0;
   right: 0;
   padding: 28px 18px 18px;
-  background: linear-gradient(to top, rgba(5,15,30,0.88) 0%, transparent 100%);
-  color: rgba(255,255,255,0.9);
+  background: linear-gradient(to top, rgba(5, 15, 30, 0.88) 0%, transparent 100%);
+  color: rgba(255, 255, 255, 0.9);
   font-family: 'Inter', sans-serif;
   font-size: 12.5px;
   font-weight: 500;
@@ -594,20 +603,23 @@ body.retro-page {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  color: rgba(255,255,255,0.25);
+  color: rgba(255, 255, 255, 0.25);
   background: linear-gradient(135deg, #1a2d45 0%, #0f2035 100%);
-  border: 1.5px dashed rgba(255,255,255,0.1);
+  border: 1.5px dashed rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   transition: color 0.2s, border-color 0.2s;
 }
+
 .j-card--active .j-card-placeholder {
-  color: rgba(255,255,255,0.45);
-  border-color: rgba(255,255,255,0.2);
+  color: rgba(255, 255, 255, 0.45);
+  border-color: rgba(255, 255, 255, 0.2);
 }
+
 .j-card-placeholder i {
   font-size: 36px;
   display: block;
 }
+
 .j-card-placeholder span {
   font-family: 'Inter', sans-serif;
   font-size: 12px;
@@ -630,9 +642,9 @@ body.retro-page {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   border: none;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 15px;
   display: flex;
   align-items: center;
@@ -641,18 +653,23 @@ body.retro-page {
   flex-shrink: 0;
   transition: background 0.2s, color 0.2s;
 }
-.journal-ctrl-btn:hover { background: rgba(255,255,255,0.22); color: #fff; }
+
+.journal-ctrl-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
 
 .journal-progress-wrap {
   flex: 1;
   height: 3px;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 2px;
   overflow: hidden;
 }
+
 .journal-progress-bar {
   height: 100%;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 2px;
   width: 0%;
   transition: width 400ms linear;
@@ -661,7 +678,7 @@ body.retro-page {
 .journal-timer {
   font-family: 'Inter', monospace;
   font-size: 11px;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255, 255, 255, 0.4);
   white-space: nowrap;
   min-width: 68px;
   text-align: right;
@@ -673,6 +690,13 @@ body.retro-page {
     width: 260px;
     height: 340px;
   }
-  .journal-topbar { padding: 14px 16px 8px; }
-  .journal-controls { padding: 10px 16px 16px; gap: 10px; }
+
+  .journal-topbar {
+    padding: 14px 16px 8px;
+  }
+
+  .journal-controls {
+    padding: 10px 16px 16px;
+    gap: 10px;
+  }
 }

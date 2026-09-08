@@ -1018,3 +1018,441 @@ body.portfolio-page {
     transform: translateY(-6px) scale(1.12);
   }
 }
+
+/* =====================================================
+   TAB BAR
+   ===================================================== */
+.pf-tab-bar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 56px;
+  border-bottom: 2px solid rgba(1, 67, 133, 0.12);
+  margin-bottom: 0;
+}
+
+.pf-tab {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 14px 24px;
+  position: relative;
+  transition: color 0.2s;
+  outline: none;
+}
+
+.pf-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #014385;
+  transform: scaleX(0);
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pf-tab[aria-selected="true"],
+.pf-tab.pf-tab--active {
+  color: #014385;
+}
+
+.pf-tab[aria-selected="true"]::after,
+.pf-tab.pf-tab--active::after {
+  transform: scaleX(1);
+}
+
+.pf-tab:hover {
+  color: #014385;
+}
+
+/* =====================================================
+   TAB PANEL WRAPPER
+   ===================================================== */
+.pf-panel {
+  padding-top: 36px;
+}
+
+.pf-panel:not(.pf-panel--active) {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .pf-tab-bar { padding: 0 24px; }
+}
+@media (max-width: 600px) {
+  .pf-tab-bar { padding: 0 16px; }
+  .pf-tab { padding: 12px 16px; font-size: 12px; }
+}
+
+/* =====================================================
+   PROJECT CARDS GRID  (Projects tab)
+   ===================================================== */
+.proj-grid {
+  display: flex;
+  flex-direction: column;
+  padding: 0 56px 56px;
+  gap: 0;
+}
+
+/* Each row gets a top border; last one also gets a bottom border */
+.proj-card {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 28px 0;
+  border-top: 1px solid rgba(1, 67, 133, 0.1);
+  cursor: pointer;
+  background: transparent;
+  transition: background 0.18s;
+  position: relative;
+  outline: none;
+}
+
+.proj-card:last-child {
+  border-bottom: 1px solid rgba(1, 67, 133, 0.1);
+}
+
+.proj-card:hover {
+  background: rgba(1, 67, 133, 0.03);
+}
+
+.proj-card:focus-visible {
+  outline: 2px solid #0066cb;
+  outline-offset: 2px;
+}
+
+/* Number badge */
+.proj-card-index {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  color: rgba(1, 67, 133, 0.35);
+  min-width: 32px;
+  flex-shrink: 0;
+}
+
+/* Text body */
+.proj-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.proj-card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 700;
+  color: #0f0f0f;
+  letter-spacing: -0.3px;
+  line-height: 1.1;
+}
+
+.proj-card-sub {
+  font-size: 12.5px;
+  color: #888;
+  font-weight: 500;
+}
+
+/* Tech tags */
+.proj-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.proj-card-tags span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #014385;
+  background: rgba(1, 67, 133, 0.07);
+  padding: 3px 9px;
+  border-radius: 2px;
+}
+
+/* Arrow indicator */
+.proj-card-arrow {
+  font-size: 22px;
+  color: rgba(1, 67, 133, 0.3);
+  flex-shrink: 0;
+  transition: transform 0.2s, color 0.2s;
+  margin-right: 4px;
+}
+
+.proj-card:hover .proj-card-arrow {
+  transform: translateX(6px);
+  color: #014385;
+}
+
+@media (max-width: 900px) {
+  .proj-grid { padding: 0 24px 48px; }
+}
+@media (max-width: 600px) {
+  .proj-grid { padding: 0 16px 40px; }
+  .proj-card { gap: 16px; padding: 20px 0; }
+  .proj-card-index { display: none; }
+}
+
+/* =====================================================
+   PROJECT DETAIL MODAL
+   ===================================================== */
+.proj-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;          /* above the dock (9999) */
+  display: flex;
+  align-items: center;    /* vertically centred */
+  justify-content: center;
+  padding: 24px;          /* breathing room around the box */
+}
+
+.proj-modal[hidden] { display: none; }
+
+/* Semi-transparent backdrop */
+.proj-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 20, 40, 0.5);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+.proj-modal--open .proj-modal-backdrop {
+  opacity: 1;
+}
+
+/* Modal: centred dialog (not bottom-sheet) */
+.proj-modal-box {
+  position: relative;
+  background: #FDFBF7;
+  width: calc(100% - 48px);
+  max-width: 860px;
+  max-height: calc(100vh - 140px); /* leaves room above AND below */
+  overflow-y: auto;
+  border: 2px solid #3A4032;
+  box-shadow: 8px 8px 0 rgba(58, 64, 50, 0.25), 0 24px 64px rgba(0,0,0,0.22);
+  padding: 44px 44px 44px;
+  opacity: 0;
+  transform: translateY(20px) scale(0.97);
+  transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Centred inside the flex container */
+  margin: auto;
+}
+
+.proj-modal--open .proj-modal-box {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Colour accent stripe */
+.proj-modal-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #014385;
+  transition: background 0.2s;
+}
+
+/* Close button */
+.proj-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: 1.5px solid rgba(61,74,46,0.25);
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+  outline: none;
+  z-index: 2;
+}
+
+.proj-modal-close:hover {
+  background: #014385;
+  color: #FDFBF7;
+  border-color: #014385;
+}
+
+/* ── Inner two-column grid ───────────────────────────── */
+.proj-modal-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+/* Left column */
+.proj-modal-left {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Index label */
+.proj-modal-index {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: rgba(1,67,133,0.4);
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Title */
+.proj-modal-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-weight: 800;
+  color: #0f0f0f;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+/* Subtitle */
+.proj-modal-subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0066cb;
+  margin-bottom: 14px;
+}
+
+/* Stack */
+.proj-modal-stack {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* Description */
+.proj-modal-desc {
+  font-size: 13.5px;
+  color: #3A3A3A;
+  line-height: 1.75;
+  margin-bottom: 28px;
+  flex: 1;
+}
+
+/* Actions row */
+.proj-modal-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.proj-modal-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: #FDFBF7 !important;
+  background: #014385;
+  border: 2px solid #014385;
+  padding: 10px 22px;
+  text-decoration: none !important;
+  transition: background 0.18s, border-color 0.18s;
+  cursor: pointer;
+}
+
+.proj-modal-live:hover {
+  background: #0066cb;
+  border-color: #0066cb;
+}
+
+/* Right column: image area */
+.proj-modal-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.proj-modal-img-wrap {
+  border: 1.5px solid rgba(58,64,50,0.2);
+  overflow: hidden;
+  background: #F0EDE5;
+  box-shadow: 3px 3px 0 rgba(58,64,50,0.15);
+}
+
+/* Fake browser chrome bar */
+.proj-modal-img-bar {
+  background: #ECECEC;
+  border-bottom: 1px solid #CCC;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+/* Actual screenshot */
+.proj-modal-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 340px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Placeholder when no image yet */
+.proj-modal-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 220px;
+  color: rgba(1,67,133,0.3);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.proj-modal-placeholder i {
+  font-size: 38px;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 760px) {
+  .proj-modal-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .proj-modal-box {
+    padding: 36px 22px 36px;
+    max-height: calc(100vh - 100px);
+  }
+}
+
+@media (max-width: 480px) {
+  .proj-modal-box {
+    width: calc(100% - 24px);
+    padding: 28px 16px 28px;
+  }
+}

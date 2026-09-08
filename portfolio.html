@@ -88,11 +88,11 @@
       <div class="pf-title-text">
         <h1 class="pf-title-heading" id="pf-page-heading"
           style="font-family: 'Inter', sans-serif; font-size: clamp(42px, 6vw, 68px); color: #0f0f0f; letter-spacing: -1px; font-weight: 700;">
-          My Projects
+          My Portfolio
         </h1>
         <p class="pf-title-desc" style="color: #555555; font-weight: 500; font-size: 15px; max-width: 400px;">
           A collection of selected work that showcases<br>
-          my skills in UI/UX design and problem solving.
+          my skills in systems development and UI/UX design.
         </p>
       </div>
 
@@ -102,222 +102,334 @@
     <div class="pf-pixel-clouds" aria-hidden="true">
       <!-- Cloud 1 -->
       <div class="pf-pixel-cloud">
-        <!-- <img src="assets/img/pixel-cloud-1.png" alt=""> -->
         <span style="font-size:42px; opacity:0.6;">☁️</span>
       </div>
       <!-- Cloud 2 (smaller) -->
       <div class="pf-pixel-cloud" style="width:56px; height:36px;">
-        <!-- <img src="assets/img/pixel-cloud-2.png" alt=""> -->
         <span style="font-size:28px; opacity:0.5;">☁️</span>
       </div>
     </div>
 
   </section>
 
+  <!-- ============================================================
+       TAB SWITCHER
+       ============================================================ -->
+  <div class="pf-tab-bar" role="tablist" aria-label="Portfolio tabs">
+    <button class="pf-tab" id="tab-projects" role="tab" aria-selected="true"
+      aria-controls="panel-projects">Projects</button>
+    <button class="pf-tab" id="tab-design" role="tab" aria-selected="false" aria-controls="panel-design">Design</button>
+  </div>
+
 
   <!-- ============================================================
-       PROJECTS
+       TAB PANELS
        ============================================================ -->
-  <div class="pf-projects" id="projects">
 
-    <!-- ===========================================================
-         PROJECT 01 — GEP CRM System
-         =========================================================== -->
-    <article class="pf-os-window" id="project-gep-crm" aria-label="Project: GEP CRM System" data-aos="fade-left"
-      data-aos-delay="150">
+  <!-- ── PANEL: PROJECTS ──────────────────────────────────────── -->
+  <div id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" class="pf-panel pf-panel--active">
 
-      <!-- Title Bar (terracotta red) -->
-      <div class="pf-titlebar pf-titlebar--red">
-        <span class="pf-titlebar-text">Project 01 - GEP CRM System</span>
-        <div class="pf-win-controls" aria-hidden="true">
-          <div class="pf-win-btn pf-win-btn--min" title="Minimize">&#x2212;</div>
-          <div class="pf-win-btn pf-win-btn--max" title="Maximize">&#x25A1;</div>
-          <div class="pf-win-btn pf-win-btn--close" title="Close">&#x2715;</div>
+    <div class="proj-grid" id="proj-grid">
+
+
+      <!-- Card 01 — KHAR Hostel Portal -->
+      <article class="proj-card" id="projcard-hr" role="button" tabindex="0"
+        aria-label="KHAR Hostel Portal — click to view details" data-title="KHAR Hostel Portal"
+        data-subtitle="Student Hostel Room Allocation System"
+        data-stack="Laravel 12 · Livewire 3 · Flux UI · Tailwind CSS 4 · Docker · Fly.io · SQLite"
+        data-desc="A hostel management portal where students can form registration groups of 2–4 members, invite peers, and track their application status (Draft, Pending, Approved, or Rejected). Admins can officially allocate rooms once groups are approved. Real-time dashboard notifications show block, floor, and house details. Role-based access: Admins oversee statistics, approve/reject group applications, and manage room inventory. Students manage their profile, group memberships, and view assigned hostel details."
+        data-live="https://khar-hostel-portal-1788598384.fly.dev/" data-color="#1D4ED8"
+        data-img="assets/img/project/KHAR.png">
+        <div class="proj-card-index">02</div>
+        <div class="proj-card-body">
+          <h2 class="proj-card-title">KHAR Hostel Portal</h2>
+          <p class="proj-card-sub">Student Hostel Room Allocation System</p>
+          <div class="proj-card-tags">
+            <span>Laravel 12</span><span>Livewire 3</span><span>Tailwind CSS
+              4</span><span>Docker</span><span>Fly.io</span>
+          </div>
         </div>
-      </div>
-      <div class="pf-titlebar-rule" aria-hidden="true"></div>
+        <div class="proj-card-arrow" aria-hidden="true">→</div>
+      </article>
 
-      <!-- Window Body -->
-      <div class="pf-window-body">
+      <!-- Card 03 — UniPerks -->
+      <article class="proj-card" id="projcard-uniperks" role="button" tabindex="0"
+        aria-label="UniPerks — click to view details" data-title="UniPerks"
+        data-subtitle="Gamified University E-Commerce Platform"
+        data-stack="Flutter · Dart · Supabase · Firebase · Stripe"
+        data-desc="A university merchandise store with a built-in gamification layer. Students earn coins by completing quizzes and spend them on vouchers, while Stripe handles secure checkout. Built as a final-year group project."
+        data-live="https://uniperks-app.vercel.app/" data-color="#014385"
+        data-img="assets/img/portfolio/UniPerks_Dashboard.png">
+        <div class="proj-card-index">03</div>
+        <div class="proj-card-body">
+          <h2 class="proj-card-title">UniPerks</h2>
+          <p class="proj-card-sub">Gamified University E-Commerce Platform</p>
+          <div class="proj-card-tags">
+            <span>Flutter</span><span>Dart</span><span>Supabase</span><span>Firebase</span><span>Stripe</span>
+          </div>
+        </div>
+        <div class="proj-card-arrow" aria-hidden="true">→</div>
+      </article>
 
-        <!-- Left column: info -->
-        <div class="pf-win-left">
-          <div class="pf-folder-icon" aria-hidden="true"><img src="assets/img/portfolio/icon/cat.png" alt=""
-              class="pf-folder-cat"></div>
+    </div><!-- /proj-grid -->
 
-          <h2 class="pf-project-name">GEP CRM System</h2>
-          <p class="pf-project-subtitle">Customer Management System</p>
+  </div><!-- /panel-projects -->
 
-          <hr class="pf-divider" aria-hidden="true">
 
-          <p class="pf-project-desc">
-            A CRM system for managing companies that subscribe to the GEP System.
-            Includes zone management, premise tracking and invoice handling.
-          </p>
+  <!-- ── PANEL: DESIGN ────────────────────────────────────────── -->
+  <div id="panel-design" role="tabpanel" aria-labelledby="tab-design" class="pf-panel" hidden>
 
-          <ul class="pf-checklist" aria-label="Key features">
-            <li>Company &amp; zone management</li>
-            <li>Premise tracking</li>
-            <li>Subscription &amp; invoice management</li>
-            <li>Clean and intuitive dashboard</li>
-          </ul>
+    <div class="pf-projects" id="projects">
 
-          <div class="pf-win-buttons">
-            <a href="gep-crm.html" class="pf-btn pf-btn--filled" id="gep-view">
-              View Project
+      <!-- ===========================================================
+            PROJECT 01 — GEP CRM System
+            =========================================================== -->
+      <article class="pf-os-window" id="project-gep-crm" aria-label="Project: GEP CRM System" data-aos="fade-left"
+        data-aos-delay="150">
+
+        <!-- Title Bar (terracotta red) -->
+        <div class="pf-titlebar pf-titlebar--red">
+          <span class="pf-titlebar-text">Project 01 - GEP CRM System</span>
+          <div class="pf-win-controls" aria-hidden="true">
+            <div class="pf-win-btn pf-win-btn--min" title="Minimize">&#x2212;</div>
+            <div class="pf-win-btn pf-win-btn--max" title="Maximize">&#x25A1;</div>
+            <div class="pf-win-btn pf-win-btn--close" title="Close">&#x2715;</div>
+          </div>
+        </div>
+        <div class="pf-titlebar-rule" aria-hidden="true"></div>
+
+        <!-- Window Body -->
+        <div class="pf-window-body">
+
+          <!-- Left column: info -->
+          <div class="pf-win-left">
+            <div class="pf-folder-icon" aria-hidden="true"><img src="assets/img/portfolio/icon/cat.png" alt=""
+                class="pf-folder-cat"></div>
+
+            <h2 class="pf-project-name">GEP CRM System</h2>
+            <p class="pf-project-subtitle">Customer Management System</p>
+
+            <hr class="pf-divider" aria-hidden="true">
+
+            <p class="pf-project-desc">
+              A CRM system for managing companies that subscribe to the GEP System.
+              Includes zone management, premise tracking and invoice handling.
+            </p>
+
+            <ul class="pf-checklist" aria-label="Key features">
+              <li>Company &amp; zone management</li>
+              <li>Premise tracking</li>
+              <li>Subscription &amp; invoice management</li>
+              <li>Clean and intuitive dashboard</li>
+            </ul>
+
+            <div class="pf-win-buttons">
+              <a href="gep-crm.html" class="pf-btn pf-btn--filled" id="gep-view">
+                View Project
+              </a>
+            </div>
+          </div>
+
+          <!-- Right column: screenshot -->
+          <div class="pf-win-right">
+            <div class="pf-screenshot-frame">
+              <div class="pf-screenshot-bar" aria-hidden="true">
+                <span class="pf-ss-dot pf-ss-dot--r"></span>
+                <span class="pf-ss-dot pf-ss-dot--y"></span>
+                <span class="pf-ss-dot pf-ss-dot--g"></span>
+              </div>
+              <img src="assets/img/portfolio/crm-front.png" alt="GEP CRM System dashboard screenshot" loading="lazy">
+            </div>
+          </div>
+
+        </div><!-- /window-body -->
+      </article>
+
+
+      <!-- ===========================================================
+      PROJECT 02 — HR Payroll System
+      =========================================================== -->
+      <article class="pf-os-window" id="project-hr-payroll" aria-label="Project: HR Payroll System" data-aos="fade-left"
+        data-aos-delay="200">
+
+        <!-- Title Bar (blue) -->
+        <div class="pf-titlebar pf-titlebar--blue">
+          <span class="pf-titlebar-text">Project 02 - HR Payroll System</span>
+          <div class="pf-win-controls" aria-hidden="true">
+            <div class="pf-win-btn pf-win-btn--min" title="Minimize">&#x2212;</div>
+            <div class="pf-win-btn pf-win-btn--max" title="Maximize">&#x25A1;</div>
+            <div class="pf-win-btn pf-win-btn--close" title="Close">&#x2715;</div>
+          </div>
+        </div>
+        <div class="pf-titlebar-rule" aria-hidden="true"></div>
+
+        <!-- Window Body -->
+        <div class="pf-window-body">
+
+          <!-- Left column: info -->
+          <div class="pf-win-left">
+            <div class="pf-folder-icon" aria-hidden="true"><img src="assets/img/portfolio/icon/cat.png" alt=""
+                class="pf-folder-cat"></div>
+
+            <h2 class="pf-project-name">HR Payroll System</h2>
+            <p class="pf-project-subtitle">Human Resources &amp; Payroll Management</p>
+
+            <hr class="pf-divider" aria-hidden="true">
+
+            <p class="pf-project-desc">
+              A comprehensive HR and payroll management system that automates
+              salary processing, leave tracking, and payslip generation for organisations.
+            </p>
+
+            <ul class="pf-checklist" aria-label="Key features">
+              <li>Employee &amp; department management</li>
+              <li>Automated salary calculation</li>
+              <li>Leave &amp; attendance tracking</li>
+              <li>Payslip generation &amp; tax reports</li>
+            </ul>
+
+            <div class="pf-win-buttons">
+              <a href="hr-payroll.html" class="pf-btn pf-btn--filled" id="hr-payroll-view">
+                View Project
+              </a>
+            </div>
+          </div>
+
+          <!-- Right column: screenshot -->
+          <div class="pf-win-right">
+            <div class="pf-screenshot-frame">
+              <div class="pf-screenshot-bar" aria-hidden="true">
+                <span class="pf-ss-dot pf-ss-dot--r"></span>
+                <span class="pf-ss-dot pf-ss-dot--y"></span>
+                <span class="pf-ss-dot pf-ss-dot--g"></span>
+              </div>
+              <img src="assets/img/portfolio/hr-payroll-dashboard.png" alt="HR Payroll System dashboard screenshot"
+                loading="lazy">
+            </div>
+          </div>
+
+        </div><!-- /window-body -->
+      </article>
+
+      <!-- ===========================================================
+           PROJECT 03 — UniPerks
+           =========================================================== -->
+      <article class="pf-os-window" id="project-uniperks" aria-label="Project: UniPerks" data-aos="fade-right"
+        data-aos-delay="100">
+
+        <!-- Title Bar (olive green) -->
+        <div class="pf-titlebar pf-titlebar--olive">
+          <span class="pf-titlebar-text">Project 03 - UniPerks</span>
+          <div class="pf-win-controls" aria-hidden="true">
+            <div class="pf-win-btn pf-win-btn--min" title="Minimize">&#x2212;</div>
+            <div class="pf-win-btn pf-win-btn--max" title="Maximize">&#x25A1;</div>
+            <div class="pf-win-btn pf-win-btn--close" title="Close">&#x2715;</div>
+          </div>
+        </div>
+        <div class="pf-titlebar-rule" aria-hidden="true"></div>
+
+        <!-- Window Body -->
+        <div class="pf-window-body">
+
+          <!-- Left column: info -->
+          <div class="pf-win-left">
+            <div class="pf-folder-icon" aria-hidden="true"><img src="assets/img/portfolio/icon/cat.png" alt=""
+                class="pf-folder-cat"></div>
+
+            <h2 class="pf-project-name">UniPerks</h2>
+            <p class="pf-project-subtitle">E-Commerce Web Platform</p>
+
+            <hr class="pf-divider" aria-hidden="true">
+
+            <p class="pf-project-desc">
+              A gamified university merchandise platform where users can earn coins
+              by answering quizzes and redeem vouchers for rewards.
+            </p>
+
+            <ul class="pf-checklist" aria-label="Key features">
+              <li>User-friendly interface</li>
+              <li>Gamified quiz system</li>
+              <li>Wallet &amp; voucher system</li>
+              <li>Stripe payment integration</li>
+            </ul>
+
+            <div class="pf-win-buttons">
+              <a href="uniperks.html" class="pf-btn pf-btn--filled" id="uniperks-view">
+                View Project
+              </a>
+            </div>
+          </div>
+
+          <!-- Right column: screenshot -->
+          <div class="pf-win-right">
+            <div class="pf-screenshot-frame">
+              <!-- Decorative browser-like top bar -->
+              <div class="pf-screenshot-bar" aria-hidden="true">
+                <span class="pf-ss-dot pf-ss-dot--r"></span>
+                <span class="pf-ss-dot pf-ss-dot--y"></span>
+                <span class="pf-ss-dot pf-ss-dot--g"></span>
+              </div>
+              <img src="assets/img/portfolio/UniPerks_Dashboard.png" alt="UniPerks E-Commerce Dashboard screenshot"
+                loading="lazy">
+            </div>
+          </div>
+
+        </div><!-- /window-body -->
+      </article>
+
+    </div><!-- /pf-projects -->
+
+  </div><!-- /panel-design -->
+
+
+  <!-- ============================================================
+       PROJECT DETAIL MODAL
+       ============================================================ -->
+  <div id="proj-modal" class="proj-modal" aria-modal="true" role="dialog" aria-label="Project details" hidden>
+    <div class="proj-modal-backdrop" id="proj-modal-backdrop"></div>
+    <div class="proj-modal-box">
+      <button class="proj-modal-close" id="proj-modal-close" aria-label="Close">&#x2715;</button>
+      <div class="proj-modal-accent" id="proj-modal-accent"></div>
+
+      <!-- Two-column layout -->
+      <div class="proj-modal-inner">
+
+        <!-- Left: text info -->
+        <div class="proj-modal-left">
+          <span class="proj-modal-index" id="proj-modal-index"></span>
+          <h2 class="proj-modal-title" id="proj-modal-title"></h2>
+          <p class="proj-modal-subtitle" id="proj-modal-subtitle"></p>
+          <p class="proj-modal-stack" id="proj-modal-stack"></p>
+          <p class="proj-modal-desc" id="proj-modal-desc"></p>
+          <div class="proj-modal-actions">
+            <a href="#" class="proj-modal-live" id="proj-modal-live" target="_blank" rel="noopener">
+              <i class="bi bi-box-arrow-up-right"></i> View Live System
             </a>
           </div>
         </div>
 
-        <!-- Right column: screenshot -->
-        <div class="pf-win-right">
-          <div class="pf-screenshot-frame">
-            <div class="pf-screenshot-bar" aria-hidden="true">
+        <!-- Right: image placeholder -->
+        <div class="proj-modal-right">
+          <div class="proj-modal-img-wrap" id="proj-modal-img-wrap">
+            <!-- Screenshot bar -->
+            <div class="proj-modal-img-bar" aria-hidden="true">
               <span class="pf-ss-dot pf-ss-dot--r"></span>
               <span class="pf-ss-dot pf-ss-dot--y"></span>
               <span class="pf-ss-dot pf-ss-dot--g"></span>
             </div>
-            <!-- Replace src with the GEP CRM screenshot when available -->
-            <img src="assets/img/portfolio/crm-front.png" alt="GEP CRM System dashboard screenshot" loading="lazy">
-          </div>
-        </div>
-
-      </div><!-- /window-body -->
-    </article>
-
-
-    <!-- ===========================================================
-    PROJECT 02 — HR Payroll System
-    =========================================================== -->
-    <article class="pf-os-window" id="project-hr-payroll" aria-label="Project: HR Payroll System" data-aos="fade-left"
-      data-aos-delay="200">
-
-      <!-- Title Bar (blue) -->
-      <div class="pf-titlebar pf-titlebar--blue">
-        <span class="pf-titlebar-text">Project 02 - HR Payroll System</span>
-        <div class="pf-win-controls" aria-hidden="true">
-          <div class="pf-win-btn pf-win-btn--min" title="Minimize">&#x2212;</div>
-          <div class="pf-win-btn pf-win-btn--max" title="Maximize">&#x25A1;</div>
-          <div class="pf-win-btn pf-win-btn--close" title="Close">&#x2715;</div>
-        </div>
-      </div>
-      <div class="pf-titlebar-rule" aria-hidden="true"></div>
-
-      <!-- Window Body -->
-      <div class="pf-window-body">
-
-        <!-- Left column: info -->
-        <div class="pf-win-left">
-          <div class="pf-folder-icon" aria-hidden="true"><img src="assets/img/portfolio/icon/cat.png" alt=""
-              class="pf-folder-cat"></div>
-
-          <h2 class="pf-project-name">HR Payroll System</h2>
-          <p class="pf-project-subtitle">Human Resources &amp; Payroll Management</p>
-
-          <hr class="pf-divider" aria-hidden="true">
-
-          <p class="pf-project-desc">
-            A comprehensive HR and payroll management system that automates
-            salary processing, leave tracking, and payslip generation for organisations.
-          </p>
-
-          <ul class="pf-checklist" aria-label="Key features">
-            <li>Employee &amp; department management</li>
-            <li>Automated salary calculation</li>
-            <li>Leave &amp; attendance tracking</li>
-            <li>Payslip generation &amp; tax reports</li>
-          </ul>
-
-          <div class="pf-win-buttons">
-            <a href="hr-payroll.html" class="pf-btn pf-btn--filled" id="hr-payroll-view">
-              View Project
-            </a>
-          </div>
-        </div>
-
-        <!-- Right column: screenshot -->
-        <div class="pf-win-right">
-          <div class="pf-screenshot-frame">
-            <div class="pf-screenshot-bar" aria-hidden="true">
-              <span class="pf-ss-dot pf-ss-dot--r"></span>
-              <span class="pf-ss-dot pf-ss-dot--y"></span>
-              <span class="pf-ss-dot pf-ss-dot--g"></span>
+            <!-- Real image (hidden until src is set) -->
+            <img src="" alt="Project screenshot" class="proj-modal-img" id="proj-modal-img" style="display:none;">
+            <!-- Placeholder shown when no image -->
+            <div class="proj-modal-placeholder" id="proj-modal-placeholder">
+              <i class="bi bi-image" aria-hidden="true"></i>
+              <span>Screenshot coming soon</span>
             </div>
-            <img src="assets/img/portfolio/hr-payroll-dashboard.png" alt="HR Payroll System dashboard screenshot"
-              loading="lazy">
           </div>
         </div>
 
-      </div><!-- /window-body -->
-    </article>
-
-    <!-- ===========================================================
-         PROJECT 03 — UniPerks
-         =========================================================== -->
-    <article class="pf-os-window" id="project-uniperks" aria-label="Project: UniPerks" data-aos="fade-right"
-      data-aos-delay="100">
-
-      <!-- Title Bar (olive green) -->
-      <div class="pf-titlebar pf-titlebar--olive">
-        <span class="pf-titlebar-text">Project 03 - UniPerks</span>
-        <div class="pf-win-controls" aria-hidden="true">
-          <div class="pf-win-btn pf-win-btn--min" title="Minimize">&#x2212;</div>
-          <div class="pf-win-btn pf-win-btn--max" title="Maximize">&#x25A1;</div>
-          <div class="pf-win-btn pf-win-btn--close" title="Close">&#x2715;</div>
-        </div>
-      </div>
-      <div class="pf-titlebar-rule" aria-hidden="true"></div>
-
-      <!-- Window Body -->
-      <div class="pf-window-body">
-
-        <!-- Left column: info -->
-        <div class="pf-win-left">
-          <div class="pf-folder-icon" aria-hidden="true"><img src="assets/img/portfolio/icon/cat.png" alt=""
-              class="pf-folder-cat"></div>
-
-          <h2 class="pf-project-name">UniPerks</h2>
-          <p class="pf-project-subtitle">E-Commerce Web Platform</p>
-
-          <hr class="pf-divider" aria-hidden="true">
-
-          <p class="pf-project-desc">
-            A gamified university merchandise platform where users can earn coins
-            by answering quizzes and redeem vouchers for rewards.
-          </p>
-
-          <ul class="pf-checklist" aria-label="Key features">
-            <li>User-friendly interface</li>
-            <li>Gamified quiz system</li>
-            <li>Wallet &amp; voucher system</li>
-            <li>Stripe payment integration</li>
-          </ul>
-
-          <div class="pf-win-buttons">
-            <a href="uniperks.html" class="pf-btn pf-btn--filled" id="uniperks-view">
-              View Project
-            </a>
-          </div>
-        </div>
-
-        <!-- Right column: screenshot -->
-        <div class="pf-win-right">
-          <div class="pf-screenshot-frame">
-            <!-- Decorative browser-like top bar -->
-            <div class="pf-screenshot-bar" aria-hidden="true">
-              <span class="pf-ss-dot pf-ss-dot--r"></span>
-              <span class="pf-ss-dot pf-ss-dot--y"></span>
-              <span class="pf-ss-dot pf-ss-dot--g"></span>
-            </div>
-            <img src="assets/img/portfolio/UniPerks_Dashboard.png" alt="UniPerks E-Commerce Dashboard screenshot"
-              loading="lazy">
-          </div>
-        </div>
-
-      </div><!-- /window-body -->
-    </article>
-
-  </div><!-- /pf-projects -->
+      </div><!-- /proj-modal-inner -->
+    </div>
+  </div>
 
 
 
@@ -400,7 +512,7 @@
       /* ── Mobile Nav Toggle ───────────────────────── */
       const hamburger = document.getElementById('ap-hamburger');
       const mobileNav = document.getElementById('ap-mobile-nav');
-      const closeBtn  = document.getElementById('ap-mobile-nav-close');
+      const closeBtn = document.getElementById('ap-mobile-nav-close');
 
       function openNav() {
         hamburger.classList.add('is-open');
@@ -428,7 +540,7 @@
 
       /* Close on Escape key */
       document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') closeNav();
+        if (e.key === 'Escape') { closeNav(); closeModal(); }
       });
     });
 
@@ -463,6 +575,92 @@
         if (body) body.style.display = body.style.display === 'none' ? 'grid' : 'none';
       });
     });
+
+    /* ── Tab Switcher ────────────────────────────────── */
+    const tabs = document.querySelectorAll('.pf-tab');
+    const panels = document.querySelectorAll('.pf-panel');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('aria-controls');
+        tabs.forEach(t => {
+          t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+          t.classList.toggle('pf-tab--active', t === tab);
+        });
+        panels.forEach(p => {
+          const isActive = p.id === target;
+          p.classList.toggle('pf-panel--active', isActive);
+          if (isActive) p.removeAttribute('hidden');
+          else p.setAttribute('hidden', '');
+        });
+      });
+    });
+
+    /* ── Project Card Modal ──────────────────────────── */
+    const modal = document.getElementById('proj-modal');
+    const modalBackdrop = document.getElementById('proj-modal-backdrop');
+    const modalClose = document.getElementById('proj-modal-close');
+    const modalAccent = document.getElementById('proj-modal-accent');
+    const modalIndex = document.getElementById('proj-modal-index');
+    const modalTitle = document.getElementById('proj-modal-title');
+    const modalSub = document.getElementById('proj-modal-subtitle');
+    const modalStack = document.getElementById('proj-modal-stack');
+    const modalDesc = document.getElementById('proj-modal-desc');
+    const modalLive = document.getElementById('proj-modal-live');
+    const modalImg = document.getElementById('proj-modal-img');
+    const modalPlaceholder = document.getElementById('proj-modal-placeholder');
+
+    /* Index map from card id */
+    const indexMap = { 'projcard-hr': '01', 'projcard-uniperks': '02' };
+
+    function openModal(card) {
+      modalAccent.style.background = card.dataset.color || '#014385';
+      modalIndex.textContent = indexMap[card.id] || '';
+      modalTitle.textContent = card.dataset.title || '';
+      modalSub.innerHTML = card.dataset.subtitle || '';
+      modalStack.textContent = card.dataset.stack || '';
+      modalDesc.textContent = card.dataset.desc || '';
+
+      /* Image: show real img if src is set, else show placeholder */
+      const imgSrc = card.dataset.img || '';
+      if (imgSrc) {
+        modalImg.src = imgSrc;
+        modalImg.style.display = 'block';
+        modalPlaceholder.style.display = 'none';
+      } else {
+        modalImg.src = '';
+        modalImg.style.display = 'none';
+        modalPlaceholder.style.display = 'flex';
+      }
+
+      const liveHref = card.dataset.live || '#';
+      modalLive.href = liveHref;
+      modalLive.style.opacity = (liveHref && liveHref !== '#') ? '1' : '0.35';
+      modalLive.style.pointerEvents = (liveHref && liveHref !== '#') ? 'auto' : 'none';
+
+      modal.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(() => modal.classList.add('proj-modal--open'));
+      modalClose.focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove('proj-modal--open');
+      setTimeout(() => {
+        modal.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+      }, 280);
+    }
+
+    document.querySelectorAll('.proj-card').forEach(card => {
+      card.addEventListener('click', () => openModal(card));
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card); }
+      });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', closeModal);
   </script>
 
 </body>
