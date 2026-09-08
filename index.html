@@ -110,20 +110,23 @@
     <hr class="retro-header-rule" aria-hidden="true">
 
 
-    <!-- HERO / CENTRE AREA -->
-    <main class="retro-hero-area" id="hero">
+    <!-- JOURNAL HERO -->
+    <main class="journal-stage" id="hero" aria-label="Photo journal">
 
-      <!-- Typed tagline -->
-      <p class="retro-tagline" aria-live="polite">
-        <span class="typed-text-bazil"></span><span class="cursor-bazil" aria-hidden="true">|</span>
-      </p>
-      <div class="retro-illustration-zone" data-aos="fade-up" data-aos-delay="150">
+      <!-- Journal title -->
+      <div class="journal-title-block">
+        <span class="journal-label">Journal</span>
+        <span class="journal-pages" id="journal-pages"></span>
+      </div>
 
-        <video class="retro-illustration-video" autoplay loop muted playsinline>
-          <source src="assets/img/Running.mp4" type="video/mp4">
-        </video>
+      <!-- 3D card deck -->
+      <div class="journal-scene" id="journal-scene" aria-live="polite">
+        <div class="journal-deck" id="journal-deck">
+          <!-- Cards are rendered by JS below -->
+        </div>
+      </div>
 
-      </div><!-- /retro-illustration-zone -->
+
 
     </main>
 
@@ -162,41 +165,235 @@
   <!-- Main JS -->
   <script src="assets/js/main.js"></script>
 
-  <!-- Typed effect -->
+  <!-- Journal 3D Carousel Script -->
   <script>
-    const typedTextElement = document.querySelector('.typed-text-bazil');
-    const textArray = ['Software Engineer', 'Web Developer', 'UI/UX Designer'];
-    let textIndex = 0;
-    let charIndex = 0;
+    /* ── Media data ─────────────────────────────────────────────── */
+    const PHOTOS = [
+      {
+        type: 'img',
+        src: 'assets/img/Album/ComasPro1.jpg',
+        caption: 'ComasPro — visiting schools to maintain computers for free'
+      },
+      {
+        type: 'img',
+        src: 'assets/img/Album/ComasPro2.jpg',
+        caption: 'ComasPro — hands-on computer maintenance at local schools'
+      },
+      {
+        type: 'img',
+        src: 'assets/img/Album/DeanList.jpg',
+        caption: 'Receiving my Dean List award'
+      },
+      {
+        type: 'img',
+        src: 'assets/img/Album/FCDO.jpg',
+        caption: 'Certificate of completion — DevOps programme'
+      },
+      {
+        type: 'img',
+        src: 'assets/img/Album/KHARpresent.jpg',
+        caption: 'Presenting KHAR — Full-Stack hostel project, 1st place'
+      },
+      {
+        type: 'img',
+        src: 'assets/img/Album/ProjectPresent.jpg',
+        caption: 'Presenting my internship project to my supervisor'
+      },
+      {
+        type: 'img',
+        src: 'assets/img/Album/iierich.jpg',
+        caption: 'iieRich programme — presenting UniPerks as final year project'
+      },
+      {
+        type: 'img',
+        src: 'assets/img/Album/SyncFura.jpg',
+        caption: 'SyncFura — completing 14 weeks DevOps programme with the team'
+      },
+      {
+        type: 'video',
+        src: 'assets/img/Album/Uniperks.mp4',
+        caption: 'Presenting the UniPerks app to clients'
+      },
+    ];
 
-    function type() {
-      if (charIndex < textArray[textIndex].length) {
-        typedTextElement.textContent += textArray[textIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, 100);
-      } else {
-        setTimeout(erase, 2000);
-      }
+    const VISIBLE = 5;     // cards each side of centre
+    const AUTO_MS = 5000;  // auto-advance interval
+    const TRANS_MS = 1200;   // transition duration
+
+    let current = 0;
+    let isAnimating = false;
+    let autoTimer = null;
+
+    const deck = document.getElementById('journal-deck');
+    const pagesEl = document.getElementById('journal-pages');
+
+    /* ── Build cards ───────────────────────────────────────────────── */
+    function buildCards() {
+      deck.innerHTML = '';
+      PHOTOS.forEach((p, i) => {
+        const card = document.createElement('div');
+        card.className = 'j-card';
+        card.dataset.index = i;
+
+        if (p.type === 'video') {
+          /* Video card */
+          const vid = document.createElement('video');
+          vid.src = p.src;
+          vid.autoplay = false;
+          vid.loop = true;
+          vid.muted = true;
+          vid.playsInline = true;
+          vid.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;';
+          card.appendChild(vid);
+          /* play/pause on active */
+          card._vid = vid;
+        } else if (p.src) {
+          /* Image card */
+          const img = document.createElement('img');
+          img.src = p.src;
+          img.alt = p.caption || '';
+          img.draggable = false;
+          card.appendChild(img);
+        } else {
+          /* Placeholder */
+          const ph = document.createElement('div');
+          ph.className = 'j-card-placeholder';
+          ph.innerHTML = `<i class="bi bi-image"></i><span>${p.caption || 'Photo'}</span>`;
+          card.appendChild(ph);
+        }
+
+        /* Caption overlay */
+        if (p.caption) {
+          const cap = document.createElement('div');
+          cap.className = 'j-card-caption';
+          cap.textContent = p.caption;
+          card.appendChild(cap);
+        }
+
+        card.addEventListener('click', () => {
+          if (i !== current && !isAnimating) goTo(i);
+        });
+        deck.appendChild(card);
+      });
+      pagesEl.textContent = `— ${PHOTOS.length} Pages`;
+      render();
     }
 
-    function erase() {
-      if (charIndex > 0) {
-        typedTextElement.textContent = textArray[textIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(erase, 50);
-      } else {
-        textIndex = (textIndex + 1) % textArray.length;
-        setTimeout(type, 1000);
-      }
+    /* ── Position cards in 3D (Book Flip Effect) ─────────────────────── */
+    function render() {
+      const cards = deck.querySelectorAll('.j-card');
+      const total = PHOTOS.length;
+      
+      cards.forEach((card, i) => {
+        let offset = i - current;
+        
+        // Ensure infinite loop logic
+        if (offset > total / 2) offset -= total;
+        if (offset < -total / 2) offset += total;
+
+        const abs = Math.abs(offset);
+        const visible = abs <= VISIBLE;
+        const isActive = offset === 0;
+        
+        let tx = 0, tz = 0, ry = 0, scale = 1, op = 1, zi = 0;
+        
+        // Simulating an open book page flip
+        if (offset < 0) {
+          // Pages on the left (flipped over)
+          tx = -160 - (abs * 10);
+          tz = -abs * 30;
+          ry = 35; // Folded left
+          scale = 0.85;
+          op = visible ? Math.max(0, 1 - abs * 0.25) : 0;
+          zi = 10 - abs;
+        } else if (offset > 0) {
+          // Pages on the right (waiting to turn)
+          tx = 160 + (abs * 10);
+          tz = -abs * 30;
+          ry = -35; // Folded right
+          scale = 0.85;
+          op = visible ? Math.max(0, 1 - abs * 0.25) : 0;
+          zi = 10 - abs;
+        } else {
+          // The active page
+          tx = 0;
+          tz = 60;
+          ry = 0; 
+          scale = 1.05;
+          op = 1;
+          zi = 20;
+        }
+        
+        card.style.transformOrigin = 'center center';
+        
+        card.style.cssText += `
+          transform: translateX(${tx}px) translateZ(${tz}px) rotateY(${ry}deg) scale(${scale});
+          opacity: ${op};
+          z-index: ${zi};
+          pointer-events: ${visible ? 'auto' : 'none'};
+        `;
+        
+        card.classList.toggle('j-card--active', isActive);
+
+        /* Play video only when active */
+        if (card._vid) {
+          if (isActive) card._vid.play().catch(() => {});
+          else          { card._vid.pause(); card._vid.currentTime = 0; }
+        }
+      });
     }
 
+    /* ── Navigate ──────────────────────────────────────────────────── */
+    function goTo(idx) {
+      if (isAnimating) return;
+      isAnimating = true;
+      current = ((idx % PHOTOS.length) + PHOTOS.length) % PHOTOS.length;
+      render();
+      setTimeout(() => { isAnimating = false; }, TRANS_MS);
+      clearInterval(autoTimer);
+      startAuto();
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    /* ── Auto advance ──────────────────────────────────────────────── */
+    function startAuto() {
+      autoTimer = setInterval(next, AUTO_MS);
+    }
+
+    /* ── Drag / swipe ──────────────────────────────────────────────── */
+    let dragStartX = null;
+    let dragDelta = 0;
+
+    function onDragStart(x) { dragStartX = x; dragDelta = 0; }
+    function onDragMove(x) { if (dragStartX !== null) dragDelta = x - dragStartX; }
+    function onDragEnd() {
+      if (dragStartX === null) return;
+      if (dragDelta < -50) next();
+      else if (dragDelta > 50) prev();
+      dragStartX = null;
+    }
+
+    deck.addEventListener('mousedown', e => onDragStart(e.clientX));
+    deck.addEventListener('mousemove', e => onDragMove(e.clientX));
+    deck.addEventListener('mouseup', onDragEnd);
+    deck.addEventListener('mouseleave', onDragEnd);
+    deck.addEventListener('touchstart', e => onDragStart(e.touches[0].clientX), { passive: true });
+    deck.addEventListener('touchmove', e => onDragMove(e.touches[0].clientX), { passive: true });
+    deck.addEventListener('touchend', onDragEnd);
+
+    /* ── Keyboard ──────────────────────────────────────────────────── */
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') next();
+      if (e.key === 'ArrowLeft') prev();
+    });
+
+    /* ── Init ──────────────────────────────────────────────────────── */
     document.addEventListener('DOMContentLoaded', () => {
-      // Init AOS
-      if (typeof AOS !== 'undefined') {
-        AOS.init({ once: true, duration: 700 });
-      }
-      // Start typing
-      setTimeout(type, 600);
+      if (typeof AOS !== 'undefined') AOS.init({ once: true, duration: 700 });
+      buildCards();
+      startAuto();
     });
   </script>
 
