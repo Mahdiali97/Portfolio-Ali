@@ -150,6 +150,7 @@
   <!-- Vendor JS -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
@@ -181,7 +182,7 @@
       {
         type: 'img',
         src: 'assets/img/Album/FCDO.jpg',
-        caption: 'Foundation Certificate of DevOps'
+        caption: 'Certificate of completion — DevOps programme'
       },
       {
         type: 'img',
@@ -207,187 +208,428 @@
         type: 'video',
         src: 'assets/img/Album/Uniperks.mp4',
         caption: 'Presenting the UniPerks app to clients'
-      },
+      }
     ];
 
-    const VISIBLE = 5;     // cards each side of centre
-    const AUTO_MS = 5000;  // auto-advance interval
-    const TRANS_MS = 1200;   // transition duration
+    /* ── Album 3D Wall (Three.js WebGL) ──────────────────────────────── */
+    class Album3DWall {
+      constructor(containerSelector, mediaData) {
+        this.container = document.querySelector(containerSelector);
+        this.mediaData = mediaData;
+        
+        // Configuration
+        this.config = {
+          photoWidth: 1.8,
+          photoHeight: 2.6,
+          gap: 0.15,
+          columns: 6, // Reduced for wider aspect, responsive down to 3
+          rows: 10,
+          cornerRadius: 0.05,
+          baseScrollSpeed: 0.003,
+          maxScrollSpeed: 0.05,
+          scrollSmoothing: 0.1,
+          pointerSensitivity: 0.05
+        };
 
-    let current = 0;
-    let isAnimating = false;
-    let autoTimer = null;
+        this.scene = null;
+        this.camera = null;
+        this.renderer = null;
+        this.photoGroup = null;
+        this.photoRows = [];
+        this.meshes = [];
+        
+        this.scrollVelocity = this.config.baseScrollSpeed;
+        this.targetScrollVelocity = this.config.baseScrollSpeed;
+        this.scrollOffset = 0;
+        
+        this.mouse = new THREE.Vector2();
+        this.targetCameraRot = new THREE.Vector2();
+        
+        this.raycaster = new THREE.Raycaster();
+        this.hoveredMesh = null;
+        
+        this.textures = []; // Cache loaded textures
+        
+        this.init();
+      }
 
-    const deck = document.getElementById('journal-deck');
+      init() {
+        this.updateResponsiveConfig();
+        this.createScene();
+        this.createCamera();
+        this.createRenderer();
+        this.createPhotoWall();
+        
+        // Add events
+        window.addEventListener('resize', () => this.handleResize());
+        this.container.addEventListener('mousemove', (e) => this.handlePointerMove(e));
+        this.container.addEventListener('wheel', (e) => this.handleWheel(e), { passive: false });
+        this.container.addEventListener('click', (e) => this.handleClick(e));
+        
+        // Touch support
+        this.container.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: true });
+        this.container.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: false });
+        this.container.addEventListener('touchend', () => this.handleTouchEnd());
 
-    /* ── Build cards ───────────────────────────────────────────────── */
-    function buildCards() {
-      deck.innerHTML = '';
-      PHOTOS.forEach((p, i) => {
-        const card = document.createElement('div');
-        card.className = 'j-card';
-        card.dataset.index = i;
-
-        if (p.type === 'video') {
-          /* Video card */
-          const vid = document.createElement('video');
-          vid.src = p.src;
-          vid.autoplay = false;
-          vid.loop = true;
-          vid.muted = true;
-          vid.playsInline = true;
-          vid.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;';
-          card.appendChild(vid);
-          /* play/pause on active */
-          card._vid = vid;
-        } else if (p.src) {
-          /* Image card */
-          const img = document.createElement('img');
-          img.src = p.src;
-          img.alt = p.caption || '';
-          img.draggable = false;
-          card.appendChild(img);
+        this.animate();
+        
+        // Set total pages label
+        const pagesEl = document.getElementById('journal-pages');
+        if (pagesEl) pagesEl.textContent = `— ${this.mediaData.length} Memories`;
+      }
+      
+      updateResponsiveConfig() {
+        const width = window.innerWidth;
+        if (width < 600) {
+          this.config.columns = 3;
+          this.config.photoWidth = 1.6;
+          this.config.photoHeight = 2.4;
+        } else if (width < 1024) {
+          this.config.columns = 5;
         } else {
-          /* Placeholder */
-          const ph = document.createElement('div');
-          ph.className = 'j-card-placeholder';
-          ph.innerHTML = `<i class="bi bi-image"></i><span>${p.caption || 'Photo'}</span>`;
-          card.appendChild(ph);
+          this.config.columns = 7;
         }
+      }
 
-        /* Caption overlay */
-        if (p.caption) {
-          const cap = document.createElement('div');
-          cap.className = 'j-card-caption';
-          cap.textContent = p.caption;
-          card.appendChild(cap);
+      createScene() {
+        this.scene = new THREE.Scene();
+        this.scene.fog = new THREE.FogExp2(0x0d1b2e, 0.035); // Matches journal stage background
+      }
+
+      createCamera() {
+        const aspect = this.container.clientWidth / this.container.clientHeight;
+        this.camera = new THREE.PerspectiveCamera(45, aspect, 0.1, 100);
+        
+        // Cinematic perspective: elevated, looking down and slightly tilted
+        this.camera.position.set(0, 2, 8);
+        this.camera.rotation.x = -0.15;
+      }
+
+      createRenderer() {
+        this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
+        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        
+        // Clear previous content
+        this.container.innerHTML = '';
+        this.container.appendChild(this.renderer.domElement);
+      }
+
+      createRoundedRectShape(w, h, r) {
+        const shape = new THREE.Shape();
+        shape.moveTo(-w/2 + r, -h/2);
+        shape.lineTo(w/2 - r, -h/2);
+        shape.quadraticCurveTo(w/2, -h/2, w/2, -h/2 + r);
+        shape.lineTo(w/2, h/2 - r);
+        shape.quadraticCurveTo(w/2, h/2, w/2 - r, h/2);
+        shape.lineTo(-w/2 + r, h/2);
+        shape.quadraticCurveTo(-w/2, h/2, -w/2, h/2 - r);
+        shape.lineTo(-w/2, -h/2 + r);
+        shape.quadraticCurveTo(-w/2, -h/2, -w/2 + r, -h/2);
+        return shape;
+      }
+
+      getTexture(index) {
+        if (this.textures[index]) return this.textures[index];
+        
+        const media = this.mediaData[index % this.mediaData.length];
+        let texture;
+        
+        if (media.type === 'video') {
+          const video = document.createElement('video');
+          video.src = media.src;
+          video.loop = true;
+          video.muted = true;
+          video.playsInline = true;
+          video.crossOrigin = "anonymous";
+          video.play().catch(() => {});
+          
+          texture = new THREE.VideoTexture(video);
+        } else {
+          texture = new THREE.TextureLoader().load(media.src);
         }
+        
+        texture.minFilter = THREE.LinearFilter;
+        texture.magFilter = THREE.LinearFilter;
+        texture.colorSpace = THREE.SRGBColorSpace;
+        
+        // Attempt cover fit equivalent (rudimentary center crop)
+        texture.wrapS = THREE.ClampToEdgeWrapping;
+        texture.wrapT = THREE.ClampToEdgeWrapping;
+        texture.center.set(0.5, 0.5);
+        // We do a rough aspect ratio mapping here if needed, but keeping it simple
+        
+        this.textures[index] = texture;
+        return texture;
+      }
 
-        card.addEventListener('click', () => {
-          if (i !== current && !isAnimating) goTo(i);
+      createPhotoWall() {
+        this.photoGroup = new THREE.Group();
+        this.scene.add(this.photoGroup);
+        
+        // Wall tilt
+        this.photoGroup.rotation.x = -Math.PI / 8; // Tilted back
+        this.photoGroup.position.y = -2;
+        this.photoGroup.position.z = -5;
+
+        const { photoWidth, photoHeight, gap, columns, rows, cornerRadius } = this.config;
+        
+        const geometry = new THREE.ShapeGeometry(this.createRoundedRectShape(photoWidth, photoHeight, cornerRadius));
+        
+        const totalWidth = columns * photoWidth + (columns - 1) * gap;
+        const startX = -totalWidth / 2 + photoWidth / 2;
+        
+        let mediaIndex = 0;
+
+        for (let r = 0; r < rows; r++) {
+          const rowGroup = new THREE.Group();
+          
+          // Y position starts from bottom (-y) going up (+y)
+          rowGroup.position.y = r * (photoHeight + gap);
+          rowGroup.userData.originalY = rowGroup.position.y;
+          
+          for (let c = 0; c < columns; c++) {
+            const material = new THREE.MeshBasicMaterial({ 
+              color: 0xffffff,
+              map: this.getTexture(mediaIndex),
+              side: THREE.DoubleSide
+            });
+            
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.position.x = startX + c * (photoWidth + gap);
+            
+            // Subtle random Z offset for parallax depth
+            mesh.position.z = (Math.random() - 0.5) * 0.4;
+            
+            // Data for interaction
+            mesh.userData = {
+              mediaData: this.mediaData[mediaIndex % this.mediaData.length],
+              baseScale: 1,
+              targetScale: 1
+            };
+            
+            rowGroup.add(mesh);
+            this.meshes.push(mesh);
+            
+            mediaIndex++;
+          }
+          
+          this.photoRows.push(rowGroup);
+          this.photoGroup.add(rowGroup);
+        }
+      }
+
+      handleResize() {
+        if (!this.container || !this.renderer || !this.camera) return;
+        this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
+        this.camera.aspect = this.container.clientWidth / this.container.clientHeight;
+        this.camera.updateProjectionMatrix();
+        
+        // We could dynamically rebuild wall if column count changes massively
+      }
+
+      handlePointerMove(e) {
+        const rect = this.container.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        // Normalized device coordinates (-1 to +1)
+        this.mouse.x = (x / rect.width) * 2 - 1;
+        this.mouse.y = -(y / rect.height) * 2 + 1;
+        
+        // Target parallax rotation
+        this.targetCameraRot.x = this.mouse.y * this.config.pointerSensitivity;
+        this.targetCameraRot.y = -this.mouse.x * this.config.pointerSensitivity;
+      }
+      
+      handleWheel(e) {
+        e.preventDefault();
+        
+        // Normalize wheel delta across browsers
+        const delta = Math.sign(e.deltaY) * Math.min(Math.abs(e.deltaY), 50);
+        
+        // Apply scroll acceleration
+        this.targetScrollVelocity -= delta * 0.001;
+        
+        // Clamp speed
+        this.targetScrollVelocity = Math.max(-this.config.maxScrollSpeed, Math.min(this.config.maxScrollSpeed, this.targetScrollVelocity));
+      }
+      
+      handleTouchStart(e) {
+        this.touchStartY = e.touches[0].clientY;
+      }
+      
+      handleTouchMove(e) {
+        e.preventDefault();
+        const touchY = e.touches[0].clientY;
+        const delta = this.touchStartY - touchY;
+        this.touchStartY = touchY;
+        
+        this.targetScrollVelocity -= delta * 0.002;
+        this.targetScrollVelocity = Math.max(-this.config.maxScrollSpeed, Math.min(this.config.maxScrollSpeed, this.targetScrollVelocity));
+      }
+      
+      handleTouchEnd() {
+        // Naturally fall back to base speed
+      }
+
+      handleClick(e) {
+        if (this.hoveredMesh) {
+          const data = this.hoveredMesh.userData.mediaData;
+          // Action on click: Could open a modal, redirect, or trigger existing UI.
+          // For now, create a temporary overlay to mimic photo viewer
+          this.showDetailView(data);
+        }
+      }
+      
+      showDetailView(data) {
+        // Integration with existing UI if exists. 
+        // Fallback: simple alert or custom overlay.
+        let overlay = document.getElementById('album-overlay');
+        if (!overlay) {
+          overlay = document.createElement('div');
+          overlay.id = 'album-overlay';
+          overlay.style.cssText = `
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9); z-index: 99999;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.3s ease; padding: 20px;
+          `;
+          
+          overlay.addEventListener('click', () => {
+            overlay.style.opacity = '0';
+            setTimeout(() => overlay.remove(), 300);
+            this.targetScrollVelocity = this.config.baseScrollSpeed;
+          });
+          
+          document.body.appendChild(overlay);
+        }
+        
+        overlay.innerHTML = '';
+        
+        if (data.type === 'video') {
+          overlay.innerHTML = `<video src="${data.src}" controls autoplay style="max-width: 90vw; max-height: 80vh; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);"></video>`;
+        } else {
+          overlay.innerHTML = `<img src="${data.src}" style="max-width: 90vw; max-height: 80vh; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); object-fit: contain;">`;
+        }
+        
+        if (data.caption) {
+          overlay.innerHTML += `<p style="color: white; margin-top: 15px; font-family: 'Inter', sans-serif; text-align: center;">${data.caption}</p>`;
+        }
+        
+        overlay.innerHTML += `<button style="position:absolute; top:20px; right:20px; background:none; border:none; color:white; font-size:24px; cursor:pointer;">&times;</button>`;
+        
+        // Pause scrolling
+        this.targetScrollVelocity = 0;
+        this.scrollVelocity = 0;
+        
+        requestAnimationFrame(() => overlay.style.opacity = '1');
+      }
+
+      updateScroll() {
+        // Return to base speed gradually
+        if (Math.abs(this.targetScrollVelocity - this.config.baseScrollSpeed) > 0.0001) {
+          this.targetScrollVelocity = THREE.MathUtils.lerp(
+            this.targetScrollVelocity, 
+            this.config.baseScrollSpeed, 
+            0.02
+          );
+        }
+        
+        this.scrollVelocity = THREE.MathUtils.lerp(
+          this.scrollVelocity,
+          this.targetScrollVelocity,
+          this.config.scrollSmoothing
+        );
+        
+        this.scrollOffset += this.scrollVelocity;
+        
+        const rowHeight = this.config.photoHeight + this.config.gap;
+        const totalHeight = this.config.rows * rowHeight;
+        
+        // Infinite recycling logic
+        this.photoRows.forEach((row, index) => {
+          // Position relative to scroll offset
+          let currentY = row.userData.originalY - this.scrollOffset;
+          
+          // Wrap around logic
+          currentY = currentY % totalHeight;
+          if (currentY < -rowHeight) {
+            currentY += totalHeight;
+          } else if (currentY > totalHeight - rowHeight) {
+            currentY -= totalHeight;
+          }
+          
+          row.position.y = currentY;
         });
-        deck.appendChild(card);
-      });
-      render();
-    }
+      }
+      
+      updateInteractions() {
+        // Parallax Camera
+        this.camera.position.x = THREE.MathUtils.lerp(this.camera.position.x, this.targetCameraRot.y * 3, 0.05);
+        this.camera.position.y = THREE.MathUtils.lerp(this.camera.position.y, 2 + this.targetCameraRot.x * 2, 0.05);
+        this.camera.lookAt(0, -2, -5);
 
-    /* ── Position cards in 3D (Book Flip Effect) ─────────────────────── */
-    function render() {
-      const cards = deck.querySelectorAll('.j-card');
-      const total = PHOTOS.length;
-
-      cards.forEach((card, i) => {
-        let offset = i - current;
-
-        // Ensure infinite loop logic
-        if (offset > total / 2) offset -= total;
-        if (offset < -total / 2) offset += total;
-
-        const abs = Math.abs(offset);
-        const visible = abs <= VISIBLE;
-        const isActive = offset === 0;
-
-        let tx = 0, tz = 0, ry = 0, scale = 1, op = 1, zi = 0;
-
-        // Simulating an open book page flip
-        if (offset < 0) {
-          // Pages on the left (flipped over)
-          tx = -160 - (abs * 10);
-          tz = -abs * 30;
-          ry = 35; // Folded left
-          scale = 0.85;
-          op = visible ? Math.max(0, 1 - abs * 0.25) : 0;
-          zi = 10 - abs;
-        } else if (offset > 0) {
-          // Pages on the right (waiting to turn)
-          tx = 160 + (abs * 10);
-          tz = -abs * 30;
-          ry = -35; // Folded right
-          scale = 0.85;
-          op = visible ? Math.max(0, 1 - abs * 0.25) : 0;
-          zi = 10 - abs;
+        // Raycasting for hover
+        this.raycaster.setFromCamera(this.mouse, this.camera);
+        const intersects = this.raycaster.intersectObjects(this.meshes);
+        
+        // Reset all target scales
+        this.meshes.forEach(mesh => mesh.userData.targetScale = 1);
+        
+        if (intersects.length > 0) {
+          this.hoveredMesh = intersects[0].object;
+          this.hoveredMesh.userData.targetScale = 1.05; // Subtle hover pop
+          document.body.style.cursor = 'pointer';
+          
+          // Slightly slow down when hovering
+          this.targetScrollVelocity = THREE.MathUtils.lerp(this.targetScrollVelocity, this.config.baseScrollSpeed * 0.3, 0.1);
         } else {
-          // The active page
-          tx = 0;
-          tz = 60;
-          ry = 0;
-          scale = 1.05;
-          op = 1;
-          zi = 20;
+          this.hoveredMesh = null;
+          document.body.style.cursor = 'default';
         }
+        
+        // Apply scales
+        this.meshes.forEach(mesh => {
+          const scale = THREE.MathUtils.lerp(mesh.scale.x, mesh.userData.targetScale, 0.1);
+          mesh.scale.set(scale, scale, scale);
+          
+          // Brighten hovered item slightly via material color
+          if (mesh === this.hoveredMesh) {
+            mesh.material.color.lerp(new THREE.Color(0xffffff), 0.1);
+          } else {
+            mesh.material.color.lerp(new THREE.Color(0xdcdcdc), 0.05); // Dim non-hovered slightly
+          }
+        });
+      }
 
-        card.style.transformOrigin = 'center center';
-
-        card.style.cssText += `
-          transform: translateX(${tx}px) translateZ(${tz}px) rotateY(${ry}deg) scale(${scale});
-          opacity: ${op};
-          z-index: ${zi};
-          pointer-events: ${visible ? 'auto' : 'none'};
-        `;
-
-        card.classList.toggle('j-card--active', isActive);
-
-        /* Play video only when active */
-        if (card._vid) {
-          if (isActive) card._vid.play().catch(() => { });
-          else { card._vid.pause(); card._vid.currentTime = 0; }
+      animate() {
+        requestAnimationFrame(() => this.animate());
+        
+        this.updateScroll();
+        this.updateInteractions();
+        
+        if (this.renderer && this.scene && this.camera) {
+          this.renderer.render(this.scene, this.camera);
         }
-      });
+      }
     }
-
-    /* ── Navigate ──────────────────────────────────────────────────── */
-    function goTo(idx) {
-      if (isAnimating) return;
-      isAnimating = true;
-      current = ((idx % PHOTOS.length) + PHOTOS.length) % PHOTOS.length;
-      render();
-      setTimeout(() => { isAnimating = false; }, TRANS_MS);
-      clearInterval(autoTimer);
-      startAuto();
-    }
-
-    function next() { goTo(current + 1); }
-    function prev() { goTo(current - 1); }
-
-    /* ── Auto advance ──────────────────────────────────────────────── */
-    function startAuto() {
-      autoTimer = setInterval(next, AUTO_MS);
-    }
-
-    /* ── Drag / swipe ──────────────────────────────────────────────── */
-    let dragStartX = null;
-    let dragDelta = 0;
-
-    function onDragStart(x) { dragStartX = x; dragDelta = 0; }
-    function onDragMove(x) { if (dragStartX !== null) dragDelta = x - dragStartX; }
-    function onDragEnd() {
-      if (dragStartX === null) return;
-      if (dragDelta < -50) next();
-      else if (dragDelta > 50) prev();
-      dragStartX = null;
-    }
-
-    deck.addEventListener('mousedown', e => onDragStart(e.clientX));
-    deck.addEventListener('mousemove', e => onDragMove(e.clientX));
-    deck.addEventListener('mouseup', onDragEnd);
-    deck.addEventListener('mouseleave', onDragEnd);
-    deck.addEventListener('touchstart', e => onDragStart(e.touches[0].clientX), { passive: true });
-    deck.addEventListener('touchmove', e => onDragMove(e.touches[0].clientX), { passive: true });
-    deck.addEventListener('touchend', onDragEnd);
-
-    /* ── Keyboard ──────────────────────────────────────────────────── */
-    document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowRight') next();
-      if (e.key === 'ArrowLeft') prev();
-    });
 
     /* ── Init ──────────────────────────────────────────────────────── */
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof AOS !== 'undefined') AOS.init({ once: true, duration: 700 });
-      buildCards();
-      startAuto();
+      
+      // Initialize the 3D Wall inside the journal scene container
+      const sceneContainer = document.getElementById('journal-scene');
+      if (sceneContainer) {
+        // Clear old DOM fallback layout
+        sceneContainer.innerHTML = '';
+        sceneContainer.style.perspective = 'none'; // remove old CSS perspective
+        
+        new Album3DWall('#journal-scene', PHOTOS);
+      }
     });
-  </script>
+</script>
 
 </body>
 

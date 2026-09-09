@@ -522,18 +522,20 @@ body.retro-page {
 /* ── 3D scene container ──────────────────────────── */
 .journal-scene {
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  perspective: 1200px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   position: relative;
+  cursor: grab;
 }
 
+.journal-scene:active {
+  cursor: grabbing;
+}
+
+/* Clear old deck styles as we use WebGL now */
 .journal-deck {
-  position: relative;
-  width: clamp(300px, 38vw, 520px);
-  height: clamp(360px, 52vh, 640px);
-  transform-style: preserve-3d;
+  display: none;
 }
 
 /* ── Individual photo card ───────────────────────── */
