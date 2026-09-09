@@ -434,12 +434,62 @@ body.retro-page {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: #ffffff;
+  /* Deep cinematic radial gradient */
+  background: radial-gradient(ellipse at 50% 30%, #1a2240 0%, #0b0d18 60%, #060810 100%);
   overflow: hidden;
   position: relative;
   padding-bottom: 72px;
-  /* clear fixed bottom-nav */
   user-select: none;
+}
+
+/* ── Animated ambient orbs ───────────────────── */
+.journal-stage::before,
+.journal-stage::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  pointer-events: none;
+  z-index: 0;
+  animation: jsDrift 14s ease-in-out infinite alternate;
+}
+
+.journal-stage::before {
+  width: 55vw; height: 55vw;
+  top: -15vw; left: -12vw;
+  background: radial-gradient(circle, rgba(79, 120, 255, 0.18) 0%, transparent 70%);
+}
+
+.journal-stage::after {
+  width: 45vw; height: 45vw;
+  bottom: -10vw; right: -8vw;
+  background: radial-gradient(circle, rgba(180, 80, 255, 0.14) 0%, transparent 70%);
+  animation-delay: -7s;
+}
+
+@keyframes jsDrift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(30px, 50px) scale(1.1); }
+}
+
+/* ── Perspective floor grid ──────────────────── */
+.journal-scene::before {
+  content: '';
+  position: absolute;
+  bottom: -5%;
+  left: -25%;
+  right: -25%;
+  height: 50%;
+  z-index: 0;
+  background:
+    linear-gradient(90deg, rgba(79,120,255,0.08) 1px, transparent 1px),
+    linear-gradient(0deg,  rgba(79,120,255,0.08) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: perspective(400px) rotateX(70deg);
+  transform-origin: bottom center;
+  mask-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 65%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 65%);
+  pointer-events: none;
 }
 
 /* ── Top bar ─────────────────────────────────────── */
@@ -456,7 +506,7 @@ body.retro-page {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255,255,255,0.12);
   border: none;
   color: #fff;
   font-size: 16px;
@@ -467,10 +517,7 @@ body.retro-page {
   transition: background 0.2s;
   backdrop-filter: blur(6px);
 }
-
-.journal-back-btn:hover {
-  background: rgba(255, 255, 255, 0.22);
-}
+.journal-back-btn:hover { background: rgba(255,255,255,0.22); }
 
 .journal-title-block {
   display: flex;
@@ -478,7 +525,6 @@ body.retro-page {
   align-items: center;
   gap: 2px;
 }
-
 .journal-label {
   font-family: 'Inter', sans-serif;
   font-size: 17px;
@@ -486,12 +532,11 @@ body.retro-page {
   color: #fff;
   letter-spacing: 0.3px;
 }
-
 .journal-pages {
   font-family: 'Inter', sans-serif;
   font-size: 11px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255,255,255,0.45);
   letter-spacing: 0.5px;
 }
 
@@ -499,14 +544,13 @@ body.retro-page {
   display: flex;
   gap: 8px;
 }
-
 .journal-icon-btn {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255,255,255,0.1);
   border: none;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255,255,255,0.7);
   font-size: 14px;
   display: flex;
   align-items: center;
@@ -514,89 +558,290 @@ body.retro-page {
   cursor: pointer;
   transition: background 0.2s;
 }
-
-.journal-icon-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
+.journal-icon-btn:hover { background: rgba(255,255,255,0.2); }
 
 /* ── 3D scene container ──────────────────────────── */
 .journal-scene {
   flex: 1;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  display: grid;
+  place-items: center;
+  perspective: 900px;
+  overflow: visible;
   position: relative;
-  cursor: grab;
+  z-index: 1;
 }
 
-.journal-scene:active {
-  cursor: grabbing;
-}
-
-/* Clear old deck styles as we use WebGL now */
+/* ── 3D deck (the stage that rotates for zoom) ──── */
 .journal-deck {
-  display: none;
+  position: relative;
+  width: 68vmin; /* Changed to landscape to better fit presentation photos */
+  height: 48vmin;
+  transform-style: preserve-3d;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 }
 
-/* ── Individual photo card ───────────────────────── */
+/* ── Overflowing triple-color glow shadow ────────── */
+.journal-deck::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -35%;
+  right: -35%;
+  height: 90px;
+  background:
+    radial-gradient(ellipse 60% 55% at 18% 100%, rgba(148, 100, 255, 0.38) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 50% 100%, rgba(79,  120, 255, 0.32) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 55% at 82% 100%, rgba(56,  200, 240, 0.30) 0%, transparent 70%);
+  filter: blur(22px);
+  pointer-events: none;
+  z-index: -1;
+  animation: overflowGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes overflowGlow {
+  0%   { opacity: 0.6;  transform: scaleX(0.94) scaleY(0.88); }
+  50%  { opacity: 0.95; }
+  100% { opacity: 0.8;  transform: scaleX(1.08) scaleY(1.12); }
+}
+
+/* Bottom pulse blob */
+.journal-deck::before {
+  content: '';
+  position: absolute;
+  bottom: -85px;
+  left: 5%;
+  right: 5%;
+  height: 28px;
+  background: radial-gradient(ellipse at center, rgba(79,120,255,0.25) 0%, transparent 75%);
+  filter: blur(16px);
+  pointer-events: none;
+  z-index: -1;
+  animation: blobPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes blobPulse {
+  from { opacity: 0.6; transform: scaleX(0.88); }
+  to   { opacity: 1;   transform: scaleX(1.12); }
+}
+
+/* ── Article card (outer — handles 3D position + reflection) ─── */
 .j-card {
   position: absolute;
   inset: 0;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #1a2d45;
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.12),
-    0 4px 10px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  pointer-events: none;
   transition:
-    transform 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    opacity 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  cursor: pointer;
+    transform 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity   500ms ease,
+    filter    600ms ease;
+
+  /* Glowing reflection below every visible card */
+  -webkit-box-reflect: below 40px
+    linear-gradient(
+      transparent 0%,
+      transparent 48%,
+      rgba(79, 120, 255, 0.06) 68%,
+      rgba(255, 255, 255, 0.15) 100%
+    );
 }
 
-.j-card--active {
-  box-shadow:
-    0 24px 60px rgba(0, 0, 0, 0.18),
-    0 8px 24px rgba(0, 0, 0, 0.12);
-  cursor: default;
+.j-card--visible {
+  opacity: 1;
 }
 
-.j-card img {
+.j-card--visible .j-card-btn {
+  pointer-events: auto;
+}
+
+/* Per-card halo colour via CSS custom prop */
+.j-card[data-halo="violet"] { --halo: 148, 100, 255; }
+.j-card[data-halo="cyan"]   { --halo: 56, 200, 240; }
+.j-card[data-halo="rose"]   { --halo: 240, 80, 140; }
+
+/* Glow halo behind card (::before sits outside overflow:hidden) */
+.j-card::before {
+  content: '';
+  position: absolute;
+  inset: -14px;
+  border-radius: 24px;
+  background: rgba(var(--halo, 79,120,255), 0.50);
+  filter: blur(36px) brightness(0.6);
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 500ms ease;
+  transform: translateZ(-1px);
+}
+
+.j-card--visible:not(.j-card--active):hover::before {
+  opacity: 1;
+}
+
+/* ── Button (inner — handles clipping, glass, interaction) ──── */
+.j-card-btn {
+  border: 0;
+  outline: 0;
+  cursor: zoom-in;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  overflow: hidden;
+  border-radius: 16px;
+  position: relative;
+  background: #030406; /* Darker background to hide letterboxing */
+  display: block;
+  padding: 0;
+  pointer-events: none;
+
+  /* Frosted glass rim */
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 8px 32px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.12);
+
+  transition:
+    transform 350ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 280ms ease;
+}
+
+/* Diagonal gloss overlay */
+.j-card-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(
+    160deg,
+    rgba(255,255,255,0.14) 0%,
+    transparent 40%,
+    transparent 60%,
+    rgba(0,0,0,0.22) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 300ms ease;
+}
+
+/* Focus ring */
+.j-card-btn:focus-visible {
+  box-shadow:
+    0 0 0 3px rgba(79, 120, 255, 0.8),
+    0 8px 32px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.12);
+}
+.j-card-btn:focus:not(:focus-visible) {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 8px 32px rgba(0,0,0,0.45);
+}
+
+/* Side card hover lift */
+.j-card--visible:not(.j-card--active) .j-card-btn:hover,
+.j-card--visible:not(.j-card--active) .j-card-btn:focus-visible {
+  transform: scale(1.03) translateY(-4%);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.14),
+    0 20px 52px rgba(0,0,0,0.55),
+    0 0 64px rgba(var(--halo, 79,120,255), 0.28),
+    inset 0 1px 0 rgba(255,255,255,0.16);
+}
+
+/* Active card glow */
+.j-card--active .j-card-btn {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.14),
+    0 20px 56px rgba(0,0,0,0.6),
+    0 0 80px rgba(79,120,255,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.18);
+}
+
+/* ── Zoomed State (Camera Rotation) ─────────────── */
+.deck-zoomed .j-card-btn {
+  cursor: zoom-out !important;
+}
+.deck-zoomed .j-card:not(.j-card--focused) {
+  filter: blur(8px) brightness(40%);
+}
+.deck-zoomed .j-card:not(.j-card--focused) .j-card-scanline {
+  opacity: 0 !important;
+}
+.j-card--focused .j-card-btn {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.14),
+    0 20px 56px rgba(0,0,0,0.6),
+    0 0 80px rgba(79,120,255,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.18);
+}
+.j-card--focused .j-card-scanline {
+  opacity: 1;
+}
+
+/* ── Card image / video ─────────────────────────── */
+.j-card-btn img,
+.j-card-btn video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   object-position: center;
   display: block;
   pointer-events: none;
+  transition:
+    transform 350ms cubic-bezier(0.4, 0, 0.2, 1),
+    filter    280ms ease;
+  filter: brightness(0.86) saturate(1.1);
 }
 
-/* Caption overlay at bottom of each card */
+.j-card--active .j-card-btn img,
+.j-card--active .j-card-btn video {
+  filter: brightness(1) saturate(1.2);
+}
+
+.j-card--visible:not(.j-card--active) .j-card-btn:hover img {
+  transform: scale(1.06);
+  filter: brightness(1) saturate(1.2);
+}
+
+/* ── Scan line (sweeps on active card) ──────────── */
+.j-card-scanline {
+  position: absolute;
+  left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+  z-index: 4;
+  pointer-events: none;
+  animation: jsScanDown 4.5s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.j-card--active .j-card-scanline {
+  opacity: 1;
+}
+
+@keyframes jsScanDown {
+  0%   { top: -2px;  opacity: 0; }
+  8%   { opacity: 0.65; }
+  90%  { opacity: 0.35; }
+  100% { top: 102%;  opacity: 0; }
+}
+
+/* ── Card label / caption ───────────────────────── */
 .j-card-caption {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 28px 18px 18px;
-  background: linear-gradient(to top, rgba(5, 15, 30, 0.88) 0%, transparent 100%);
-  color: rgba(255, 255, 255, 0.9);
+  bottom: 0; left: 0; right: 0;
+  padding: 44px 18px 18px;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+  color: #fff;
   font-family: 'Inter', sans-serif;
-  font-size: 12.5px;
-  font-weight: 500;
-  line-height: 1.45;
-  letter-spacing: 0.2px;
-  border-radius: 0 0 16px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  line-height: 1.5;
+  z-index: 3;
   pointer-events: none;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.j-card--active .j-card-caption {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Placeholder when no image provided */
+/* ── Placeholder (no image) ─────────────────────── */
 .j-card-placeholder {
   width: 100%;
   height: 100%;
@@ -605,29 +850,50 @@ body.retro-page {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(255,255,255,0.25);
   background: linear-gradient(135deg, #1a2d45 0%, #0f2035 100%);
-  border: 1.5px dashed rgba(255, 255, 255, 0.1);
+  border: 1.5px dashed rgba(255,255,255,0.1);
   border-radius: 16px;
   transition: color 0.2s, border-color 0.2s;
 }
-
 .j-card--active .j-card-placeholder {
-  color: rgba(255, 255, 255, 0.45);
-  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255,255,255,0.45);
+  border-color: rgba(255,255,255,0.2);
 }
-
 .j-card-placeholder i {
   font-size: 36px;
   display: block;
 }
-
 .j-card-placeholder span {
   font-family: 'Inter', sans-serif;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+}
+
+/* ── Hint text ──────────────────────────────────── */
+.journal-hint {
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.24);
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  z-index: 10;
+  pointer-events: none;
+  animation: hintFadeOut 4s ease-out 2s forwards;
+  white-space: nowrap;
+}
+
+@keyframes hintFadeOut {
+  0%   { opacity: 1; }
+  80%  { opacity: 0.5; }
+  100% { opacity: 0; }
 }
 
 /* ── Bottom controls ─────────────────────────────── */
@@ -644,9 +910,9 @@ body.retro-page {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255,255,255,0.1);
   border: none;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255,255,255,0.75);
   font-size: 15px;
   display: flex;
   align-items: center;
@@ -655,23 +921,18 @@ body.retro-page {
   flex-shrink: 0;
   transition: background 0.2s, color 0.2s;
 }
-
-.journal-ctrl-btn:hover {
-  background: rgba(255, 255, 255, 0.22);
-  color: #fff;
-}
+.journal-ctrl-btn:hover { background: rgba(255,255,255,0.22); color: #fff; }
 
 .journal-progress-wrap {
   flex: 1;
   height: 3px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255,255,255,0.12);
   border-radius: 2px;
   overflow: hidden;
 }
-
 .journal-progress-bar {
   height: 100%;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255,255,255,0.7);
   border-radius: 2px;
   width: 0%;
   transition: width 400ms linear;
@@ -680,25 +941,28 @@ body.retro-page {
 .journal-timer {
   font-family: 'Inter', monospace;
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255,255,255,0.4);
   white-space: nowrap;
   min-width: 68px;
   text-align: right;
 }
 
-/* ── Responsive ──────────────────────────────────────────────── */
+/* ── Responsive ──────────────────────────────────── */
 @media (max-width: 600px) {
   .journal-deck {
-    width: 260px;
-    height: 340px;
+    width: 38vmin;
+    height: 54vmin;
   }
+  .journal-topbar { padding: 14px 16px 8px; }
+  .journal-controls { padding: 10px 16px 16px; gap: 10px; }
 
-  .journal-topbar {
-    padding: 14px 16px 8px;
+  /* Reduce glow intensity on mobile */
+  .journal-deck::after {
+    height: 50px;
+    bottom: -40px;
+    filter: blur(14px);
   }
-
-  .journal-controls {
-    padding: 10px 16px 16px;
-    gap: 10px;
-  }
+  .journal-stage::before,
+  .journal-stage::after { filter: blur(70px); }
+  .journal-hint { display: none; }
 }
