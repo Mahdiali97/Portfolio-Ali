@@ -57,30 +57,34 @@ export default function AsciiCursor() {
 
       // Interpolation prevents gaps when the mouse moves rapidly
       const distance = Math.hypot(mouse.x - lastMouse.x, mouse.y - lastMouse.y);
-      const steps = Math.max(1, Math.floor(distance / (charSize / 2)));
       
       if (mouse.x > 0 && mouse.y > 0) {
-        for (let i = 0; i <= steps; i++) {
-          const interpX = lastMouse.x + (mouse.x - lastMouse.x) * (i / steps);
-          const interpY = lastMouse.y + (mouse.y - lastMouse.y) * (i / steps);
-          const cx = Math.floor(interpX / charSize);
-          const cy = Math.floor(interpY / charSize);
-          const radius = 2.5; 
+        // ONLY deposit new characters if the mouse has moved more than 2 pixels
+        if (distance > 2) {
+          const steps = Math.max(1, Math.floor(distance / (charSize / 2)));
+          for (let i = 0; i <= steps; i++) {
+            const interpX = lastMouse.x + (mouse.x - lastMouse.x) * (i / steps);
+            const interpY = lastMouse.y + (mouse.y - lastMouse.y) * (i / steps);
+            const cx = Math.floor(interpX / charSize);
+            const cy = Math.floor(interpY / charSize);
+            const radius = 2.5; 
 
-          // Deposit intensity into the grid
-          for (let y = -Math.ceil(radius); y <= Math.ceil(radius); y++) {
-            for (let x = -Math.ceil(radius); x <= Math.ceil(radius); x++) {
-              const idx = (cy + y) * cols + (cx + x);
-              if (idx >= 0 && idx < grid.length) {
-                const dist = Math.sqrt(x * x + y * y);
-                if (dist < radius) {
-                  const intensity = 1 - (dist / radius);
-                  grid[idx] = Math.min(grid[idx] + intensity * 0.45, 1);
+            // Deposit intensity into the grid
+            for (let y = -Math.ceil(radius); y <= Math.ceil(radius); y++) {
+              for (let x = -Math.ceil(radius); x <= Math.ceil(radius); x++) {
+                const idx = (cy + y) * cols + (cx + x);
+                if (idx >= 0 && idx < grid.length) {
+                  const dist = Math.sqrt(x * x + y * y);
+                  if (dist < radius) {
+                    const intensity = 1 - (dist / radius);
+                    grid[idx] = Math.min(grid[idx] + intensity * 0.45, 1);
+                  }
                 }
               }
             }
           }
         }
+        // Always synchronize lastMouse after checking, regardless of distance
         lastMouse.x = mouse.x;
         lastMouse.y = mouse.y;
       }

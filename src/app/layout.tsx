@@ -16,10 +16,6 @@ import {
 import { Footer, Header, RouteGuard, Providers } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle, home, person } from "@/resources";
 
-import { CustomCursor } from "@/components/CustomCursor";
-
-
-
 import { BlackCatEntity } from "@/components/BlackCatEntity";
 
 export async function generateMetadata() {
@@ -78,7 +74,6 @@ export default async function RootLayout({
           padding="0"
           horizontal="center"
         >
-          <CustomCursor />
           <BlackCatEntity />
           
           <Flex fillWidth minHeight="16" s={{ hide: true }} />
