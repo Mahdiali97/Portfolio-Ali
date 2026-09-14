@@ -60,25 +60,27 @@ export const Header = () => {
       />
       <Row
         fitHeight
-        className={styles.position}
+        className={`fixed top-4 md:top-6 left-0 right-0 mx-auto z-[9999] flex justify-center w-max pointer-events-auto ${styles.position}`}
         position="fixed"
         as="header"
-        zIndex={100}
         horizontal="center"
         style={{
           top: "1.5rem",
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "calc(100% - 2rem)",
-          maxWidth: "max-content",
+          left: 0,
+          right: 0,
+          marginLeft: "auto",
+          marginRight: "auto",
+          width: "max-content",
+          zIndex: 9999,
         }}
         s={{
-          top: "1.5rem",
+          top: "1rem",
           position: "fixed",
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "auto",
-          maxWidth: "calc(100% - 2rem)",
+          left: 0,
+          right: 0,
+          marginLeft: "auto",
+          marginRight: "auto",
+          width: "max-content",
           justifyContent: "center",
         }}
       >
