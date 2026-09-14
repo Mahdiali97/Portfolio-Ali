@@ -1,0 +1,100 @@
+1:"$Sreact.fragment"
+2:I[273323,["/Portfolio-Ali/_next/static/chunks/6f2dcb8f8809af68.js","/Portfolio-Ali/_next/static/chunks/7b29aeb5dd0a74af.js","/Portfolio-Ali/_next/static/chunks/0d294dfb05322a9e.js","/Portfolio-Ali/_next/static/chunks/bd2cb3a643e69965.js","/Portfolio-Ali/_next/static/chunks/a352d82009e2cfe5.js","/Portfolio-Ali/_next/static/chunks/2079049d5abbbd3d.js","/Portfolio-Ali/_next/static/chunks/430391a6b05245fa.js"],"Column"]
+3:I[479520,["/Portfolio-Ali/_next/static/chunks/6f2dcb8f8809af68.js","/Portfolio-Ali/_next/static/chunks/7b29aeb5dd0a74af.js","/Portfolio-Ali/_next/static/chunks/0d294dfb05322a9e.js","/Portfolio-Ali/_next/static/chunks/bd2cb3a643e69965.js","/Portfolio-Ali/_next/static/chunks/a352d82009e2cfe5.js","/Portfolio-Ali/_next/static/chunks/2079049d5abbbd3d.js","/Portfolio-Ali/_next/static/chunks/430391a6b05245fa.js"],""]
+4:I[624379,["/Portfolio-Ali/_next/static/chunks/6f2dcb8f8809af68.js","/Portfolio-Ali/_next/static/chunks/7b29aeb5dd0a74af.js","/Portfolio-Ali/_next/static/chunks/0d294dfb05322a9e.js","/Portfolio-Ali/_next/static/chunks/bd2cb3a643e69965.js","/Portfolio-Ali/_next/static/chunks/a352d82009e2cfe5.js","/Portfolio-Ali/_next/static/chunks/2079049d5abbbd3d.js","/Portfolio-Ali/_next/static/chunks/430391a6b05245fa.js"],"SmartLink"]
+5:I[778454,["/Portfolio-Ali/_next/static/chunks/6f2dcb8f8809af68.js","/Portfolio-Ali/_next/static/chunks/7b29aeb5dd0a74af.js","/Portfolio-Ali/_next/static/chunks/0d294dfb05322a9e.js","/Portfolio-Ali/_next/static/chunks/bd2cb3a643e69965.js","/Portfolio-Ali/_next/static/chunks/a352d82009e2cfe5.js","/Portfolio-Ali/_next/static/chunks/2079049d5abbbd3d.js","/Portfolio-Ali/_next/static/chunks/430391a6b05245fa.js"],"Row"]
+6:I[571045,["/Portfolio-Ali/_next/static/chunks/6f2dcb8f8809af68.js","/Portfolio-Ali/_next/static/chunks/7b29aeb5dd0a74af.js","/Portfolio-Ali/_next/static/chunks/0d294dfb05322a9e.js","/Portfolio-Ali/_next/static/chunks/bd2cb3a643e69965.js","/Portfolio-Ali/_next/static/chunks/a352d82009e2cfe5.js","/Portfolio-Ali/_next/static/chunks/2079049d5abbbd3d.js","/Portfolio-Ali/_next/static/chunks/430391a6b05245fa.js"],"AvatarGroup"]
+7:I[398382,["/Portfolio-Ali/_next/static/chunks/6f2dcb8f8809af68.js","/Portfolio-Ali/_next/static/chunks/7b29aeb5dd0a74af.js","/Portfolio-Ali/_next/static/chunks/0d294dfb05322a9e.js","/Portfolio-Ali/_next/static/chunks/bd2cb3a643e69965.js","/Portfolio-Ali/_next/static/chunks/a352d82009e2cfe5.js","/Portfolio-Ali/_next/static/chunks/2079049d5abbbd3d.js","/Portfolio-Ali/_next/static/chunks/430391a6b05245fa.js"],"Media"]
+8:I[811052,["/Portfolio-Ali/_next/static/chunks/6f2dcb8f8809af68.js","/Portfolio-Ali/_next/static/chunks/7b29aeb5dd0a74af.js","/Portfolio-Ali/_next/static/chunks/0d294dfb05322a9e.js","/Portfolio-Ali/_next/static/chunks/bd2cb3a643e69965.js","/Portfolio-Ali/_next/static/chunks/a352d82009e2cfe5.js","/Portfolio-Ali/_next/static/chunks/2079049d5abbbd3d.js","/Portfolio-Ali/_next/static/chunks/430391a6b05245fa.js"],"HeadingLink"]
+9:I[436122,["/Portfolio-Ali/_next/static/chunks/6f2dcb8f8809af68.js","/Portfolio-Ali/_next/static/chunks/7b29aeb5dd0a74af.js","/Portfolio-Ali/_next/static/chunks/0d294dfb05322a9e.js","/Portfolio-Ali/_next/static/chunks/bd2cb3a643e69965.js","/Portfolio-Ali/_next/static/chunks/a352d82009e2cfe5.js","/Portfolio-Ali/_next/static/chunks/2079049d5abbbd3d.js","/Portfolio-Ali/_next/static/chunks/430391a6b05245fa.js"],"List"]
+a:I[626935,["/Portfolio-Ali/_next/static/chunks/6f2dcb8f8809af68.js","/Portfolio-Ali/_next/static/chunks/7b29aeb5dd0a74af.js","/Portfolio-Ali/_next/static/chunks/0d294dfb05322a9e.js","/Portfolio-Ali/_next/static/chunks/bd2cb3a643e69965.js","/Portfolio-Ali/_next/static/chunks/a352d82009e2cfe5.js","/Portfolio-Ali/_next/static/chunks/2079049d5abbbd3d.js","/Portfolio-Ali/_next/static/chunks/430391a6b05245fa.js"],"ListItem"]
+12:I[311451,["/Portfolio-Ali/_next/static/chunks/6f2dcb8f8809af68.js","/Portfolio-Ali/_next/static/chunks/7b29aeb5dd0a74af.js","/Portfolio-Ali/_next/static/chunks/0d294dfb05322a9e.js","/Portfolio-Ali/_next/static/chunks/bd2cb3a643e69965.js","/Portfolio-Ali/_next/static/chunks/a352d82009e2cfe5.js","/Portfolio-Ali/_next/static/chunks/2079049d5abbbd3d.js","/Portfolio-Ali/_next/static/chunks/430391a6b05245fa.js"],"Line"]
+13:I[474855,["/Portfolio-Ali/_next/static/chunks/6f2dcb8f8809af68.js","/Portfolio-Ali/_next/static/chunks/7b29aeb5dd0a74af.js","/Portfolio-Ali/_next/static/chunks/0d294dfb05322a9e.js","/Portfolio-Ali/_next/static/chunks/bd2cb3a643e69965.js","/Portfolio-Ali/_next/static/chunks/a352d82009e2cfe5.js","/Portfolio-Ali/_next/static/chunks/2079049d5abbbd3d.js","/Portfolio-Ali/_next/static/chunks/430391a6b05245fa.js"],"ProjectCard"]
+18:I[988654,["/Portfolio-Ali/_next/static/chunks/6f2dcb8f8809af68.js","/Portfolio-Ali/_next/static/chunks/7b29aeb5dd0a74af.js","/Portfolio-Ali/_next/static/chunks/0d294dfb05322a9e.js","/Portfolio-Ali/_next/static/chunks/bd2cb3a643e69965.js","/Portfolio-Ali/_next/static/chunks/a352d82009e2cfe5.js","/Portfolio-Ali/_next/static/chunks/2079049d5abbbd3d.js","/Portfolio-Ali/_next/static/chunks/430391a6b05245fa.js"],"ScrollToHash"]
+19:I[897367,["/Portfolio-Ali/_next/static/chunks/d96012bcfc98706a.js","/Portfolio-Ali/_next/static/chunks/73e3194f06db260e.js"],"OutletBoundary"]
+1a:"$Sreact.suspense"
+0:{"buildId":"-Ae-SoAaLQIN9KpBkrwqu","rsc":["$","$1","c",{"children":[["$","$L2",null,{"as":"section","maxWidth":"m","horizontal":"center","gap":"l","children":[["$","$L3",null,{"id":"schema-blogPosting-/work/uniperks","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"url\":\"https://demo.magic-portfolio.com/work/uniperks\",\"sameAs\":[],\"headline\":\"UniPerks: Gamified Campus E-Commerce\",\"description\":\"A full-stack mobile commerce ecosystem engineered specifically for Universiti Pendidikan Sultan Idris (UPSI) students and faculty.\",\"image\":\"https://demo.magic-portfolio.com/api/og/generate?title=UniPerks%3A%20Gamified%20Campus%20E-Commerce\",\"datePublished\":\"2026-02-15\",\"dateModified\":\"2026-02-15\",\"author\":{\"@type\":\"Person\",\"name\":\"Ali Hanafiah\",\"url\":\"https://demo.magic-portfolio.com/about\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://demo.magic-portfolio.com/images/Ali.jpg\"}}}"}}],["$","$L2",null,{"maxWidth":"s","gap":"16","horizontal":"center","align":"center","children":[["$","$L4",null,{"href":"/work","children":["$","span",null,{"className":"font-label font-strong font-m","style":{},"children":"Projects"}]}],["$","span",null,{"className":"font-body font-default font-xs neutral-on-background-weak mb-12","style":{},"children":"February 15, 2026"}],["$","h1",null,{"className":"font-display font-strong font-m neutral-on-background-strong","style":{"textWrap":"balance"},"children":"UniPerks: Gamified Campus E-Commerce"}]]}],["$","$L5",null,{"marginBottom":"32","horizontal":"center","children":["$","$L5",null,{"gap":"16","vertical":"center","children":[["$","$L6",null,{"reverse":true,"avatars":[{"src":"/images/Ali.jpg"}],"size":"s"}],["$","span",null,{"className":"font-label font-default font-m brand-on-background-weak","style":{},"children":[["$","span","0",{"children":[false,["$","$L4",null,{"href":"https://www.linkedin.com/in/ali-hanafiah-778365353","children":"Ali Hanafiah"}]]}]]}]]}]}],["$","$L7",null,{"priority":true,"aspectRatio":"16 / 9","radius":"m","alt":"image","src":"/images/projects/uniperks.png"}],["$","$L2",null,{"style":{"margin":"auto"},"as":"article","maxWidth":"xs","children":[["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"overview","children":"Overview"}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"A full-stack mobile commerce ecosystem engineered specifically for Universiti Pendidikan Sultan Idris (UPSI) students and faculty. The platform transforms standard university merchandise transactions into an engaging retention loop by pairing direct commerce with a daily educational quiz and coin-reward system."}],"\n",["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"core-architecture-and-features","children":"Core Architecture & Features"}],"\n",["$","$L9",null,{"as":"ul","children":["\n",["$","$La",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Gamified Economy"}],": A real-time coin-generation engine tied to timed academic quizzes, allowing students to earn discounts through daily engagement."]}],"\n",["$","$La",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Voucher & Wallet Subsystem"}],": Secure digital wallet managing coupon redemption logic, expiration rules, and automated checkout discounts."]}],"\n",["$","$La",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Role-Based Management"}],": Distinct dashboards allowing administrators to manage inventory and verify student claims while students browse and checkout."]}],"\n"]}],"\n",["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"technical-stack-and-tools","children":"Technical Stack & Tools"}],"\n",["$","$L9",null,{"as":"ul","children":["\n",["$","$La",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Mobile App"}],": Flutter, Dart (Cross-Platform iOS & Android)"]}],"\n",["$","$La",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":["$Lb",": Supabase (PostgreSQL, Realtime Subscriptions, Row-Level Security)"]}],"\n","$Lc","\n","$Ld","\n","$Le","\n"]}]]}],"$Lf","$L10"]}],null,"$L11"]}],"loading":null,"isPartial":false}
+b:["$","strong",null,{"children":"Backend & Database"}]
+c:["$","$La",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Authentication & Security"}],": Firebase Auth, Supabase Auth"]}]
+d:["$","$La",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Payments"}],": Stripe API Integration"]}]
+e:["$","$La",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Design & Prototyping"}],": Figma"]}]
+14:T432,
+## Overview
+
+A privacy-centric, on-premise Large Language Model deployment pipeline engineered to deliver zero-latency inference while ensuring 100% data sovereignty. Built to eliminate vendor lock-in and high recurring costs associated with cloud-hosted AI APIs, the setup operates entirely offline on dedicated hardware with custom resource scheduling.
+
+## Core Architecture & Features
+
+- **Containerized Isolation**: Packages model weights, runtime dependencies, and inference engines into reproducible Docker containers.
+- **Hardware Resource Optimization**: Implements memory mapping and CPU/GPU thread allocation to sustain peak throughput on constrained local hardware.
+- **Interactive CLI & API Gateway**: Delivers a dedicated terminal interface alongside a local REST endpoint for drop-in application integration.
+
+## Technical Stack & Tools
+
+- **Inference Engine**: llama.cpp, GGUF 4-bit Quantization (Q4_K_M)
+- **Containerization**: Docker, Docker Compose
+- **Operating System**: Ubuntu / Linux Server Environments
+- **Scripting**: Bash, Shell Automation Scripts15:T89c,
+## Overview
+
+UniPerks is a gamified university merchandise e-commerce platform designed for Universiti Pendidikan Sultan Idris (UPSI). Students earn coins by completing quizzes and can redeem them for vouchers or spend them in the in-app store.
+
+<img src="/images/projects/UniPerks_Dashboard.png" alt="UniPerks Dashboard" style={{ width: '100%', borderRadius: '8px', margin: '20px 0' }} />
+
+## The Existing Design
+
+Before UniPerks, UPSI relied on a basic catalog website. There was no integrated checkout system for students to purchase official merchandise.
+
+- Fragmented user journey caused by external Shopee redirects
+- No centralised native app for purchases and voucher redemption
+- Lack of university control over the third-party shopping experience
+- Inability to integrate student-focused incentives like digital coins
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', margin: '20px 0' }}>
+  <img src="/images/projects/uniperks-before-home.png" alt="Before Home" style={{ width: '100%', borderRadius: '6px' }} />
+  <img src="/images/projects/uniperks-before-categories.png" alt="Before Categories" style={{ width: '100%', borderRadius: '6px' }} />
+  <img src="/images/projects/uniperks-before-checkout.png" alt="Before Checkout" style={{ width: '100%', borderRadius: '6px' }} />
+</div>
+
+## User Research & Persona
+
+Understanding student habits and motivations to build a seamless purchasing and reward system.
+
+<img src="/images/projects/uniperks-persona.png" alt="User Persona" style={{ width: '100%', borderRadius: '8px', margin: '20px 0' }} />
+
+## Wireframes & Iterations
+
+Starting with low-fidelity sketches and moving to digital wireframes in Figma.
+
+<img src="/images/projects/uniperks-hifi-screens.png" alt="Hi-Fi Screens" style={{ width: '100%', borderRadius: '8px', margin: '20px 0' }} />
+
+## Full Screen Mockups
+
+<div style={{ display: 'flex', flexDirection: 'column', width: '100%', gap: '16px', margin: '20px 0' }}>
+  <img src="/images/projects/UniPerks_Dashboard.png" style={{ width: '100%', borderRadius: '8px' }} />
+  <img src="/images/projects/uniperks-mockup.png" style={{ width: '100%', borderRadius: '8px' }} />
+</div>
+f:["$","$L2",null,{"fillWidth":true,"gap":"40","horizontal":"center","marginTop":"40","children":[["$","$L12",null,{"maxWidth":"40"}],["$","h2",null,{"className":"font-heading font-strong font-xl neutral-on-background-strong mb-24","style":{"textWrap":"balance"},"children":"Related projects"}],["$","$L2",null,{"fillWidth":true,"gap":"xl","marginBottom":"40","paddingX":"l","children":[["$","$L13","local-llama-ai",{"priority":true,"href":"/work/local-llama-ai","images":["/images/projects/LLama.png"],"title":"Local LLaMA Infrastructure","description":"A privacy-centric, on-premise Large Language Model deployment pipeline engineered to deliver zero-latency inference while ensuring 100% data sovereignty.","content":"$14","avatars":[{"src":"/images/Ali.jpg"}],"link":""}],["$","$L13","gep-crm-system",{"priority":true,"href":"/work/gep-crm-system","images":["/images/projects/CRM1.png"],"title":"GEP CRM System","description":"A robust Customer Relationship Management system built with React, TypeScript, Vite, Express, and Prisma for managing enterprise clients, zones, premises, and invoices.","content":"\n<div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>\n  <img src=\"/images/projects/CRM1.png\" style={{ width: '100%', display: 'block', marginBottom: '-1px' }} />\n  <img src=\"/images/projects/CRM2.png\" style={{ width: '100%', display: 'block', marginBottom: '-1px' }} />\n  <img src=\"/images/projects/CRM3.png\" style={{ width: '100%', display: 'block', marginBottom: '-1px' }} />\n  <img src=\"/images/projects/CRM4.png\" style={{ width: '100%', display: 'block', marginBottom: '-1px' }} />\n  <img src=\"/images/projects/CRM5.png\" style={{ width: '100%', display: 'block' }} />\n</div>\n","avatars":[{"src":"/images/Ali.jpg"}],"link":""}],["$","$L13","uniperks-design",{"priority":false,"href":"/work/uniperks-design","images":["/images/projects/uniperks-mockup.png"],"title":"UniPerks: UI/UX Case Study","description":"Comprehensive UI/UX design case study for UniPerks, covering user research, competitive analysis, wireframing, design systems, and high-fidelity mockups.","content":"$15","avatars":[{"src":"/images/Ali.jpg"}],"link":""}],"$L16","$L17"]}]]}]
+10:["$","$L18",null,{}]
+11:["$","$L19",null,{"children":["$","$1a",null,{"name":"Next.MetadataOutlet","children":"$@1b"}]}]
+1c:T473,
+## Overview
+
+A high-concurrency web allocation and residential governance portal engineered for Kolej Harun Aminurrashid (KHAR). Built to eliminate physical queues and uncoordinated spreadsheet records, the platform provides automated, real-time dormitory room selection for thousands of university students during high-traffic intake windows.
+
+## Core Architecture & Features
+
+- **Multi-Student Group Booking**: Synchronized application system allowing peer groups of 2 to 4 students to link records and register for adjacent dorm rooms simultaneously.
+- **Real-Time Allocation Engine**: Concurrency-safe room reservation pipeline with Livewire preventing double-booking race conditions during peak server loads.
+- **Administrative Control Hub**: Interactive dashboard for residential staff to monitor block capacity, filter student eligibility, and approve housing claims.
+
+## Technical Stack & Tools
+
+- **Full-Stack Framework**: Laravel, Livewire
+- **Styling & UI**: Tailwind CSS, Flux UI Components
+- **Access Control**: Spatie Laravel-Permission
+- **Database**: MySQL, SQLite
+- **DevOps & Cloud**: Docker, Fly.io Deployment Pipeline
+16:["$","$L13","khar-hostel-portal",{"priority":false,"href":"/work/khar-hostel-portal","images":["/images/projects/khar-hostel-portal.png"],"title":"KHAR Hostel Portal","description":"A high-concurrency web allocation and residential governance portal engineered for Kolej Harun Aminurrashid (KHAR).","content":"$1c","avatars":[{"src":"/images/Ali.jpg"}],"link":"https://khar-hostel-portal-1788598384.fly.dev/"}]
+17:["$","$L13","hr-payroll-system",{"priority":false,"href":"/work/hr-payroll-system","images":["/images/projects/HR1.png"],"title":"HR Payroll System","description":"An enterprise Human Resources and Payroll management platform that automates salary processing, leave tracking, and payslip generation.","content":"\n<div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>\n  <img src=\"/images/projects/HR1.png\" style={{ width: '100%', display: 'block', marginBottom: '-1px' }} />\n  <img src=\"/images/projects/HR2.png\" style={{ width: '100%', display: 'block', marginBottom: '-1px' }} />\n  <img src=\"/images/projects/HR3.png\" style={{ width: '100%', display: 'block', marginBottom: '-1px' }} />\n  <img src=\"/images/projects/HR4.png\" style={{ width: '100%', display: 'block' }} />\n</div>\n","avatars":[{"src":"/images/Ali.jpg"}],"link":""}]
+1b:null
