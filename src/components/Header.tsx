@@ -61,20 +61,27 @@ export const Header = () => {
       <Row
         fitHeight
         className={styles.position}
-        position="sticky"
+        position="fixed"
         as="header"
-        zIndex={9}
-        fillWidth
-        padding="8"
+        zIndex={100}
         horizontal="center"
-        data-border="rounded"
+        style={{
+          top: "1.5rem",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "calc(100% - 2rem)",
+          maxWidth: "max-content",
+        }}
         s={{
+          top: "1.5rem",
           position: "fixed",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "auto",
+          maxWidth: "calc(100% - 2rem)",
+          justifyContent: "center",
         }}
       >
-        <Row paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          {display.location && <Row s={{ hide: true }}>{person.location}</Row>}
-        </Row>
         <Row fillWidth horizontal="center">
           <Row
             style={{
@@ -83,8 +90,8 @@ export const Header = () => {
               WebkitBackdropFilter: "blur(32px)",
               border: "1px solid var(--card-border)",
               boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 1px var(--card-border)",
+              borderRadius: "999px",
             }}
-            radius="m-4"
             padding="4"
             horizontal="center"
             zIndex={1}
@@ -179,19 +186,6 @@ export const Header = () => {
             </Row>
           </Row>
         </Row>
-        <Flex fillWidth horizontal="end" vertical="center">
-          <Flex
-            paddingRight="12"
-            horizontal="end"
-            vertical="center"
-            textVariant="body-default-s"
-            gap="20"
-          >
-            <Flex s={{ hide: true }}>
-              {display.time && <TimeDisplay timeZone={person.location} />}
-            </Flex>
-          </Flex>
-        </Flex>
       </Row>
     </>
   );

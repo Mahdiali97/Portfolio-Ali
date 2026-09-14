@@ -19,7 +19,7 @@ export default function Work() {
 
   return (
     <SmoothScroll>
-      <main className="min-h-screen bg-[var(--bg-main)] text-[var(--text-main)] transition-colors duration-300 pt-28 pb-20 relative z-10 overflow-x-hidden">
+      <main className="min-h-screen bg-[var(--bg-main)] text-[var(--text-main)] transition-colors duration-300 pt-28 pb-20 relative z-10">
         <Schema
           as="webPage"
           baseURL={baseURL}

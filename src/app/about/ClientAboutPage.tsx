@@ -162,7 +162,7 @@ export default function ClientAboutPage() {
       </aside>
 
       {/* Scrolling Right Column */}
-      <main className="lg:w-2/3 p-8 sm:p-12 lg:p-24 overflow-x-hidden z-10">
+      <main className="lg:w-2/3 p-8 sm:p-12 lg:p-24 z-10">
         
         {/* 1. Hero / Intro */}
         <section className="min-h-[70vh] flex flex-col justify-center mb-32">

@@ -14,7 +14,7 @@ export async function generateMetadata() {
 
 export default function Gallery() {
   return (
-    <main className="w-full h-full min-h-screen bg-transparent overflow-hidden">
+    <main className="w-full h-full min-h-screen bg-transparent">
       <Schema
         as="webPage"
         baseURL={baseURL}
