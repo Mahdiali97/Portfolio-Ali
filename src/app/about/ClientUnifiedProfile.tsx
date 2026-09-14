@@ -219,7 +219,7 @@ export default function ClientUnifiedProfile() {
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-4">
-          <MagneticButton href="/docs/Resume-Ali.pdf" download="Resume-Ali.pdf">
+          <MagneticButton href="/Portfolio-Ali/docs/Resume-Ali.pdf" download="Resume-Ali.pdf">
             <Icon name="document" size="xs" /> Download CV
           </MagneticButton>
           <MagneticButton href="https://github.com/Mahdiali97">
