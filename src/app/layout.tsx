@@ -3,6 +3,7 @@ import "@once-ui-system/core/css/tokens.css";
 import "@/resources/custom.css";
 
 import classNames from "classnames";
+import AsciiCursor from "@/components/AsciiCursor";
 
 import {
   Background,
@@ -90,6 +91,7 @@ export default async function RootLayout({
             </Flex>
           </Flex>
           <Footer />
+          <AsciiCursor />
         </Column>
       </Providers>
     </Flex>
