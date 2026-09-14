@@ -1,0 +1,30 @@
+---
+title: "Local LLaMA Infrastructure"
+publishedAt: "2026-03-05"
+summary: "A privacy-centric, on-premise Large Language Model deployment pipeline engineered to deliver zero-latency inference while ensuring 100% data sovereignty."
+category: "Project"
+images:
+  - "/images/projects/LLama.png"
+team:
+  - name: "Ali Hanafiah"
+    role: "DevOps Engineer"
+    avatar: "/images/Ali.jpg"
+    linkedIn: "https://www.linkedin.com/in/ali-hanafiah-778365353"
+---
+
+## Overview
+
+A privacy-centric, on-premise Large Language Model deployment pipeline engineered to deliver zero-latency inference while ensuring 100% data sovereignty. Built to eliminate vendor lock-in and high recurring costs associated with cloud-hosted AI APIs, the setup operates entirely offline on dedicated hardware with custom resource scheduling.
+
+## Core Architecture & Features
+
+- **Containerized Isolation**: Packages model weights, runtime dependencies, and inference engines into reproducible Docker containers.
+- **Hardware Resource Optimization**: Implements memory mapping and CPU/GPU thread allocation to sustain peak throughput on constrained local hardware.
+- **Interactive CLI & API Gateway**: Delivers a dedicated terminal interface alongside a local REST endpoint for drop-in application integration.
+
+## Technical Stack & Tools
+
+- **Inference Engine**: llama.cpp, GGUF 4-bit Quantization (Q4_K_M)
+- **Containerization**: Docker, Docker Compose
+- **Operating System**: Ubuntu / Linux Server Environments
+- **Scripting**: Bash, Shell Automation Scripts

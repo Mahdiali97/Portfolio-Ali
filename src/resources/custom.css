@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root, :root[data-theme="dark"] {
+  --bg-main: #0a0a0a;
+  --text-main: rgb(245, 235, 235);
+  --text-muted: rgba(228, 208, 208, 0.7);
+  --text-accent: rgb(213, 180, 180);
+  --color-dark: rgb(134, 112, 112);
+  --color-mid-hover: rgb(213, 180, 180);
+  --color-mid-ambient: rgb(228, 208, 208);
+  --color-base: rgb(245, 235, 235);
+  --card-bg: rgba(20, 20, 20, 0.7);
+  --card-border: rgba(134, 112, 112, 0.3);
+  --pill-bg: rgba(134, 112, 112, 0.15);
+  --pill-border: rgba(134, 112, 112, 0.4);
+  --pill-text: rgb(228, 208, 208);
+  --hollow-stroke: rgba(228, 208, 208, 0.6);
+  --cat-body: #111111;
+  --cat-stroke: rgb(134, 112, 112);
+  --cat-eyes: rgb(245, 235, 235);
+  --cat-pupils: #0a0a0a;
+  --footer-sweep: rgb(213, 180, 180);
+  --footer-sweep-text: #0a0a0a;
+}
+
+:root[data-theme="light"] {
+  --bg-main: #F5EBEB;
+  --text-main: #867070;
+  --text-muted: rgba(134, 112, 112, 0.75);
+  --text-accent: #867070;
+  --color-dark: #867070;
+  --color-mid-hover: #D5B4B4;
+  --color-mid-ambient: #E4D0D0;
+  --color-base: #F5EBEB;
+  --card-bg: rgba(228, 208, 208, 0.45);
+  --card-border: rgba(134, 112, 112, 0.2);
+  --pill-bg: rgba(213, 180, 180, 0.35);
+  --pill-border: rgba(134, 112, 112, 0.3);
+  --pill-text: #867070;
+  --hollow-stroke: rgba(134, 112, 112, 0.4);
+  --cat-body: #867070;
+  --cat-stroke: #D5B4B4;
+  --cat-eyes: #F5EBEB;
+  --cat-pupils: #867070;
+  --footer-sweep: #867070;
+  --footer-sweep-text: #F5EBEB;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-mid-hover);
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.font-serif {
+  font-family: 'Instrument Serif', serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.hollow-text {
+  -webkit-text-stroke: 3px var(--hollow-stroke);
+  color: transparent;
+}
