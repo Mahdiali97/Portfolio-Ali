@@ -202,7 +202,7 @@ export const CaseStudyTakeover: React.FC<CaseStudyTakeoverProps> = ({ project, o
                 className="w-full relative"
               >
                 <img
-                  src={`/images/projects/${img}`}
+                  src={`/Portfolio-Ali/images/projects/${img}`}
                   alt={`CRM Screenshot ${i + 1}`}
                   className="w-full h-auto block"
                 />
@@ -223,7 +223,7 @@ export const CaseStudyTakeover: React.FC<CaseStudyTakeoverProps> = ({ project, o
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                src="/images/projects/uniperks.png"
+                src="/Portfolio-Ali/images/projects/uniperks.png"
                 className="w-full rounded-2xl shadow-2xl"
               />
             </section>
@@ -241,7 +241,7 @@ export const CaseStudyTakeover: React.FC<CaseStudyTakeoverProps> = ({ project, o
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    src={`/images/projects/${img}`}
+                    src={`/Portfolio-Ali/images/projects/${img}`}
                     className="w-full rounded-xl shadow-lg border border-[var(--card-border)]"
                   />
                 ))}
@@ -257,7 +257,7 @@ export const CaseStudyTakeover: React.FC<CaseStudyTakeoverProps> = ({ project, o
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                src="/images/projects/uniperks-persona.png"
+                src="/Portfolio-Ali/images/projects/uniperks-persona.png"
                 className="w-full rounded-2xl shadow-xl"
               />
             </section>
@@ -275,7 +275,7 @@ export const CaseStudyTakeover: React.FC<CaseStudyTakeoverProps> = ({ project, o
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.05 }}
-                    src={`/images/projects/${img}`}
+                    src={`/Portfolio-Ali/images/projects/${img}`}
                     className="w-full rounded-xl shadow-lg border border-[var(--card-border)]"
                   />
                 ))}
@@ -284,7 +284,7 @@ export const CaseStudyTakeover: React.FC<CaseStudyTakeoverProps> = ({ project, o
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                src="/images/projects/uniperks-hifi-screens.png"
+                src="/Portfolio-Ali/images/projects/uniperks-hifi-screens.png"
                 className="w-full rounded-2xl shadow-xl mt-6"
               />
             </section>
@@ -296,14 +296,14 @@ export const CaseStudyTakeover: React.FC<CaseStudyTakeoverProps> = ({ project, o
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  src="/images/projects/uniperks.png"
+                  src="/Portfolio-Ali/images/projects/uniperks.png"
                   className="w-full rounded-2xl shadow-2xl"
                 />
                 <motion.img
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  src="/images/projects/uniperks-mockup.png"
+                  src="/Portfolio-Ali/images/projects/uniperks-mockup.png"
                   className="w-full rounded-2xl shadow-2xl"
                 />
               </div>
@@ -324,7 +324,7 @@ export const CaseStudyTakeover: React.FC<CaseStudyTakeoverProps> = ({ project, o
                 className="w-full relative"
               >
                 <img
-                  src={`/images/projects/${img}`}
+                  src={`/Portfolio-Ali/images/projects/${img}`}
                   alt={`HR Screenshot ${i + 1}`}
                   className="w-full h-auto block"
                 />

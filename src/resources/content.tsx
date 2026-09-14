@@ -6,7 +6,7 @@ const person: Person = {
   lastName: "Hanafiah",
   name: `Ali Hanafiah`,
   role: "Software Engineer & UI/UX Designer",
-  avatar: "/images/Ali.jpg",
+  avatar: "/Portfolio-Ali/images/Ali.jpg",
   email: "mahdialihanafiah@gmail.com",
   location: "Asia/Kuala_Lumpur", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English", "Bahasa Melayu", "Japanese (JLPT N3)"], // optional: Leave the array empty if you don't want to display languages
@@ -45,7 +45,7 @@ const social: Social = [
 
 const home: Home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "/Portfolio-Ali/images/og/home.jpg",
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
@@ -211,7 +211,7 @@ const gallery: Gallery = {
   description: `A photo collection by ${person.name}`,
   images: [
     {
-      src: "/images/gallery/horizontal-1.jpg",
+      src: "/Portfolio-Ali/images/gallery/horizontal-1.jpg",
       alt: "image",
       orientation: "horizontal",
     },

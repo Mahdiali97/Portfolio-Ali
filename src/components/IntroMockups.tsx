@@ -99,7 +99,7 @@ export const IntroMockups = () => {
           >
             {/* Background Image Layer */}
             <img 
-              src="/images/projects/CRM1.png"
+              src="/Portfolio-Ali/images/projects/CRM1.png"
               onError={(e) => { e.currentTarget.src = "https://images.unsplash.com/photo-1581291518655-9523b932edcf?auto=format&fit=crop&w=800&q=80"; }}
               alt="GEP Corporate UI"
               className="absolute inset-0 w-full h-full object-cover scale-100 group-hover/card:scale-105 transition-transform duration-700 ease-out"
@@ -127,7 +127,7 @@ export const IntroMockups = () => {
           >
             {/* Background Image Layer */}
             <img 
-              src="/images/projects/uniperks-mockup.png"
+              src="/Portfolio-Ali/images/projects/uniperks-mockup.png"
               onError={(e) => { e.currentTarget.src = "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80"; }}
               alt="Campus Mobile E-Commerce"
               className="absolute inset-0 w-full h-full object-cover scale-100 group-hover/card:scale-105 transition-transform duration-700 ease-out translate-x-4 translate-y-4 drop-shadow-2xl"

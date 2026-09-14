@@ -12,7 +12,7 @@ const projects = [
     description: "Proprietary gamified e-commerce application designed specifically for university merchandise and student perks.",
     num: "01",
     slug: "uniperks",
-    image: "/images/projects/uniperks.png"
+    image: "/Portfolio-Ali/images/projects/uniperks.png"
   },
   {
     title: "GEP CRM System",
@@ -20,7 +20,7 @@ const projects = [
     description: "Enterprise multi-module customer relationship management system with interactive pipelines and analytics dashboards.",
     num: "02",
     slug: "gep-crm-system",
-    image: "/images/projects/gep-crm-system.png"
+    image: "/Portfolio-Ali/images/projects/gep-crm-system.png"
   },
   {
     title: "Local LLaMA Infrastructure",
@@ -44,7 +44,7 @@ const projects = [
     description: "High-concurrency web registration portal for university accommodation featuring real-time validation and group booking synchronization.",
     num: "05",
     slug: "khar-hostel-portal",
-    image: "/images/projects/khar-hostel-portal.png"
+    image: "/Portfolio-Ali/images/projects/khar-hostel-portal.png"
   },
 ];
 

@@ -16,7 +16,7 @@ export const FloatingCats = () => {
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {/* Floating Cat 1 */}
       <motion.img
-        src="/images/projects/cat.png"
+        src="/Portfolio-Ali/images/projects/cat.png"
         alt="Floating Cat"
         className="absolute opacity-40 blur-[1px] w-48 h-auto"
         initial={{ x: "-10vw", y: "80vh", rotate: -15 }}
@@ -35,7 +35,7 @@ export const FloatingCats = () => {
 
       {/* Floating Cat 2 */}
       <motion.img
-        src="/images/projects/Cat1.png"
+        src="/Portfolio-Ali/images/projects/Cat1.png"
         alt="Floating Cat Avatar"
         className="absolute opacity-30 blur-[2px] w-64 h-auto"
         initial={{ x: "110vw", y: "40vh", rotate: 20 }}
@@ -55,7 +55,7 @@ export const FloatingCats = () => {
       
       {/* Bobbing Cat in corner */}
       <motion.img
-        src="/images/projects/cat.png"
+        src="/Portfolio-Ali/images/projects/cat.png"
         alt="Bobbing Cat"
         className="absolute top-24 left-10 opacity-20 w-32 h-auto hidden md:block"
         animate={{
