@@ -184,19 +184,19 @@ export default function ClientUnifiedProfile() {
         {/* BULLETPROOF FULL BLEED BREAKOUT CONTAINER */}
         <div className="relative flex flex-col items-center justify-center mt-12 md:mt-24 w-screen left-1/2 -translate-x-1/2 min-h-[60vh] py-10 overflow-hidden">
         
-          {/* LAYER 1: Background Solid Text (Behind the user) */}
+          {/* LAYER 1: Background Solid Text (Single Line) */}
           <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-            <h1 className="text-[18vw] sm:text-[15vw] md:text-[11vw] lg:text-[9rem] font-black leading-[0.85] tracking-tighter text-[#0a0a0a] dark:text-[rgb(245,235,235)] text-center opacity-100">
-              ALI<br />HANAFIAH
+            <h1 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[7rem] xl:text-[9rem] font-black leading-none tracking-tighter text-[#0a0a0a] dark:text-[rgb(245,235,235)] text-center whitespace-nowrap opacity-100">
+              ALI HANAFIAH
             </h1>
           </div>
         
-          {/* LAYER 2: The Floating Subject */}
+          {/* LAYER 2: The Floating Subject (Re-centered) */}
           <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
             <motion.div 
               animate={{ y: [-12, 12, -12] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="w-72 md:w-[32rem] h-auto drop-shadow-2xl"
+              className="w-72 md:w-[32rem] h-auto drop-shadow-2xl translate-y-4"
             >
               <Image 
                 src="/Portfolio-Ali/images/ALI-HANAFIAH.png"
@@ -210,9 +210,9 @@ export default function ClientUnifiedProfile() {
             </motion.div>
           </div>
 
-          {/* Floating Tech Icons (Restored to their own wrapper inside the breakout so they orbit properly without breaking center) */}
+          {/* Floating Tech Icons */}
           <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-            <div className="relative w-full max-w-4xl h-full flex items-center justify-center">
+            <div className="relative w-full max-w-4xl h-full flex items-center justify-center translate-y-4">
               {/* Photoshop - Top Left */}
               <motion.div
                 animate={{ y: [0, -15, 0], x: [0, 5, 0], rotate: [0, -5, 0] }}
@@ -251,16 +251,16 @@ export default function ClientUnifiedProfile() {
             </div>
           </div>
         
-          {/* LAYER 3: Foreground Outlined Text (In front of the user) */}
+          {/* LAYER 3: Foreground Outlined Text (Single Line) */}
           <div className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none">
-            <h1 className="text-[18vw] sm:text-[15vw] md:text-[11vw] lg:text-[9rem] font-black leading-[0.85] tracking-tighter text-transparent [-webkit-text-stroke:1px_#0a0a0a] dark:[-webkit-text-stroke:1px_rgb(245,235,235)] text-center opacity-100">
-              ALI<br />HANAFIAH
+            <h1 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[7rem] xl:text-[9rem] font-black leading-none tracking-tighter text-transparent [-webkit-text-stroke:2px_#0a0a0a] dark:[-webkit-text-stroke:2px_rgb(245,235,235)] text-center drop-shadow-sm whitespace-nowrap opacity-100">
+              ALI HANAFIAH
             </h1>
           </div>
         </div>
         
         {/* LAYER 4: High-Contrast Bio & Unified Buttons */}
-        <div className="relative z-40 mt-4 md:mt-8 flex flex-col items-center text-center max-w-2xl px-4 mx-auto mb-16">
+        <div className="relative z-40 mt-8 md:mt-16 flex flex-col items-center text-center max-w-2xl px-4 mx-auto mb-16">
           <h2 className="text-neutral-900 dark:text-neutral-300 font-mono text-xs md:text-sm tracking-widest uppercase mb-6 font-bold">
             Software Engineer, DevOps & UI/UX
           </h2>
