@@ -16,8 +16,6 @@ import {
 import { Footer, Header, RouteGuard, Providers } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle, home, person } from "@/resources";
 
-import { BlackCatEntity } from "@/components/BlackCatEntity";
-
 export async function generateMetadata() {
   return Meta.generate({
     title: home.title,
@@ -74,7 +72,6 @@ export default async function RootLayout({
           padding="0"
           horizontal="center"
         >
-          <BlackCatEntity />
           
           <Flex fillWidth minHeight="16" s={{ hide: true }} />
           <Header />

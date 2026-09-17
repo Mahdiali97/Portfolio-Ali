@@ -155,10 +155,7 @@ export default function ClientAboutPage() {
           </div>
         </div>
         
-        {/* Interactive Cat */}
-        <div className="hidden lg:block">
-          <InteractiveSidebarCat scrollYProgress={scrollYProgress} />
-        </div>
+        {/* Sidebar Cat - Hidden */}
       </aside>
 
       {/* Scrolling Right Column */}
