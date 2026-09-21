@@ -185,8 +185,8 @@ export default function ClientUnifiedProfile() {
         <div className="relative flex flex-col items-center justify-center mt-12 md:mt-24 w-screen left-1/2 -translate-x-1/2 min-h-[60vh] py-10 overflow-hidden">
         
           {/* LAYER 1: Background Solid Text (Single Line) */}
-          <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-            <h1 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[7rem] xl:text-[9rem] font-black leading-none tracking-tighter text-[#0a0a0a] dark:text-[rgb(245,235,235)] text-center whitespace-nowrap opacity-100">
+          <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none overflow-hidden">
+            <h1 className="font-black leading-none tracking-tighter text-[#0a0a0a] dark:text-[rgb(245,235,235)] text-center whitespace-nowrap opacity-100" style={{ fontSize: 'clamp(3rem, 10vw, 13vw)' }}>
               ALI HANAFIAH
             </h1>
           </div>
@@ -252,8 +252,8 @@ export default function ClientUnifiedProfile() {
           </div>
         
           {/* LAYER 3: Foreground Outlined Text (Single Line) */}
-          <div className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none">
-            <h1 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[7rem] xl:text-[9rem] font-black leading-none tracking-tighter text-transparent [-webkit-text-stroke:2px_#0a0a0a] dark:[-webkit-text-stroke:2px_rgb(245,235,235)] text-center drop-shadow-sm whitespace-nowrap opacity-100">
+          <div className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none overflow-hidden">
+            <h1 className="font-black leading-none tracking-tighter text-transparent [-webkit-text-stroke:2px_#0a0a0a] dark:[-webkit-text-stroke:2px_rgb(245,235,235)] text-center drop-shadow-sm whitespace-nowrap opacity-100" style={{ fontSize: 'clamp(3rem, 10vw, 13vw)' }}>
               ALI HANAFIAH
             </h1>
           </div>
