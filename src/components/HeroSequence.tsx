@@ -96,7 +96,7 @@ export const HeroSequence = () => {
                 Explore Work
             </Button>
             <Button
-                href="/Portfolio-Ali/docs/Resume-Ali.pdf"
+                href="/Portfolio-Ali/docs/Resume-Ali.pdf?v=2"
                 variant="secondary"
                 size="l"
                 className="border-dark text-dark hover:bg-mid-ambient transition-all px-10 rounded-full"

@@ -271,7 +271,7 @@ export default function ClientUnifiedProfile() {
           {/* Action Buttons */}
           <div className="flex flex-col items-center gap-4">
             <div className="flex flex-wrap justify-center gap-4">
-              <MagneticButton href="/Portfolio-Ali/docs/Resume-Ali.pdf" download="Resume-Ali.pdf">
+              <MagneticButton href="/Portfolio-Ali/docs/Resume-Ali.pdf?v=2" download="Resume-Ali.pdf">
                 <Icon name="document" size="xs" /> Download CV
               </MagneticButton>
               <MagneticButton href="https://github.com/Mahdiali97">
