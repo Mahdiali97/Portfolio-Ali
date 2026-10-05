@@ -19,6 +19,7 @@ export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
       smoothWheel: true,
       wheelMultiplier: 1,
       touchMultiplier: 2,
+      anchors: true,
     });
 
     function raf(time: number) {

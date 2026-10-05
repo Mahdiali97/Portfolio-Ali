@@ -53,7 +53,7 @@ export default async function RootLayout({
         <Providers>
           <Navigation />
           <SmoothScroll>
-            <main className="relative z-10">{children}</main>
+          <main id="top" className="relative z-10">{children}</main>
           </SmoothScroll>
         </Providers>
       </body>
