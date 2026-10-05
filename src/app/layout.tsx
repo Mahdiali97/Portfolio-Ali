@@ -3,18 +3,11 @@ import "@once-ui-system/core/css/tokens.css";
 import "@/resources/custom.css";
 
 import classNames from "classnames";
-import AsciiCursor from "@/components/AsciiCursor";
-
-import {
-  Background,
-  Column,
-  Flex,
-  Meta,
-  opacity,
-  SpacingToken,
-} from "@once-ui-system/core";
-import { Footer, Header, RouteGuard, Providers } from "@/components";
-import { baseURL, effects, fonts, style, dataStyle, home, person } from "@/resources";
+import { Flex, Meta } from "@once-ui-system/core";
+import { Providers } from "@/components";
+import { Navigation } from "@/components/Navigation";
+import { SmoothScroll } from "@/components/SmoothScroll";
+import { baseURL, fonts, home, person } from "@/resources";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -26,25 +19,21 @@ export async function generateMetadata() {
   });
 }
 
-import { SmoothScroll } from "@/components/SmoothScroll";
-
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <Flex
-      suppressHydrationWarning
-      as="html"
+    <html
       lang={person.locale ?? "en"}
-      fillWidth
       className={classNames(
         fonts.heading.variable,
         fonts.body.variable,
         fonts.label.variable,
         fonts.code.variable,
       )}
+      data-theme="dark"
     >
       <head>
         <script
@@ -53,39 +42,21 @@ export default async function RootLayout({
             __html: `
               (function() {
                 try {
-                  const root = document.documentElement;
-                  const savedTheme = localStorage.getItem('data-theme') || 'dark';
-                  root.setAttribute('data-theme', savedTheme);
+                  document.documentElement.setAttribute('data-theme', 'dark');
                 } catch (e) {}
               })();
             `,
           }}
         />
       </head>
-      <Providers>
-        <Column
-          as="body"
-          background="page"
-          fillWidth
-          style={{ minHeight: "100vh", backgroundColor: "var(--bg-main)" }}
-          margin="0"
-          padding="0"
-          horizontal="center"
-        >
-          
-          <Flex fillWidth minHeight="16" s={{ hide: true }} />
-          <Header />
-          <Flex zIndex={0} fillWidth horizontal="center" flex={1}>
-            <Flex horizontal="center" fillWidth minHeight="0">
-              <SmoothScroll>
-                  <RouteGuard>{children}</RouteGuard>
-              </SmoothScroll>
-            </Flex>
-          </Flex>
-          <Footer />
-          <AsciiCursor />
-        </Column>
-      </Providers>
-    </Flex>
+      <body className="bg-[var(--surface-ground)] text-[var(--text-primary)] min-h-screen antialiased selection:bg-[var(--text-accent)] selection:text-[var(--surface-ground)]">
+        <Providers>
+          <Navigation />
+          <SmoothScroll>
+            <main className="relative z-10">{children}</main>
+          </SmoothScroll>
+        </Providers>
+      </body>
+    </html>
   );
 }

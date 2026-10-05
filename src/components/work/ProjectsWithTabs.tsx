@@ -125,7 +125,7 @@ export function ProjectsWithTabs({ allProjects }: { allProjects: any[] }) {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative z-10 flex items-center gap-2.5 px-7 py-3 rounded-full text-sm font-semibold transition-colors duration-200 outline-none cursor-pointer ${
+                className={`relative z-10 flex items-center gap-2.5 px-7 py-3 rounded-full text-sm font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--border-focus)] cursor-pointer ${
                   isActive
                     ? "text-[#0a0a0a]"
                     : "text-[var(--color-dark)] hover:text-[var(--text-main)]"

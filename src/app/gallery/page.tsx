@@ -1,34 +1,14 @@
-import { Meta, Schema } from "@once-ui-system/core";
-import GalleryView from "@/components/gallery/GalleryView";
-import { baseURL, gallery, person } from "@/resources";
+"use client";
 
-export async function generateMetadata() {
-  return Meta.generate({
-    title: "Gallery — Moments & Milestones",
-    description: gallery.description,
-    baseURL: baseURL,
-    image: `/api/og/generate?title=${encodeURIComponent(gallery.title)}`,
-    path: gallery.path,
-  });
-}
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-export default function Gallery() {
-  return (
-    <main className="w-full h-full min-h-screen bg-transparent">
-      <Schema
-        as="webPage"
-        baseURL={baseURL}
-        title={gallery.title}
-        description={gallery.description}
-        path={gallery.path}
-        image={`/api/og/generate?title=${encodeURIComponent(gallery.title)}`}
-        author={{
-          name: person.name,
-          url: `${baseURL}${gallery.path}`,
-          image: `${baseURL}${person.avatar}`,
-        }}
-      />
-      <GalleryView />
-    </main>
-  );
+export default function GalleryRedirect() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace("/#gallery");
+  }, [router]);
+
+  return null;
 }

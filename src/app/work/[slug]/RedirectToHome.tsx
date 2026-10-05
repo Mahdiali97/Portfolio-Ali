@@ -3,12 +3,12 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-export default function AboutRedirect() {
+export const RedirectToHome = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace("/#about");
+    router.replace("/#work");
   }, [router]);
 
   return null;
-}
+};

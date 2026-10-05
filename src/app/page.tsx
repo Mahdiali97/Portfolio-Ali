@@ -1,9 +1,11 @@
-import { HeroCinema } from "@/components/HeroCinema";
-import { IntroMockups } from "@/components/IntroMockups";
-import { HorizontalWork } from "@/components/HorizontalWork";
-import { JourneyOutline } from "@/components/JourneyOutline";
-import { MassiveFooter } from "@/components/MassiveFooter";
-import { SmoothScroll } from "@/components/SmoothScroll";
+import { Hero } from "@/components/Hero";
+import { Introduction } from "@/components/Introduction";
+import { WorkExhibition } from "@/components/WorkExhibition";
+import { CaseStudies } from "@/components/CaseStudies";
+import { ProfessionalBackground } from "@/components/ProfessionalBackground";
+import { Skills } from "@/components/Skills";
+import { GallerySection } from "@/components/GallerySection";
+import { Conclusion } from "@/components/Conclusion";
 import { Meta } from "@once-ui-system/core";
 import { baseURL, home } from "@/resources";
 
@@ -19,14 +21,15 @@ export async function generateMetadata() {
 
 export default function Home() {
   return (
-    <SmoothScroll>
-      <main className="bg-[var(--bg-main)] min-h-screen text-[var(--text-main)] transition-colors duration-300">
-        <HeroCinema />
-        <IntroMockups />
-        <HorizontalWork />
-        <JourneyOutline />
-        <MassiveFooter />
-      </main>
-    </SmoothScroll>
+      <div className="bg-[var(--surface-ground)] min-h-screen text-[var(--text-primary)] transition-colors duration-300">
+        <Hero />
+        <Introduction />
+        <WorkExhibition />
+        <CaseStudies />
+        <ProfessionalBackground />
+        <Skills />
+        <GallerySection />
+        <Conclusion />
+      </div>
   );
 }
