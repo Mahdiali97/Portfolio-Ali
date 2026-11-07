@@ -13,7 +13,7 @@ export const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-[100] px-6 py-8 flex justify-between items-start pointer-events-none">
+    <nav className="fixed top-0 left-0 w-full z-[100] px-6 pt-8 pb-12 flex justify-between items-start pointer-events-none bg-[linear-gradient(to_bottom,rgba(7,9,14,0.92)_0%,rgba(7,9,14,0.7)_55%,rgba(7,9,14,0)_100%)]">
       <Reveal direction="none">
         <Magnetic>
           <Link

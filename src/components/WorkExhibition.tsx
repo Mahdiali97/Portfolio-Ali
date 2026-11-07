@@ -16,6 +16,7 @@ const projects = [
     desc: "Proprietary gamified e-commerce application designed specifically for university merchandise and student perks. Blending high-conversion flows with modern spatial interfaces.",
     image: "/Portfolio-Ali/images/projects/uniperks.png",
     slug: "uniperks",
+    accent: "text-[var(--accent-design)]",
     layout: "spatial" // 3D tilt, large display
   },
   {
@@ -26,6 +27,7 @@ const projects = [
     desc: "Enterprise multi-module customer relationship management system. Features interactive pipelines, analytics dashboards, and rigorous state management.",
     image: "/Portfolio-Ali/images/projects/CRM1.png",
     slug: "gep-crm-system",
+    accent: "text-[var(--accent-engineering)]",
     layout: "landscape" // Wide cinematic display
   },
   {
@@ -36,6 +38,7 @@ const projects = [
     desc: "Comprehensive accommodation management portal for KHAR university residents. Focuses on accessibility, fast load times, and data density.",
     image: "/Portfolio-Ali/images/projects/khar-hostel-portal.png",
     slug: "khar-hostel-portal",
+    accent: "text-[var(--accent-engineering)]",
     layout: "editorial" // Split text/image
   }
 ];
@@ -48,7 +51,8 @@ const infraProjects = [
     tech: ["Python", "LLM", "Agentic Frameworks"],
     desc: "Autonomous AI agent architecture designed for complex task orchestration and intelligent workflow automation.",
     image: "/Portfolio-Ali/images/projects/Hermes.png",
-    slug: "hermes-agent"
+    slug: "hermes-agent",
+    accent: "text-[var(--accent-ai)]"
   },
   {
     id: "05",
@@ -57,7 +61,8 @@ const infraProjects = [
     tech: ["Docker", "Containerization", "Inference"],
     desc: "Privacy-first local LLM orchestration setup utilizing Docker containers for zero-latency private inference.",
     image: "/Portfolio-Ali/images/projects/LLama.png",
-    slug: "local-llama-ai"
+    slug: "local-llama-ai",
+    accent: "text-[var(--accent-infra)]"
   }
 ];
 
@@ -74,7 +79,7 @@ const ParallaxImage = ({ src, alt, className }: { src: string; alt: string; clas
         src={src}
         alt={alt}
         loading="lazy"
-        className="absolute inset-0 w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+        className="absolute inset-0 w-full h-full object-cover brightness-[0.85] group-hover:brightness-100 transition-[filter] duration-700"
       />
     </div>
   );
@@ -106,9 +111,9 @@ export const WorkExhibition = () => {
         <div className="group grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-4 order-2 lg:order-1 flex flex-col gap-6">
             <Reveal direction="left">
-              <span className="font-mono text-xs text-[var(--text-accent)]">{projects[0].id}</span>
+              <span className={`font-mono text-xs ${projects[0].accent}`}>{projects[0].id}</span>
               <h3 className="text-4xl lg:text-5xl font-bold uppercase tracking-tight mt-2">{projects[0].title}</h3>
-              <p className="font-serif italic text-xl text-[var(--text-secondary)] mt-2">{projects[0].category}</p>
+              <p className={`font-serif italic text-xl mt-2 ${projects[0].accent}`}>{projects[0].category}</p>
             </Reveal>
             <Reveal direction="up" delay={0.2}>
               <p className="text-sm leading-relaxed text-[var(--text-secondary)] max-w-sm">
@@ -142,9 +147,9 @@ export const WorkExhibition = () => {
         <div className="group flex flex-col gap-8">
           <div className="flex flex-col md:flex-row justify-between items-end gap-6">
             <Reveal direction="up">
-              <span className="font-mono text-xs text-[var(--text-accent)] block mb-2">{projects[1].id}</span>
+              <span className={`font-mono text-xs block mb-2 ${projects[1].accent}`}>{projects[1].id}</span>
               <h3 className="text-4xl lg:text-6xl font-bold uppercase tracking-tighter">{projects[1].title}</h3>
-              <p className="font-serif italic text-xl text-[var(--text-secondary)] mt-2">{projects[1].category}</p>
+              <p className={`font-serif italic text-xl mt-2 ${projects[1].accent}`}>{projects[1].category}</p>
             </Reveal>
             <Reveal direction="left" delay={0.2}>
                <a href="#gep-crm" className="inline-flex items-center gap-4 group/btn pb-2">
@@ -187,9 +192,9 @@ export const WorkExhibition = () => {
           </div>
           <div className="lg:col-span-5 flex flex-col gap-6 lg:pl-12 border-l border-transparent lg:border-[var(--border-subtle)]">
             <Reveal direction="left">
-              <span className="font-mono text-xs text-[var(--text-accent)]">{projects[2].id}</span>
+              <span className={`font-mono text-xs ${projects[2].accent}`}>{projects[2].id}</span>
               <h3 className="text-4xl lg:text-5xl font-bold uppercase tracking-tight mt-2 leading-[0.9]">{projects[2].title}</h3>
-              <p className="font-serif italic text-xl text-[var(--text-secondary)] mt-4">{projects[2].category}</p>
+              <p className={`font-serif italic text-xl mt-4 ${projects[2].accent}`}>{projects[2].category}</p>
             </Reveal>
             <Reveal direction="up" delay={0.2}>
               <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
@@ -226,16 +231,17 @@ export const WorkExhibition = () => {
                        src={proj.image} 
                        alt={proj.title} 
                        loading="lazy"
-                       className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover/infra:opacity-100 group-hover/infra:grayscale-0 transition-all duration-700 group-hover/infra:scale-105" 
+                       className="absolute inset-0 w-full h-full object-cover brightness-[0.85] group-hover/infra:brightness-100 transition-[filter,transform] duration-700 group-hover/infra:scale-105"
                      />
                      <div className="absolute inset-0 border border-[var(--text-accent)] opacity-0 group-hover/infra:opacity-20 transition-opacity duration-500" />
                   </div>
                   <div>
                     <div className="flex justify-between items-start mb-4">
                        <h4 className="text-2xl font-bold uppercase tracking-tight">{proj.title}</h4>
-                       <span className="font-mono text-[10px] text-[var(--text-accent)]">{proj.id}</span>
+                       <span className={`font-mono text-[10px] ${proj.accent}`}>{proj.id}</span>
                     </div>
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-6 h-16">{proj.desc}</p>
+                    <p className={`font-serif italic text-lg mb-3 ${proj.accent}`}>{proj.category}</p>
+                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-6 md:min-h-16">{proj.desc}</p>
                     <div className="flex flex-wrap gap-2">
                       {proj.tech.map(t => (
                         <span key={t} className="text-[var(--text-tertiary)] font-mono text-[9px] uppercase tracking-widest border border-transparent group-hover/infra:border-[var(--border-subtle)] px-2 py-1 transition-colors">{t}</span>

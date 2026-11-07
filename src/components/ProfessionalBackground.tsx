@@ -35,7 +35,7 @@ export const ProfessionalBackground = () => {
           {/* Sticky Sidebar */}
           <div className="lg:w-1/3">
              <Reveal direction="down">
-              <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-[var(--text-accent)] block mb-8">Background / 03</span>
+              <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-[var(--text-accent)] block mb-8">Background / 04</span>
               <h2 className="text-5xl font-extrabold tracking-tighter uppercase leading-[0.9]">
                 Professional <br />
                 <span className="font-serif italic font-normal lowercase text-[var(--text-secondary)]">Narrative</span>
@@ -47,7 +47,7 @@ export const ProfessionalBackground = () => {
           <div className="lg:w-2/3 space-y-24">
             {journey.map((item, i) => (
               <div key={i} className="relative pl-8 border-l border-[var(--border-strong)]">
-                <div className="absolute -left-[5px] top-2 w-2 h-2 bg-[var(--text-accent)] rounded-full" />
+                <div className="absolute -left-[4.5px] top-2 w-2 h-2 bg-[var(--text-accent)] rounded-full" />
                 
                 <Reveal direction="up" delay={i * 0.2}>
                   <div className="flex justify-between items-start mb-6">

@@ -14,8 +14,14 @@
   /* Contrast & Hierarchy */
   --text-primary: #f0f6fc;
   --text-secondary: #8b949e;
-  --text-tertiary: #484f58;
+  --text-tertiary: #7d8590;
   --text-accent: #58a6ff;
+
+  /* Domain accents (see DESIGN.md §3) */
+  --accent-engineering: #58a6ff;
+  --accent-design: #f78166;
+  --accent-infra: #3fb950;
+  --accent-ai: #bc8cff;
 
   /* Borders & Rules */
   --border-subtle: rgba(240, 246, 252, 0.08);

@@ -54,7 +54,7 @@ export const GallerySection = () => {
                   src={image.src} 
                   alt={image.alt} 
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" 
+                  className="absolute inset-0 w-full h-full object-cover brightness-[0.85] group-hover:brightness-100 group-hover:scale-105 transition-[filter,transform] duration-500" 
                 />
               </button>
             </Reveal>

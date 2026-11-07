@@ -23,7 +23,7 @@ export const Conclusion = () => {
         <div className="flex flex-col lg:flex-row justify-between items-end gap-16 mb-24 border-b border-[var(--border-strong)] pb-12">
            <div className="max-w-2xl">
              <Reveal direction="down">
-                <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-[var(--text-accent)] block mb-8">Conclusion / 05</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-[var(--text-accent)] block mb-8">Contact / 07</span>
              </Reveal>
              <h2 className="text-5xl lg:text-8xl font-extrabold tracking-tighter uppercase leading-[0.85] mb-8">
                 <TextReveal text="Direct" /> <br />
@@ -39,7 +39,7 @@ export const Conclusion = () => {
            </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {links.map((link, i) => (
             <Reveal key={link.label} direction="up" delay={0.3 + i * 0.1}>
               <Magnetic distance={0.15}>

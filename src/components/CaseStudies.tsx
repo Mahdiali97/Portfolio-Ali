@@ -8,6 +8,8 @@ type CaseStudy = {
   id: string;
   title: string;
   role: string;
+  /** Tailwind text-colour class for the project's domain accent (DESIGN.md §3) */
+  accent: string;
   tech: string[];
   link?: string;
   context: string;
@@ -25,6 +27,7 @@ const caseStudies: CaseStudy[] = [
     id: "uniperks",
     title: "UniPerks: Gamified Campus E-Commerce",
     role: "Lead Developer & UI Designer",
+    accent: "text-[var(--accent-design)]",
     tech: ["Flutter", "Supabase", "Dart", "Firebase", "Stripe", "Figma"],
     link: "https://uniperks-app.vercel.app/",
     context: "Universiti Pendidikan Sultan Idris (UPSI) relied on a fragmented, external catalog for merchandise, lacking an integrated checkout or student incentive structure.",
@@ -39,6 +42,7 @@ const caseStudies: CaseStudy[] = [
     id: "gep-crm",
     title: "GEP CRM System",
     role: "Full-Stack Developer & UI/UX",
+    accent: "text-[var(--accent-engineering)]",
     tech: ["React", "TypeScript", "Vite", "Express", "Prisma", "MySQL", "Tailwind"],
     context: "Enterprise client needed a scalable customer relationship management system to handle complex hierarchies of clients, zones, premises, and invoicing without overwhelming users.",
     approach: "Built a robust web application using a modern React + Vite frontend and a Prisma + Express backend. Prioritized rigorous state management and clean component architecture.",
@@ -56,6 +60,7 @@ const caseStudies: CaseStudy[] = [
     id: "khar-hostel",
     title: "KHAR Hostel Portal",
     role: "Full-Stack Developer",
+    accent: "text-[var(--accent-engineering)]",
     tech: ["Laravel", "Livewire", "Tailwind CSS", "MySQL", "Docker", "Fly.io"],
     link: "https://khar-hostel-portal-1788598384.fly.dev/",
     context: "Kolej Harun Aminurrashid (KHAR) suffered from physical queues and uncoordinated spreadsheet records during high-traffic intake windows.",
@@ -70,6 +75,7 @@ const caseStudies: CaseStudy[] = [
     id: "hr-payroll",
     title: "HR Payroll System",
     role: "Full-Stack Developer & UI/UX",
+    accent: "text-[var(--accent-engineering)]",
     tech: ["Full-Stack", "Enterprise Architecture"],
     context: "Manual salary processing, leave tracking, and payslip generation caused administrative bottlenecks and errors.",
     approach: "Designed an enterprise Human Resources platform to centralize employee data and automate financial/administrative workflows.",
@@ -86,6 +92,7 @@ const caseStudies: CaseStudy[] = [
     id: "hermes-agent",
     title: "Hermes Agent",
     role: "AI Engineer",
+    accent: "text-[var(--accent-ai)]",
     tech: ["Python", "LLM APIs", "Vector DB", "Docker", "Linux CLI"],
     context: "Rigid automation scripts fail when encountering unexpected errors or requiring dynamic context outside their hardcoded boundaries.",
     approach: "Engineered an autonomous AI agent framework designed for multi-step task decomposition and recursive problem-solving. It references contextual knowledge databases and executes dynamic pipelines.",
@@ -98,6 +105,7 @@ const caseStudies: CaseStudy[] = [
     id: "local-llama",
     title: "Local LLaMA Infrastructure",
     role: "DevOps Engineer",
+    accent: "text-[var(--accent-infra)]",
     tech: ["llama.cpp", "Docker", "Linux Server", "Bash"],
     context: "Cloud-hosted AI APIs presented high recurring costs and potential data sovereignty / privacy issues.",
     approach: "Deployed a privacy-centric, on-premise Large Language Model pipeline engineered to deliver zero-latency inference entirely offline on dedicated hardware.",
@@ -142,10 +150,10 @@ export const CaseStudies = () => {
 
   return (
     <section id="case-studies" className="py-32 bg-[var(--surface-ground)] text-[var(--text-primary)]">
-      <div className="max-w-4xl mx-auto px-6 mb-32">
+      <div className="max-w-7xl mx-auto px-6 mb-32">
         <Reveal direction="down">
-           <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-[var(--text-accent)] block mb-8">Detailed Archives / 02.1</span>
-           <h2 className="text-5xl font-extrabold tracking-tighter uppercase leading-[0.9]">
+           <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-[var(--text-accent)] block mb-8">Detailed Archives / 03</span>
+           <h2 className="text-5xl lg:text-7xl font-extrabold tracking-tighter uppercase leading-[0.9]">
               Project <br />
               <span className="font-serif italic font-normal lowercase text-[var(--text-secondary)]">Case Studies</span>
            </h2>
@@ -160,14 +168,14 @@ export const CaseStudies = () => {
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
                   <div>
                     <h3 className="text-4xl md:text-6xl font-extrabold uppercase tracking-tight">{study.title}</h3>
-                    <p className="font-serif italic text-xl md:text-2xl text-[var(--text-accent)] mt-4">{study.role}</p>
+                    <p className={`font-serif italic text-xl md:text-2xl mt-4 ${study.accent}`}>{study.role}</p>
                   </div>
                   {study.link && (
                     <a 
                       href={study.link} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="px-6 py-3 border border-[var(--text-primary)] font-mono text-xs uppercase tracking-widest hover:bg-[var(--text-primary)] hover:text-[var(--surface-ground)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--border-focus)]"
+                      className="shrink-0 whitespace-nowrap px-6 py-3 border border-[var(--text-primary)] font-mono text-xs uppercase tracking-widest hover:bg-[var(--text-primary)] hover:text-[var(--surface-ground)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--border-focus)]"
                     >
                       View Live
                     </a>
@@ -247,7 +255,7 @@ export const CaseStudies = () => {
                           src={img}
                           alt={`${study.title} project image ${i + 1}`}
                           loading="lazy"
-                          className="h-auto w-full object-cover grayscale transition-all duration-700 hover:grayscale-0"
+                          className="h-auto w-full object-cover brightness-[0.85] transition-[filter] duration-700 hover:brightness-100"
                         />
                       </div>
                     </Reveal>

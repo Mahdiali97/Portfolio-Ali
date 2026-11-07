@@ -19,7 +19,7 @@ export const Skills = () => {
       <div className="max-w-7xl mx-auto px-6">
         
         <Reveal direction="down">
-          <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-[var(--text-accent)] block mb-8">Capabilities / 04</span>
+          <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-[var(--text-accent)] block mb-8">Capabilities / 05</span>
           <h2 className="text-5xl lg:text-7xl font-extrabold tracking-tighter uppercase leading-[0.9] mb-24">
             Technical <br />
             <span className="font-serif italic font-normal lowercase text-[var(--text-secondary)]">Range</span>

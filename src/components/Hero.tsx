@@ -21,8 +21,7 @@ export const Hero = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const artifacts = [
-    { src: "/Portfolio-Ali/images/projects/uniperks-mockup.png", alt: "UniPerks Mockup", className: "w-[300px] h-auto top-[10%] right-[5%] z-0" },
-    { src: "/Portfolio-Ali/images/projects/Hermes.png", alt: "Hermes Agent", className: "w-[400px] h-auto bottom-[15%] left-[2%] z-0" },
+    { src: "/Portfolio-Ali/images/projects/uniperks-mockup.png", alt: "", className: "w-[300px] h-auto top-[18%] right-[8%] z-0" },
   ];
 
   return (
@@ -35,31 +34,21 @@ export const Hero = () => {
         <motion.div
           key={i}
           style={{ y: i === 0 ? y1 : y2, rotate: i === 0 ? rotate : -rotate, opacity }}
-          className={`absolute pointer-events-none opacity-20 grayscale hover:grayscale-0 transition-all duration-700 hidden lg:block ${art.className}`}
+          aria-hidden="true"
+          className={`absolute pointer-events-none hidden lg:block ${art.className}`}
         >
-          <img 
-            src={art.src} 
-            alt={art.alt} 
+          <img
+            src={art.src}
+            alt={art.alt}
             loading="eager"
             fetchPriority="high"
-            className="rounded-sm border border-[var(--border-subtle)] shadow-2xl" 
+            className="rounded-sm border border-[var(--border-subtle)] shadow-2xl opacity-50"
           />
         </motion.div>
       ))}
 
       {/* Main Composition */}
       <div className="relative z-10 max-w-7xl w-full flex flex-col items-start lg:items-center">
-        <div className="w-full flex flex-col lg:flex-row items-end lg:items-center justify-between mb-12">
-           <Reveal direction="down">
-              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--text-secondary)]">
-                
-              </span>
-           </Reveal>
-           <Reveal direction="down" delay={0.1}>
-              <div className="h-[1px] w-12 lg:w-32 bg-[var(--border-strong)] hidden lg:block" />
-           </Reveal>
-        </div>
-
         <div className="relative w-full">
           <motion.div 
              style={{ y: shouldReduceMotion ? 0 : y1 }}
@@ -84,16 +73,8 @@ export const Hero = () => {
           </Reveal>
         </div>
 
-        <div className="mt-46 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-          <div className="lg:col-span-4">
-            <Reveal direction="up" delay={1}>
-              <p className="text-[var(--text-secondary)] text-sm leading-relaxed max-w-[280px]">
-                
-              </p>
-            </Reveal>
-          </div>
-
-          <div className="lg:col-span-8 flex justify-end">
+        <div className="mt-16 lg:mt-48 w-full flex justify-end">
+          <div>
             <Tilt3D intensity={10}>
               <Reveal direction="up" delay={1.2}>
                 <div className="group relative overflow-hidden rounded-sm border border-[var(--border-strong)] bg-[var(--surface-card)] p-1">
@@ -103,7 +84,7 @@ export const Hero = () => {
                     alt="UniPerks Interface" 
                     loading="eager"
                     fetchPriority="high"
-                    className="w-full lg:w-[600px] h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" 
+                    className="w-full lg:w-[600px] h-auto object-cover brightness-[0.85] group-hover:brightness-100 transition-all duration-700 scale-105 group-hover:scale-100"
                   />
                   <div className="absolute bottom-4 left-4 font-mono text-[10px] uppercase tracking-widest text-[var(--text-primary)] opacity-0 group-hover:opacity-100 transition-opacity">
                     Technical Excellence / Visual Precision
